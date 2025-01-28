@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beta Album - Ana Sayfa</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="/BETA_ALBUM/Beta_Album/css/index.css">
 </head>
 <body>
 
 <header>
-    <div style="padding:0px 0px;"></div>
     <nav>
         <ul>
             <li><a href="/BETA_ALBUM/Beta_Album/includes/login.php">Üye Giriş / Hesabım</a></li>
@@ -26,7 +25,7 @@
     </nav>
 </header>
 
-<nav>
+<nav class="fixed">
    
     <ul class="menu">
         <li ><a class="icon" href="/BETA_ALBUM/Beta_Album/index.php" style="text-decoration: none !important;"><b>BETA ALBUM&trade;</b></a></li>
@@ -54,7 +53,7 @@
             <a class="categoryList" href="#">Fotoğraf Baskı ▽</a>
             <div class="dropdown-content">
                 <div class="dropdown-item">
-                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Labartuvar Baskı"><p>Labartuvar Baskı</p></a>
+                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Laboratuvar Baskı"><p>Laboratuvar Baskı</p></a>
                 </div>
             </div>
         </li>
@@ -128,5 +127,14 @@
     </ul>
   
 </nav>
+<script>
+        window.onscroll = function() {
+            if (window.scrollY > 0) {
+                document.body.classList.add("scrolled");
+            } else {
+                document.body.classList.remove("scrolled");
+            }
+        };
+    </script>
 </body>
 </html>
