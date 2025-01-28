@@ -8,6 +8,6 @@
 </head>
 <body>
     <?php include('navbar.php');?>
-
+<h1>GİRİŞ</h1>
 </body>
 </html>

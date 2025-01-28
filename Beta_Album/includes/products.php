@@ -8,6 +8,9 @@
 </head>
 <body>
     <?php include('navbar.php');?>
+    <?php $id = $_GET['Kategori'];
+    echo "<h1>$id</h1>";
+    ?>
 
 </body>
 </html>

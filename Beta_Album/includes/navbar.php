@@ -13,15 +13,15 @@
     <div style="padding:0px 0px;"></div>
     <nav>
         <ul>
-            <li><a href="#">Üye Giriş / Hesabım</a></li>
+            <li><a href="/BETA_ALBUM/Beta_Album/includes/login.php">Üye Giriş / Hesabım</a></li>
             |
             <li><a href="/BETA_ALBUM/Beta_Album/includes/Aboutus.php">Hakkımızda</a></li>
             |
-            <li><a href="#">İletişim</a></li>
+            <li><a href="/BETA_ALBUM/Beta_Album/includes/contact.php">İletişim</a></li>
             |
             <li><a href="/BETA_ALBUM/Beta_Album/includes/Basket.php">Sepetim</a></li>
             |
-            <li><a href="#">Kasaya git</a></li>
+            <li><a href="/BETA_ALBUM/Beta_Album/includes/Basket.php">Kasaya git</a></li>
         </ul>
     </nav>
 </header>
@@ -29,7 +29,7 @@
 <nav>
    
     <ul class="menu">
-        <li ><a class="icon" href="index.php" style="text-decoration: none !important;"><b>BETA ALBUM&trade;</b></a></li>
+        <li ><a class="icon" href="/BETA_ALBUM/Beta_Album/index.php" style="text-decoration: none !important;"><b>BETA ALBUM&trade;</b></a></li>
         <li class="dropdown">
             <a class="categoryList" href="#">Panoramik Albüm ▽</a>
             <div class="dropdown-content">
