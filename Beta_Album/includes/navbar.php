@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beta Album - Ana Sayfa</title>
-    <link rel="stylesheet" href="../css/navbar.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/index.css">
 </head>
 <body>
 
@@ -14,11 +15,11 @@
         <ul>
             <li><a href="#">Üye Giriş / Hesabım</a></li>
             |
-            <li><a href="#">Hakkımızda</a></li>
+            <li><a href="/BETA_ALBUM/Beta_Album/includes/Aboutus.php">Hakkımızda</a></li>
             |
             <li><a href="#">İletişim</a></li>
             |
-            <li><a href="#">Sepetim</a></li>
+            <li><a href="/BETA_ALBUM/Beta_Album/includes/Basket.php">Sepetim</a></li>
             |
             <li><a href="#">Kasaya git</a></li>
         </ul>
@@ -26,108 +27,106 @@
 </header>
 
 <nav>
-    <span style=""><b>BETA ALBUM&trade;</b></span>
+   
     <ul class="menu">
+        <li ><a class="icon" href="index.php" style="text-decoration: none !important;"><b>BETA ALBUM&trade;</b></a></li>
         <li class="dropdown">
-            <a href="#">Panoramik Albüm ▽</a>
+            <a class="categoryList" href="#">Panoramik Albüm ▽</a>
             <div class="dropdown-content">
                 <div class="dropdown-item">
-                    <p>Bebek Albümleri</p>
+                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Bebek Albümleri"><p>Bebek Albümleri</p></a>
                 </div>
                 <div class="dropdown-item">
-                    <p>Ekonomik Albümler</p>
+                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Ekonomik Albümler"><p>Ekonomik Albümler</p></a>
                 </div>
                 <div class="dropdown-item">
-                    <p>Exclusive Albümler</p>
+                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Exclusive Albümler"><p>Exclusive Albümler</p></a>
                 </div>
                 <div class="dropdown-item">
-                    <p>Kampanyalı Albümler</p>
+                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Kampanyalı Albümler"><p>Kampanyalı Albümler</p></a>
                 </div>
                 <div class="dropdown-item">
-                    <p>Fırsat Albümleri</p>
+                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Fırsat Albümleri"><p>Fırsat Albümleri</p></a>
                 </div>
-                <img src="https://fastly.picsum.photos/id/643/200/300.jpg?hmac=rS-MHa0BIMHdAgm-FZ7QM36aRKEAzzhSRNRv5n4uqGc" alt="Albüm Resmi">
             </div>
         </li>
         <li class="dropdown">
-            <a href="#">Fotoğraf Baskı ▽</a>
+            <a class="categoryList" href="#">Fotoğraf Baskı ▽</a>
             <div class="dropdown-content">
                 <div class="dropdown-item">
-                    <p>Labartuvar Baskı</p>
+                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Labartuvar Baskı"><p>Labartuvar Baskı</p></a>
                 </div>
-                <img src="https://fastly.picsum.photos/id/643/200/300.jpg?hmac=rS-MHa0BIMHdAgm-FZ7QM36aRKEAzzhSRNRv5n4uqGc" alt="Albüm Resmi">
             </div>
         </li>
         <li class="dropdown">
-            <a href="#">Fotokitap ▽</a>
+            <a class="categoryList" href="#">Fotokitap ▽</a>
             <div class="dropdown-content">
                 <div class="dropdown-item">
-                    <p>Fotokitap</p>
+                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Fotokitap"><p>Fotokitap</p></a>
                 </div>
-                <img src="https://fastly.picsum.photos/id/643/200/300.jpg?hmac=rS-MHa0BIMHdAgm-FZ7QM36aRKEAzzhSRNRv5n4uqGc" alt="Albüm Resmi">
             </div>
         </li>
         <li class="dropdown">
-            <a href="#">Fotoğraf Kutusu ▽</a>
+            <a class="categoryList" href="#">Fotoğraf Kutusu ▽</a>
             <div class="dropdown-content">
                 <div class="dropdown-item">
-                    <p>Fotoğraf Kutusu</p>
+                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Fotoğraf Kutusu"><p>Fotoğraf Kutusu</p></a>
                 </div>
                 <div class="dropdown-item">
-                    <p>Album Kutusu</p>
+                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Album Kutusu"><p>Album Kutusu</p></a>
                 </div>
-                <img src="https://fastly.picsum.photos/id/643/200/300.jpg?hmac=rS-MHa0BIMHdAgm-FZ7QM36aRKEAzzhSRNRv5n4uqGc" alt="Albüm Resmi">
             </div>
         </li>
         <li class="dropdown">
-            <a href="#">Duvar Sanatı ▽</a>
+            <a class="categoryList" href="#">Duvar Sanatı ▽</a>
             <div class="dropdown-content">
                 <div class="dropdown-item">
-                    <p>Fotoğraf Baskılı Çerçeve</p>
+                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Fotoğraf Baskılı Çerçeve"><p>Fotoğraf Baskılı Çerçeve</p></a>
                 </div>
                 <div class="dropdown-item">
-                    <p>Foto Akordeon</p>
+                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Foto Akordeon"><p>Foto Akordeon</p></a>
                 </div>
                 <div class="dropdown-item">
-                    <p>Kanvas Tablo</p>
+                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Kanvas Tablo"><p>Kanvas Tablo</p></a>
                 </div>
                 <div class="dropdown-item">
-                    <p>Yapışkanlı Çerçeve</p>
+                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Yapışkanlı Çerçeve"><p>Yapışkanlı Çerçeve</p></a>
                 </div>
-                <img src="https://fastly.picsum.photos/id/643/200/300.jpg?hmac=rS-MHa0BIMHdAgm-FZ7QM36aRKEAzzhSRNRv5n4uqGc" alt="Albüm Resmi">
             </div>
         </li>
         <li class="dropdown">
-            <a href="#">Fotoğraflı Ürün ▽</a>
+            <a class="categoryList" href="#">Fotoğraflı Ürün ▽</a>
             <div class="dropdown-content">
                 <div class="dropdown-item">
-                    <p>Mezuniyet Albümü</p>
+                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Mezuniyet Albümü"><p>Mezuniyet Albümü</p></a>
                 </div>
                 <div class="dropdown-item">
-                    <p>Puzzle</p>
+                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Puzzle"><p>Puzzle</p></a>
                 </div>
                 <div class="dropdown-item">
-                    <p>Bardak Baskı</p>
+                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Bardak Baskı"><p>Bardak Baskı</p></a>
                 </div>
-                <img src="https://fastly.picsum.photos/id/643/200/300.jpg?hmac=rS-MHa0BIMHdAgm-FZ7QM36aRKEAzzhSRNRv5n4uqGc" alt="Albüm Resmi">
             </div>
         </li>
         <li class="dropdown">
-            <a href="#">Photoshop Tasarım ▽</a>
+            <a class="categoryList" href="#">Photoshop Tasarım ▽</a>
             <div class="dropdown-content">
                 <div class="dropdown-item">
-                    <p>Albüm Çalışması</p>
+                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Albüm Çalışması"><p>Albüm Çalışması</p></a>
                 </div>
                 <div class="dropdown-item">
-                    <p>Tekli Poz</p>
+                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Tekli Poz"><p>Tekli Poz</p></a>
                 </div>
                 <div class="dropdown-item">
-                    <p>Restore</p>
+                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Restore"><p>Restore</p></a>
                 </div>
-                <img src="https://fastly.picsum.photos/id/643/200/300.jpg?hmac=rS-MHa0BIMHdAgm-FZ7QM36aRKEAzzhSRNRv5n4uqGc" alt="Albüm Resmi">
             </div>
         </li>
+        <li><a class="search_icon"href="#" style="margin-left: 150px ;"><i class="fas fa-search"></i></a></li>
+        <li><a class="search_icon" href="/BETA_ALBUM/Beta_Album/includes/login.php"><i class="fas fa-user"></i></a></li>
+        <li><a class="search_icon" href="/BETA_ALBUM/Beta_Album/includes/Basket.php"><i class="fa-solid fa-basket-shopping"></i></a></li>
     </ul>
+  
 </nav>
 </body>
 </html>
