@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beta Album - ürünler</title>
+    <title>Oturum Aç</title>
     <link rel="stylesheet" href="/BETA_ALBUM/Beta_Album/css/backgraund.css">
 </head>
 <body class="body">
@@ -12,5 +12,6 @@
         <h1 class='head'>GİRİŞ</h1>  
     </div>
 
+    <?php include('footer.php');?>
 </body>
 </html>

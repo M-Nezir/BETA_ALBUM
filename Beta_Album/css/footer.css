@@ -1,0 +1,179 @@
+footer {
+    font-family: 'Century Gothic', sans-serif;
+    font-weight: 20;
+    font-size: 14px;
+    height: 45px;
+    width: 100%;
+    display: block;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 20px;
+    padding-top: 11px;
+    padding-bottom: 0;
+}
+
+.container {
+    display: flex;
+    border-top: 1px solid #333;
+    background-color: rgb(255, 255, 255);
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-bottom: 70px ;
+}
+
+.footer-items {
+    display: inline-block;
+    margin-top: 25px;
+    width: auto;
+    height: 189px;
+    top: 0;
+}
+
+.footer-items ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+} 
+
+.footer-items ul li{
+    margin-bottom: 10px;
+}
+
+.footer-items ul li h3{
+    font-family: 'Century Gothic', sans-serif;
+    display: inline-block;
+    margin-bottom: 5px;
+    font-weight: 20;
+    margin-top: 0;
+    padding: 0;
+}
+.footer-items ul li h3::after {
+    content: "";
+    display: block;
+    width: 60%;
+    height: 3px;
+    background-color: rgba(81, 81, 81, 0.165);
+    margin-top: 5px;
+    border-radius: 2px;
+}
+
+.footer-items ul li a{
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+}
+
+.footer-items ul li a:hover{
+    display: inline-block;
+    text-decoration: underline;
+    color: black;
+}
+
+.footer-items ul li i{
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+
+  .footer_icon{
+    display: block;
+    color: black;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+.logo{
+    display: flex;
+    background-color: white;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 14%;
+    padding-right: 14%;
+    padding-bottom: 60px;
+}
+
+.text{
+    display: inline-block;
+    width: 400px;
+}
+
+.img{
+    display: inline-block;
+    position: relative;
+}
+
+.fa-brands{
+    font-size: 30px;
+    padding-bottom: 25px;
+    margin-left: 20px;
+
+}
+
+.facebook{
+    margin-left: 70px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-bottom: 40px;
+    }
+
+    .footer-items {
+        text-align: left;
+        margin-top: 15px;
+        height: auto;
+    }
+
+    .footer-items ul li h3::after {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .footer-items ul li a {
+        font-size: 14px;
+    }
+
+    .logo {
+        flex-direction: column;
+        align-items: center;
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-bottom: 40px;
+    }
+
+    .text {
+        width: 100%;
+        text-align: center;
+    }
+
+    .img {
+        display: block;
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .fa-brands {
+        font-size: 25px;
+        margin-left: 10px;
+    }
+
+    .facebook {
+        margin-left: 10px;
+    }
+
+    .footer_icon {
+        font-size: 25px;
+    }
+
+    footer{
+        bottom: 0;
+        font-size: 70%;
+    }
+}

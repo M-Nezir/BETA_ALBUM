@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beta Album - ürünler</title>
+    <title>İletişim</title>
     <link rel="stylesheet" href="/BETA_ALBUM/Beta_Album/css/backgraund.css">
 </head>
 <body class="body">
@@ -11,5 +11,7 @@
     <div class="main">
         <h1 class='head'>İLETİŞİM</h1>
     </div>
+
+    <?php include('footer.php');?>
 </body>
 </html>

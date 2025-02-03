@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beta Album - Ana Sayfa</title>
-    <link rel="stylesheet" href="css/index.css">
+    <title>Beta Album</title>
+    <link rel="stylesheet" href="/BETA_ALBUM/Beta_Album/css/index.css">
 </head>
 <body>
     <?php include('includes/navbar.php');?>
@@ -34,9 +34,7 @@
     </div>
 </section>
 
-<footer>
-    &copy; 2025 Beta Album. Tüm hakları saklıdır.
-</footer>
+<?php include('includes/footer.php');?>
 
 </body>
 </html>

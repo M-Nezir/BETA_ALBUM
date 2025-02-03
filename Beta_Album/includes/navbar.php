@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beta Album - Ana Sayfa</title>
+    <title>Beta Album</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/BETA_ALBUM/Beta_Album/css/index.css">
 </head>
@@ -14,19 +14,20 @@
         <ul>
             <li><a href="/BETA_ALBUM/Beta_Album/includes/login.php">Üye Giriş / Hesabım</a></li>
             |
-            <li><a href="/BETA_ALBUM/Beta_Album/includes/Aboutus.php">Hakkımızda</a></li>
+            <li><a href="/BETA_ALBUM/Beta_Album/includes/about_us.php">Hakkımızda</a></li>
             |
             <li><a href="/BETA_ALBUM/Beta_Album/includes/contact.php">İletişim</a></li>
             |
-            <li><a href="/BETA_ALBUM/Beta_Album/includes/Basket.php">Sepetim</a></li>
+            <li><a href="/BETA_ALBUM/Beta_Album/includes/basket.php">Sepetim</a></li>
             |
-            <li><a href="/BETA_ALBUM/Beta_Album/includes/Basket.php">Kasaya git</a></li>
+            <li><a href="/BETA_ALBUM/Beta_Album/includes/basket.php">Kasaya git</a></li>
         </ul>
     </nav>
 </header>
 
 <nav class="fixed">
-   
+<a class="icon_mobile" href="/BETA_ALBUM/Beta_Album/index.php" style="text-decoration: none !important;"><b>BETA ALBUM&trade;</b></a>
+<button class="hamburger-button">☰</button>
     <ul class="menu">
         <li ><a class="icon" href="/BETA_ALBUM/Beta_Album/index.php" style="text-decoration: none !important;"><b>BETA ALBUM&trade;</b></a></li>
         <li class="dropdown">
@@ -123,10 +124,25 @@
         </li>
         <li><a class="search_icon"href="#" style="margin-left: 150px ;"><i class="fas fa-search"></i></a></li>
         <li><a class="search_icon" href="/BETA_ALBUM/Beta_Album/includes/login.php"><i class="fas fa-user"></i></a></li>
-        <li><a class="search_icon" href="/BETA_ALBUM/Beta_Album/includes/Basket.php"><i class="fa-solid fa-basket-shopping"></i></a></li>
+        <li><a class="search_icon" href="/BETA_ALBUM/Beta_Album/includes/basket.php"><i class="fa-solid fa-basket-shopping"></i></a></li>
     </ul>
-  
+    <a class="search_icon_mobile"href="#"><i class="fas fa-search"></i></a>
+    <a class="search_icon_mobile" href="/BETA_ALBUM/Beta_Album/includes/login.php"><i class="fas fa-user"></i></a>
+    <a class="search_icon_mobile" href="/BETA_ALBUM/Beta_Album/includes/basket.php"><i class="fa-solid fa-basket-shopping"></i></a>
 </nav>
+
+
+<script>
+const hamburgerButton = document.querySelector('.hamburger-button');
+const menu = document.querySelector('.menu');
+
+hamburgerButton.addEventListener('click', () => {
+    menu.classList.toggle('active');
+    hamburgerButton.classList.toggle('open'); // Butona açık/kapalı durumu ekler
+});
+</script>
+
+
 <script>
         window.onscroll = function() {
             if (window.scrollY > 0) {

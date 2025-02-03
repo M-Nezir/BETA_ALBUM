@@ -37,7 +37,7 @@ header nav {
 header nav ul {
     list-style: none;
     display: flex;
-    margin-left: 970px;
+    margin-left: 60%;
 }
 
 header nav ul li {
@@ -98,14 +98,6 @@ header nav ul li a:hover {
     width: 100%;
     height: auto;
     margin-bottom: 10px;
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 20px;
-    margin-top: 20px;
 }
 
 nav {
@@ -223,9 +215,9 @@ text-align: center;
 justify-content: center;
 }
 .search_icon{
-    display: flex;         /* Flexbox düzeni ekleniyor */
-    justify-content: flex-end; /* İçeriği yatayda sağa yaslar */
-    align-items: center;   /* İçeriği dikeyde ortalar */
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;  
     text-decoration: none;
     
   }
@@ -234,3 +226,165 @@ justify-content: center;
     font-size: 18px;
     color: #000000;
   }
+
+  .hamburger-button {
+    display: none;
+  }
+  .icon_mobile {
+    display: none;
+  }
+
+  .search_icon_mobile {
+    display: none;
+  }
+
+  @media screen and (max-width: 768px) {
+/* Genelde mobil cihazlar için ayarlandı */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Yatay kaydırma çubuğunun görünmesini engelle */
+}
+
+/* Menü elemanları */
+.fixed {
+    display: flex;
+    flex-direction: column; /* Menü öğelerini dikey sıralar */
+    align-items: center; /* Simgeyi ortalar */
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #f4e3d4;
+    padding: 10px 0; /* Yalnızca üstten ve alttan padding */
+    z-index: 10;
+}
+
+/* Menü içeriği */
+.fixed .menu {
+    display: flex;
+    flex-direction: column; /* Dikey sıralama */
+    align-items: center; /* Ortalar */
+    width: 100%;
+}
+
+/* Başlangıçta menü gizli olacak */
+.menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Menü açıldığında display: block; ile menüyü göstereceğiz */
+.menu.active {
+    display: flex;
+}
+
+/* Menü item'ları */
+.fixed .menu li {
+    margin: 10px 0;
+}
+
+.fixed .menu li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 18px; /* Büyütüldü, daha okunabilir */
+    padding: 10px;
+}
+
+.fixed .menu li a:hover {
+    color: rgba(68, 68, 68, 0.9);
+}
+
+/* Mobilde icon ve hamburger menü */
+.icon_mobile, .search_icon_mobile {
+    display: inline-flex;
+    font-size: 30px; /* İcon boyutu küçültüldü */
+    margin: 10px;
+    align-items: center;
+}
+
+.hamburger-button {
+    display: block; /* Mobilde görünür yapar */
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 20; /* Menü üstünde görünür */
+}
+
+
+/* Dropdown menüler */
+.menu .dropdown {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px; /* Dropdown elemanları arasına boşluk ekledik */
+}
+
+.menu .dropdown a {
+    font-size: 16px; /* Okunabilirlik için büyütüldü */
+    display: block;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Dropdown içerik */
+.menu .dropdown-content {
+    display: none; /* Başlangıçta gizli */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+}
+
+.menu .dropdown-content .dropdown-item {
+    padding: 8px;
+    text-align: center;
+}
+
+.menu .dropdown-content .dropdown-item:hover {
+    background-color: #f4e3d4;
+}
+
+/* Dropdown menüsüne tıklandığında menü açma */
+.menu .dropdown.active .dropdown-content {
+    display: block;
+}
+
+/* Arama ikonları */
+.search_icon {
+    display: none;
+}
+
+/* Eğer simgeyi göstermenin istendiği kısımlar */
+.search_icon_mobile, .icon_mobile {
+    font-size: 30px; /* İkonları büyüttük */
+}
+
+/* Mobilde menü açma ve gizleme için stiller */
+body.scrolled .fixed {
+    position: relative;
+    z-index: 5;
+}
+
+/* Menü öğelerinin genişliği %100 olacak, taşma yapmaz */
+.menu li {
+    width: 100%; /* Liste öğeleri ekran genişliğine uyar */
+    text-align: center;
+    padding: 10px 0; /* İçerik düzenlemesi */
+}
+
+/* Menünün sağa kaymasını engellemek için ekleme */
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Yatay kaydırma çubuğunun görünmesini engeller */
+}
+.icon{
+    display: none;
+}
+
+}
