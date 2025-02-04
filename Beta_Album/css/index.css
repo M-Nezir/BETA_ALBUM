@@ -13,7 +13,7 @@ body.scrolled .fixed {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.7); 
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
 header {
@@ -55,14 +55,13 @@ header nav ul li a:hover {
     font-size: 13px;
 }
 
-
 .slider {
     width: 100%;
     height: 550px;
     margin-bottom: 20px;
     z-index: index -1;
     overflow: hidden;
-    position: relative; 
+    position: relative;
 }
 
 .content {
@@ -108,12 +107,10 @@ nav {
     display: flex;
     flex-direction: column;
     text-align: bottom;
-   
 }
 .fixed {
     position: relative;
     z-index: 10;
-    
 }
 
 nav ul {
@@ -127,18 +124,18 @@ nav ul {
 nav ul li {
     margin: 0 15px;
 }
-.icon{
+.icon {
     display: inline-block;
     margin-right: 150px;
 }
-nav a b{
+nav a b {
     color: black;
     transition: none;
 }
 
-nav a b:hover{
-    color: black;  
-    transition: none; 
+nav a b:hover {
+    color: black;
+    transition: none;
 }
 
 .menu {
@@ -160,6 +157,9 @@ nav a b:hover{
     font-size: 12px;
     font-family: 'Century Gothic', sans-serif;
     text-align: center;
+}
+.menu .dropdown p {
+   margin: 0;
 }
 .menu .dropdown a:hover {
     text-decoration: none;
@@ -187,11 +187,10 @@ nav a b:hover{
     background-size: cover;
     background-color: #ffffff;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    align-items: center; /* Dikey hizalama */
-    gap: 10px; /* Yazı ve resim arasındaki boşluk */
+    align-items: center;
+    gap: 10px;
     justify-content: flex-end;
     z-index: 10;
- 
 }
 
 .menu .dropdown:hover .dropdown-content {
@@ -201,190 +200,150 @@ nav a b:hover{
 .menu .dropdown-content .dropdown-item {
     padding: 8px 16px;
     border: none;
-
 }
 
 .menu .dropdown-content .dropdown-item:hover {
     padding: 8px 16px;
     background-color: #f4e3d4;
-    
 }
 
 .categoryList {
-text-align: center;
-justify-content: center;
+    text-align: center;
+    justify-content: center;
 }
-.search_icon{
+.search_icon {
     display: flex;
-    justify-content: flex-end; 
-    align-items: center;  
+    justify-content: flex-end;
+    align-items: center;
     text-decoration: none;
-    
-  }
+}
   
-  a i {
+a i {
     font-size: 18px;
     color: #000000;
-  }
-
-  .hamburger-button {
-    display: none;
-  }
-  .icon_mobile {
-    display: none;
-  }
-
-  .search_icon_mobile {
-    display: none;
-  }
-
-  @media screen and (max-width: 768px) {
-/* Genelde mobil cihazlar için ayarlandı */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    overflow-x: hidden; /* Yatay kaydırma çubuğunun görünmesini engelle */
-}
-
-/* Menü elemanları */
-.fixed {
-    display: flex;
-    flex-direction: column; /* Menü öğelerini dikey sıralar */
-    align-items: center; /* Simgeyi ortalar */
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #f4e3d4;
-    padding: 10px 0; /* Yalnızca üstten ve alttan padding */
-    z-index: 10;
-}
-
-/* Menü içeriği */
-.fixed .menu {
-    display: flex;
-    flex-direction: column; /* Dikey sıralama */
-    align-items: center; /* Ortalar */
-    width: 100%;
-}
-
-/* Başlangıçta menü gizli olacak */
-.menu {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Menü açıldığında display: block; ile menüyü göstereceğiz */
-.menu.active {
-    display: flex;
-}
-
-/* Menü item'ları */
-.fixed .menu li {
-    margin: 10px 0;
-}
-
-.fixed .menu li a {
-    text-decoration: none;
-    color: #000;
-    font-size: 18px; /* Büyütüldü, daha okunabilir */
-    padding: 10px;
-}
-
-.fixed .menu li a:hover {
-    color: rgba(68, 68, 68, 0.9);
-}
-
-/* Mobilde icon ve hamburger menü */
-.icon_mobile, .search_icon_mobile {
-    display: inline-flex;
-    font-size: 30px; /* İcon boyutu küçültüldü */
-    margin: 10px;
-    align-items: center;
 }
 
 .hamburger-button {
-    display: block; /* Mobilde görünür yapar */
-    background: none;
-    border: none;
-    font-size: 30px;
-    cursor: pointer;
-    z-index: 20; /* Menü üstünde görünür */
+    display: none!important;
 }
 
-
-/* Dropdown menüler */
-.menu .dropdown {
-    position: relative;
-    width: 100%;
-    margin-bottom: 10px; /* Dropdown elemanları arasına boşluk ekledik */
+.offcanvas {
+    display: none;
 }
-
-.menu .dropdown a {
-    font-size: 16px; /* Okunabilirlik için büyütüldü */
-    display: block;
-    text-align: center;
-    padding: 10px;
-}
-
-/* Dropdown içerik */
-.menu .dropdown-content {
-    display: none; /* Başlangıçta gizli */
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: #fff;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 10px 0;
-}
-
-.menu .dropdown-content .dropdown-item {
-    padding: 8px;
-    text-align: center;
-}
-
-.menu .dropdown-content .dropdown-item:hover {
-    background-color: #f4e3d4;
-}
-
-/* Dropdown menüsüne tıklandığında menü açma */
-.menu .dropdown.active .dropdown-content {
-    display: block;
-}
-
-/* Arama ikonları */
-.search_icon {
+.icon_mobile {
     display: none;
 }
 
-/* Eğer simgeyi göstermenin istendiği kısımlar */
-.search_icon_mobile, .icon_mobile {
-    font-size: 30px; /* İkonları büyüttük */
+.search_icon_mobile {
+    display: none;
 }
 
-/* Mobilde menü açma ve gizleme için stiller */
-body.scrolled .fixed {
-    position: relative;
-    z-index: 5;
-}
-
-/* Menü öğelerinin genişliği %100 olacak, taşma yapmaz */
-.menu li {
-    width: 100%; /* Liste öğeleri ekran genişliğine uyar */
-    text-align: center;
-    padding: 10px 0; /* İçerik düzenlemesi */
-}
-
-/* Menünün sağa kaymasını engellemek için ekleme */
-html, body {
+@media screen and (max-width: 768px) {
+body {
     margin: 0;
-    padding: 0;
-    overflow-x: hidden; /* Yatay kaydırma çubuğunun görünmesini engeller */
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
 }
-.icon{
+header {
+    background-color: #f4e3d4;
+    padding-left: 1%;
+    padding-right: 1%;
+    display: flex;
+    justify-content: space-between;
+}
+
+header nav {
+    display: none;;
+}
+
+
+.menu-item {
+    background-color: white;
+    transition: background-color 0.4s ease;
+}
+
+.list-group-item.active {
+    background-color: #d5d5d5!important;
+    border: none!important;
+    color: #000!important;
+    transition: background-color 0.2s ease!important;
+}
+.collapse .list-group a{
+    background-color: #eeeeee!important;
+    color: #000!important;
+    border-radius: 0!important;
+}
+.list-group-item {
+    border-radius: 0!important;
+}
+
+.offcanvas.offcanvas-start {
+    width: 70%;
+    height: 100vh;
+}
+.dropdown-toggle {
+    font-family: 'Century Gothic', sans-serif!important;
+}
+
+.hamburger-button {
+    background-color: #f4f4f4!important;
+    width: 100% !important;
+    height: 50% !important;
+    padding-left: 3%;
+    padding-right: 3%;
+    display: flex !important;
+    justify-content: flex-end;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.btn-primary{
+    border: none !important;
+    box-shadow: none !important;
+    background-color: #ffffff00 !important;
+    font-size: 110% !important;
+    color: #000 !important;
+    padding: 0 !important;
+    margin: 1% !important;
+    margin-left: 15px !important;
+}
+
+.fixed {
     display: none;
+}
+
+.icon {
+    display: none;
+}
+.search_icon_mobile {
+    display: inline-block;
+    margin-left: 15px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+.icon_mobile.left{
+    margin-right: auto;
+    color: #000;
+    text-decoration: none;
+    margin-top: 8px;
+}
+
+.offcanvas-header {
+  padding: 0!important;
+  padding-left: 5%!important;
+  height: 7%!important;
+}
+.offcanvas-header .icon_mobile {
+    display: inline-block!important;
+    font-size: 20px!important;
+}
+.icon_mobile {
+    display: inline-block!important;
+}
+.single-items a{
+    font-weight: 600!important;
+
 }
 
 }

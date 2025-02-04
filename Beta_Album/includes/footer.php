@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beta Album</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/BETA_ALBUM/Beta_Album/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="/BETA_ALBUM/Beta_Album/css/footer.css">
+    
 </head>
 <body>
 
-<div class="container">
+<div class="footer_container">
     <div class="footer-items">
         <ul>
             <li><h3>Bilgiler</h3></li>
@@ -40,7 +42,7 @@
     <div class="footer-items">
         <ul>
             <li><h3>İletişim Bilgilerimiz</h3></li>
-            <li><a href="https://www.google.com/maps?q=Adres+Buraya"><i class="fa-solid fa-location-dot"></i>1348sk no:1 adres bilgileri...</a></li>
+            <li><a href="https://www.google.com/maps?q=Adres+Buraya" target="_blank"><i class="fa-solid fa-location-dot"></i>1348sk no:1 adres bilgileri...</a></li>
             <li><a href="tel:+905555555555"><i class="fa-solid fa-phone"></i>Telefon: +90 (555) 555 55 55</a></li>
             <li mailto=><a href="mailto:bilgi@betaalbum.com"><i class="fa-solid fa-envelope"></i>Mail: bilgi@betaalbum.com</a></li>
         </ul> 

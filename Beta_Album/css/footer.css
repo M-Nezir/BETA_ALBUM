@@ -12,168 +12,168 @@ footer {
     padding-top: 11px;
     padding-bottom: 0;
 }
-
-.container {
-    display: flex;
-    border-top: 1px solid #333;
-    background-color: rgb(255, 255, 255);
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 15%;
-    padding-right: 15%;
-    padding-bottom: 70px ;
+.footer_container {
+    display: flex !important;
+    border-top: 1px solid #333 !important;
+    background-color: rgb(255, 255, 255) !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding-left: 15% !important;
+    padding-right: 15% !important;
+    padding-bottom: 70px !important;
+    width: 100% !important;
 }
 
 .footer-items {
-    display: inline-block;
-    margin-top: 25px;
-    width: auto;
-    height: 189px;
-    top: 0;
+    display: inline-block !important;
+    margin-top: 25px !important;
+    width: auto !important;
+    height: 189px !important;
+    top: 0 !important;
 }
 
-.footer-items ul{
-    list-style: none;
-    margin: 0;
-    padding: 0;
+.footer-items ul {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
 } 
 
-.footer-items ul li{
-    margin-bottom: 10px;
+.footer-items ul li {
+    margin-bottom: 10px !important;
 }
 
-.footer-items ul li h3{
-    font-family: 'Century Gothic', sans-serif;
-    display: inline-block;
-    margin-bottom: 5px;
-    font-weight: 20;
-    margin-top: 0;
-    padding: 0;
+.footer-items ul li h3 {
+    font-family: 'Century Gothic', sans-serif !important;
+    display: inline-block !important;
+    margin-bottom: 5px !important;
+    font-weight: 20 !important;
+    margin-top: 0 !important;
+    padding: 0 !important;
 }
+
 .footer-items ul li h3::after {
-    content: "";
-    display: block;
-    width: 60%;
-    height: 3px;
-    background-color: rgba(81, 81, 81, 0.165);
-    margin-top: 5px;
-    border-radius: 2px;
+    content: "" !important;
+    display: block !important;
+    width: 60% !important;
+    height: 3px !important;
+    background-color: rgba(81, 81, 81, 0.165) !important;
+    margin-top: 5px !important;
+    border-radius: 2px !important;
 }
 
-.footer-items ul li a{
-    display: inline-block;
-    text-decoration: none;
-    color: black;
+.footer-items ul li a {
+    display: inline-block !important;
+    text-decoration: none !important;
+    color: black !important;
 }
 
-.footer-items ul li a:hover{
-    display: inline-block;
-    text-decoration: underline;
-    color: black;
+.footer-items ul li a:hover {
+    display: inline-block !important;
+    text-decoration: underline !important;
+    color: black !important;
 }
 
-.footer-items ul li i{
-    margin-right: 5px;
-    margin-bottom: 5px;
-  }
-
-  .footer_icon{
-    display: block;
-    color: black;
-    font-size: 30px;
-    text-decoration: none;
+.footer-items ul li i {
+    margin-right: 5px !important;
+    margin-bottom: 5px !important;
 }
 
-.logo{
-    display: flex;
-    background-color: white;
-    justify-content: space-between;
-    width: 100%;
-    padding-left: 14%;
-    padding-right: 14%;
-    padding-bottom: 60px;
+.footer_icon {
+    display: block !important;
+    color: black !important;
+    font-size: 30px !important;
+    text-decoration: none !important;
 }
 
-.text{
-    display: inline-block;
-    width: 400px;
+.logo {
+    display: flex !important;
+    background-color: white !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    padding-left: 14% !important;
+    padding-right: 14% !important;
+    padding-bottom: 60px !important;
 }
 
-.img{
-    display: inline-block;
-    position: relative;
+.text {
+    display: inline-block !important;
+    width: 400px !important;
 }
 
-.fa-brands{
-    font-size: 30px;
-    padding-bottom: 25px;
-    margin-left: 20px;
-
+.img {
+    display: inline-block !important;
+    position: relative !important;
 }
 
-.facebook{
-    margin-left: 70px;
+.fa-brands {
+    font-size: 30px !important;
+    padding-bottom: 25px !important;
+    margin-left: 20px !important;
+}
+
+.facebook {
+    margin-left: 70px !important;
 }
 
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        align-items: flex-start;
-        padding-left: 5%;
-        padding-right: 5%;
-        padding-bottom: 40px;
+    .footer_container {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        padding-left: 5% !important;
+        padding-right: 5% !important;
+        padding-bottom: 40px !important;
     }
 
     .footer-items {
-        text-align: left;
-        margin-top: 15px;
-        height: auto;
+        text-align: left !important;
+        margin-top: 15px !important;
+        height: auto !important;
     }
 
     .footer-items ul li h3::after {
-        width: 80%;
-        margin-left: auto;
-        margin-right: auto;
+        width: 80% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
     }
 
     .footer-items ul li a {
-        font-size: 14px;
+        font-size: 14px !important;
     }
 
     .logo {
-        flex-direction: column;
-        align-items: center;
-        padding-left: 5%;
-        padding-right: 5%;
-        padding-bottom: 40px;
+        flex-direction: column !important;
+        align-items: center !important;
+        padding-left: 5% !important;
+        padding-right: 5% !important;
+        padding-bottom: 40px !important;
     }
 
     .text {
-        width: 100%;
-        text-align: center;
+        width: 100% !important;
+        text-align: center !important;
     }
 
     .img {
-        display: block;
-        margin-top: 10px;
-        text-align: center;
+        display: block !important;
+        margin-top: 10px !important;
+        text-align: center !important;
     }
 
     .fa-brands {
-        font-size: 25px;
-        margin-left: 10px;
+        font-size: 25px !important;
+        margin-left: 10px !important;
     }
 
     .facebook {
-        margin-left: 10px;
+        margin-left: 10px !important;
     }
 
     .footer_icon {
-        font-size: 25px;
+        font-size: 25px !important;
     }
 
-    footer{
-        bottom: 0;
-        font-size: 70%;
+    footer {
+        bottom: 0 !important;
+        font-size: 70% !important;
     }
 }

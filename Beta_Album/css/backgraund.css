@@ -14,7 +14,7 @@
 }
 
 body{
-    background-color: #a6866a;
+    background-color: #a6866a !important;
 
 }
 
@@ -37,7 +37,7 @@ body{
     }
     
     body{
-        background-color: #a6866a;
+        background-color: #a6866a !important;
     
     }
     
