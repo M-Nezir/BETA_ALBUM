@@ -29,7 +29,7 @@
 
 <nav class="fixed">
     <ul class="menu">
-        <li ><a class="icon" href="/BETA_ALBUM/Beta_Album/index.php" style="text-decoration: none !important;"><b>BETA ALBUM&trade;</b></a></li>
+        <li ><a class="icon" href="/BETA_ALBUM/Beta_Album/index.php" style="text-decoration: none !important;"><img src="/BETA_ALBUM/Beta_Album/image/betaalbümyatay.svg" alt="Logo" width="140" height=auto></a></li>
         <li class="dropdown">
             <a class="categoryList" href="#">Panoramik Albüm ▽</a>
             <div class="dropdown-content">
@@ -130,7 +130,7 @@
 
 
 <div class="hamburger-button">
-    <a href="/BETA_ALBUM/Beta_Album/index.php"  class="icon_mobile left"><b>BETA ALBUM&trade;</b></a>
+    <a href="/BETA_ALBUM/Beta_Album/index.php"  class="icon_mobile left"><img src="/BETA_ALBUM/Beta_Album/image/betaalbümyatay.svg" alt="Logo" width="140" height=auto></a>
     <a class="search_icon_mobile"href="#"><i class="fas fa-search"></i></a>
     <a class="search_icon_mobile" href="/BETA_ALBUM/Beta_Album/includes/login.php"><i class="fas fa-user"></i></a>
     <a class="search_icon_mobile" href="/BETA_ALBUM/Beta_Album/includes/basket.php"><i class="fa-solid fa-basket-shopping"></i></a>

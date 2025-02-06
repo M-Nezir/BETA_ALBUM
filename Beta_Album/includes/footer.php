@@ -43,8 +43,8 @@
         <ul>
             <li><h3>İletişim Bilgilerimiz</h3></li>
             <li><a href="https://www.google.com/maps?q=Adres+Buraya" target="_blank"><i class="fa-solid fa-location-dot"></i>1348sk no:1 adres bilgileri...</a></li>
-            <li><a href="tel:+905555555555"><i class="fa-solid fa-phone"></i>Telefon: +90 (555) 555 55 55</a></li>
-            <li mailto=><a href="mailto:bilgi@betaalbum.com"><i class="fa-solid fa-envelope"></i>Mail: bilgi@betaalbum.com</a></li>
+            <li><a href="tel:+905369771595"><i class="fa-solid fa-phone"></i>Telefon: +90 536 977 15 95</a></li>
+            <li mailto=><a href="mailto:betacolor@hotmail.com"><i class="fa-solid fa-envelope"></i>Mail: betacolor@hotmail.com</a></li>
         </ul> 
     </div> 
 
@@ -52,14 +52,14 @@
 
 <div  class="logo">
     <div>
-        <a class="footer_icon" href="/BETA_ALBUM/Beta_Album/index.php"><b>BETA ALBUM&trade;</b></a></li>
+        <a class="footer_icon" href="/BETA_ALBUM/Beta_Album/index.php"><img src="/BETA_ALBUM/Beta_Album/image/betaalbümkare.svg" alt="Logo" width="200" height="200"></a>
 
     </div> 
     <div class="text">
         Hizmetlerimiz Hakkında sorularınız mı var? Bize
-         <a href="mailto:bilgi@betaalbum.com" style="color: #FFA500;">bilgi@betaalbum.com </a>mail adresimizden yazabilir, hafta içi
+         <a href="mailto:betacolor@hotmail.com" style="color: #FFA500;">betacolor@hotmail.com </a>mail adresimizden yazabilir, hafta içi
          <span  style="color: #FFA500;">09.00 - 20.00 </span>saatleri arasında 
-        <a href="tel:+905555555555" style="color: #FFA500;">+90 (555) 555 55 55</a> numaralı telefondan ulaşabilirsiniz.
+        <a href="tel:+905369771595" style="color: #FFA500;">+90 536 977 15 95</a> numaralı telefondan ulaşabilirsiniz.
     </div>
     <div class="img">
         <a href="https://www.google.com/search?q=facebook" target="_blank" class="facebook"><i class="fa-brands fa-facebook"></i></a>
