@@ -34,19 +34,19 @@
             <a class="categoryList" href="#">Panoramik Albüm ▽</a>
             <div class="dropdown-content">
                 <div class="dropdown-item">
-                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Bebek Albümleri"><p>Bebek Albümleri</p></a>
+                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=1"><p>Bebek Albümleri</p></a>
                 </div>
                 <div class="dropdown-item">
-                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Ekonomik Albümler"><p>Ekonomik Albümler</p></a>
+                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=2"><p>Ekonomik Albümler</p></a>
                 </div>
                 <div class="dropdown-item">
-                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Exclusive Albümler"><p>Exclusive Albümler</p></a>
+                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=3"><p>Exclusive Albümler</p></a>
                 </div>
                 <div class="dropdown-item">
-                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Kampanyalı Albümler"><p>Kampanyalı Albümler</p></a>
+                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=4"><p>Kampanyalı Albümler</p></a>
                 </div>
                 <div class="dropdown-item">
-                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Fırsat Albümleri"><p>Fırsat Albümleri</p></a>
+                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=5"><p>Fırsat Albümleri</p></a>
                 </div>
             </div>
         </li>
@@ -54,7 +54,7 @@
             <a class="categoryList" href="#">Fotoğraf Baskı ▽</a>
             <div class="dropdown-content">
                 <div class="dropdown-item">
-                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Laboratuvar Baskı"><p>Laboratuvar Baskı</p></a>
+                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=6"><p>Laboratuvar Baskı</p></a>
                 </div>
             </div>
         </li>
@@ -62,7 +62,7 @@
             <a class="categoryList" href="#">Fotokitap ▽</a>
             <div class="dropdown-content">
                 <div class="dropdown-item">
-                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Fotokitap"><p>Fotokitap</p></a>
+                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=7"><p>Fotokitap</p></a>
                 </div>
             </div>
         </li>
@@ -70,10 +70,10 @@
             <a class="categoryList" href="#">Fotoğraf Kutusu ▽</a>
             <div class="dropdown-content">
                 <div class="dropdown-item">
-                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Fotoğraf Kutusu"><p>Fotoğraf Kutusu</p></a>
+                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=8"><p>Fotoğraf Kutusu</p></a>
                 </div>
                 <div class="dropdown-item">
-                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Album Kutusu"><p>Album Kutusu</p></a>
+                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=9"><p>Album Kutusu</p></a>
                 </div>
             </div>
         </li>
@@ -81,16 +81,16 @@
             <a class="categoryList" href="#">Duvar Sanatı ▽</a>
             <div class="dropdown-content">
                 <div class="dropdown-item">
-                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Fotoğraf Baskılı Çerçeve"><p>Fotoğraf Baskılı Çerçeve</p></a>
+                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=10"><p>Fotoğraf Baskılı Çerçeve</p></a>
                 </div>
                 <div class="dropdown-item">
-                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Foto Akordeon"><p>Foto Akordeon</p></a>
+                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=11"><p>Foto Akordeon</p></a>
                 </div>
                 <div class="dropdown-item">
-                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Kanvas Tablo"><p>Kanvas Tablo</p></a>
+                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=12"><p>Kanvas Tablo</p></a>
                 </div>
                 <div class="dropdown-item">
-                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Yapışkanlı Çerçeve"><p>Yapışkanlı Çerçeve</p></a>
+                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=13"><p>Yapışkanlı Çerçeve</p></a>
                 </div>
             </div>
         </li>
@@ -98,13 +98,13 @@
             <a class="categoryList" href="#">Fotoğraflı Ürün ▽</a>
             <div class="dropdown-content">
                 <div class="dropdown-item">
-                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Mezuniyet Albümü"><p>Mezuniyet Albümü</p></a>
+                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=14"><p>Mezuniyet Albümü</p></a>
                 </div>
                 <div class="dropdown-item">
-                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Puzzle"><p>Puzzle</p></a>
+                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=15"><p>Puzzle</p></a>
                 </div>
                 <div class="dropdown-item">
-                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Bardak Baskı"><p>Bardak Baskı</p></a>
+                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=16"><p>Bardak Baskı</p></a>
                 </div>
             </div>
         </li>
@@ -112,13 +112,13 @@
             <a class="categoryList" href="#">Photoshop Tasarım ▽</a>
             <div class="dropdown-content">
                 <div class="dropdown-item">
-                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Albüm Çalışması"><p>Albüm Çalışması</p></a>
+                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=17"><p>Albüm Çalışması</p></a>
                 </div>
                 <div class="dropdown-item">
-                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Tekli Poz"><p>Tekli Poz</p></a>
+                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=18"><p>Tekli Poz</p></a>
                 </div>
                 <div class="dropdown-item">
-                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Restore"><p>Restore</p></a>
+                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=19"><p>Restore</p></a>
                 </div>
             </div>
         </li>
