@@ -30,6 +30,7 @@
 <nav class="fixed">
     <ul class="menu">
         <li ><a class="icon" href="/BETA_ALBUM/Beta_Album/index.php" style="text-decoration: none !important;"><img src="/BETA_ALBUM/Beta_Album/image/betaalbümyatay.svg" alt="Logo" width="140" height=auto></a></li>
+        <div class="center">
         <li class="dropdown">
             <a class="categoryList" href="#">Panoramik Albüm ▽</a>
             <div class="dropdown-content">
@@ -122,9 +123,12 @@
                 </div>
             </div>
         </li>
-        <li><a class="search_icon"href="#" style="margin-left: 150px ;"><i class="fas fa-search"></i></a></li>
-        <li><a class="search_icon" href="/BETA_ALBUM/Beta_Album/includes/login.php"><i class="fas fa-user"></i></a></li>
-        <li><a class="search_icon" href="/BETA_ALBUM/Beta_Album/includes/basket.php"><i class="fa-solid fa-basket-shopping"></i></a></li>
+        </div>
+        <li class="saarch-icon-container">
+        <a class="search_icon"href="#"><i class="fas fa-search"></i></a>
+        <a class="search_icon" href="/BETA_ALBUM/Beta_Album/includes/login.php"><i class="fas fa-user"></i></a>
+        <a class="search_icon" style="margin-right: 0;" href="/BETA_ALBUM/Beta_Album/includes/basket.php"><i class="fa-solid fa-basket-shopping"></i></a>
+      </li>
     </ul>
 </nav>
 

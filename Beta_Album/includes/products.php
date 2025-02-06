@@ -32,6 +32,8 @@ if ($kategori) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $kategori ? htmlspecialchars($kategori['kategori_ad']) : 'Kategori Bulunamadı'; ?></title>
     <link rel="stylesheet" href="/BETA_ALBUM/Beta_Album/css/backgraund.css">
+    <link rel="stylesheet" href="/BETA_ALBUM/Beta_Album/css/products.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="main">
@@ -43,12 +45,20 @@ if ($kategori) {
                 while ($row = $urun_result->fetch_assoc()) {
                     echo "<div class='product'>";
                     echo "<img src='/BETA_ALBUM/Beta_Album/image/" . htmlspecialchars($row['urun_gorsel']) . "' alt='Ürün Görseli'>";
-                    echo "<h2>" . htmlspecialchars($row['urun_ad']) . "</h2>";
+                    echo "<h4>" . htmlspecialchars($row['urun_ad']) . "</h4>";
                     echo "<p>Fiyat: " . htmlspecialchars($row['urun_fiyat']) . " TL</p>";
+                    echo "<a href='/BETA_ALBUM/Beta_Album/includes/product_detail.php?urun_ad=" . htmlspecialchars($row['urun_ad']) . "'>";
+                    echo "<div class='add-to-cart'>";
+                    echo "<i class='fa-solid fa-cart-shopping'></i>";
+                    echo "</div>";
+                    echo "</a>";
                     echo "</div>";
                 }
             } else {
-                echo "<p>Bu kategoride ürün bulunmamaktadır.</p>";
+                echo"<div class='error-container'>";
+                echo "<p class='error'>Maalesef Bu Kategoride Ürün Bulunmamaktadır.</p>";
+                echo"<i class='fa-solid fa-xmark'></i>";
+                echo"</div>";
             }
             ?>
         </div>

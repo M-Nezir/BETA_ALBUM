@@ -126,29 +126,29 @@ nav ul li {
 }
 .icon {
     display: inline-block;
-    margin-right: 150px;
-}
-nav a b {
-    color: black;
-    transition: none;
+    position: relative;
+    align-self: flex-start; 
 }
 
-nav a b:hover {
-    color: black;
-    transition: none;
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 2vw;
 }
 
 .menu {
-    display: inline-flex;
-    justify-content: center;
+    display: flex;
+    justify-content: space-between;
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
 
 .menu .dropdown {
-    position: relative;
-    margin: 0 15px;
+    position:static;
+    margin: 0 1px;
 }
 
 .menu .dropdown a {
@@ -212,10 +212,17 @@ nav a b:hover {
     justify-content: center;
 }
 .search_icon {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    display: inline-block;
+    font-size: 20px;
+    position: relative;
+    margin-right: 10px; /* Sağ tarafa 5px boşluk ekle */
     text-decoration: none;
+}
+.search-icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
   
 a i {
