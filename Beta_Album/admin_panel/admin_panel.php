@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (!isset($_SESSION['admin_logged_in'])) {
+    header("Location: ../includes/adminlogin.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,8 +40,13 @@
      <a href="/BETA_ALBUM/Beta_Album/admin_panel/view_orders.php"><i class="fa-solid fa-truck-fast"></i>Siparişleri Görüntüle</a>
     </div>
 
+    <div class="menu-item">
+        <a href="../includes/logout.php">
+            <button>Çıkış Yap</button>
+        </a>
+    </div>
+
 </div>
 
-    
 </body>
 </html>

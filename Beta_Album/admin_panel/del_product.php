@@ -1,4 +1,12 @@
 <?php
+session_start();
+if (!isset($_SESSION['admin_logged_in'])) {
+    header("Location: ../includes/adminlogin.php");
+    exit();
+}
+?>
+
+<?php
 session_start(); // Session başlat
 
 include('../includes/config.php');

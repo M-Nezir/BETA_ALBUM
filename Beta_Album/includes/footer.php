@@ -28,6 +28,7 @@
             <li><h3>Ekstralar</h3></li>
             <li><a href="/BETA_ALBUM/Beta_Album/includes/campaigns.php">Kampanyalar</a></li>
             <li><a href="/BETA_ALBUM/Beta_Album/includes/sitemap.php">Site Haritası</a></li>
+            <li><a href="/BETA_ALBUM/Beta_Album/includes/adminlogin.php">Yönetici Girişi</a></li>
         </ul>
     </div>
 
