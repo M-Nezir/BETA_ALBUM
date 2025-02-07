@@ -11,8 +11,6 @@
     
 <div class="main">
     <h1 class="head"><?php echo $_GET['urun_ad'];?></h1>
-
-
 </div>
 
 <?php include('footer.php');?>
