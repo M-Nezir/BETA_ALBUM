@@ -125,7 +125,11 @@
         </li>
         </div>
         <li class="saarch-icon-container">
-        <a class="search_icon"href="#"><i class="fas fa-search"></i></a>
+        <a class="search_icon" id="search-btn" href="#"><i class="fas fa-search"></i></a>
+        <form id="search-form" action="/BETA_ALBUM/Beta_Album/includes/search.php" method="GET">
+            <input type="text" name="query" placeholder="Ürün ara..." required>
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
         <a class="search_icon" href="/BETA_ALBUM/Beta_Album/includes/login.php"><i class="fas fa-user"></i></a>
         <a class="search_icon" style="margin-right: 0;" href="/BETA_ALBUM/Beta_Album/includes/basket.php"><i class="fa-solid fa-basket-shopping"></i></a>
       </li>

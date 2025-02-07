@@ -207,6 +207,34 @@ nav ul li {
     background-color: #f4e3d4;
 }
 
+.search-container {
+    position: relative;
+}
+
+#search-form {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background: white;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#search-form input {
+    padding: 5px;
+    width: 200px;
+    border: none;
+    outline: none;
+}
+
+#search-form button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
 .categoryList {
     text-align: center;
     justify-content: center;
