@@ -4,10 +4,6 @@ if (!isset($_SESSION['admin_logged_in'])) {
     header("Location: ../includes/adminlogin.php");
     exit();
 }
-?>
-
-<?php
-session_start(); // Session başlata
 include('../includes/config.php');
 
 // Kategori seçildiğinde ürünleri çek
