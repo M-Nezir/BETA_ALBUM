@@ -93,79 +93,40 @@ padding-bottom: 0;
     padding: 1%;
 }
 
-.add-product-form {
-    display: inline-block;
-    height: auto;
-    width: 30%;
-    border: 1px solid rgb(79, 79, 79);
-    margin: 3px;
-    margin-left: 33px;
-    padding-bottom: 0;
-}
-
-.add-product-form div {
-    display: flex;
-    margin: 3px;
-    margin-bottom: 2%;
-    padding: 1%;
-}
-
-.input-container {
-    margin-bottom: 15px;
-    width: 100%;
-}
-
-.add-product-form div label {
-    width: 40%;
-    margin-left: 3%;
-    padding-bottom: 0;
-    font-weight: bold;
-}
-
-.add-product-form div input {
-    display: inline-block;
-    height: 50%;
-    width: 50%;
-    border: 1px solid rgb(79, 79, 79);
-    margin-left: 3%;
-    padding-bottom: 0;
-}
-
-.add-button {
-    display: block;
-    width: 100%;
-    background-color: rgb(206, 206, 206);
-    border-top: 1px solid rgb(79, 79, 79);
-    color: rgb(0, 0, 0);
-    text-align: center;
-    padding: 5px;
-    cursor: pointer;
-}
-
-.search-image {
-    width: 10px;
-    background-color: rgb(206, 206, 206);
-    border-top: 1px solid rgb(79, 79, 79);
-    color: rgb(0, 0, 0);
-    text-align: center;
-    padding: 5px;
-}
-
-.add-product-form h1 {
-    margin: 0;
-    padding: 10%;
-    background-color: rgb(204, 204, 204);
+.upload-container {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f4f4f4;
     border-radius: 5px;
 }
 
-.add-product-form .input-container input {
+.upload-container div {
+    margin-bottom: 15px;
+}
+
+.upload-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.upload-container input {
     width: 100%;
     padding: 8px;
+    border: 1px solid #ddd;
     border-radius: 4px;
     box-sizing: border-box;
 }
 
-.add-button:hover {
-    background-color: #45a049;
+.upload-container button {
+    padding: 10px 15px;
+    background-color: #4CAF50;
     color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.upload-container button:hover {
+    background-color: #45a049;
 }

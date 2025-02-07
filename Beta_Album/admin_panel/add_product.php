@@ -1,16 +1,15 @@
 <?php
 session_start(); // Session başlat
-
 include('../includes/config.php');
 
 // Kategori seçildiğinde ürünleri çek
 if (isset($_GET['kategori_id'])) {
     $_SESSION['kategori_id'] = $_GET['kategori_id']; // Seçilen kategoriyi session'a kaydet
 } elseif (!isset($_SESSION['kategori_id'])) {
-    $_SESSION['kategori_id'] = null; // Eğer kategori seçilmemişse null ata
+    $_SESSION['kategori_id'] = null;
 }
 
-$id = $_SESSION['kategori_id']; // Session'daki kategori ID'yi al
+$id = $_SESSION['kategori_id'];
 
 if ($id) {
     // kategori ismini al
@@ -39,11 +38,18 @@ if ($id) {
 if (isset($_POST['add_product'])) {
     $urun_ad = $_POST['urun_ad'];
     $urun_fiyat = $_POST['urun_fiyat'];
-    $urun_gorsel = $_POST['urun_gorsel'];
-    
+
+    // Dosya yükleme işlemi
+    $target_dir = "../image/"; // Kayıt edilecek dizin
+    $target_file = $target_dir . basename($_FILES["urun_gorsel"]["name"]);
+    move_uploaded_file($_FILES["urun_gorsel"]["tmp_name"], $target_file);
+
+    $urun_gorsel = basename($_FILES["urun_gorsel"]["name"]); // DB'ye kaydedilecek dosya adı
+
     $insert_sql = "INSERT INTO urunler (urun_ad, urun_fiyat, urun_gorsel, kategori_id) VALUES (?, ?, ?, ?)";
     $stmt = $conn->prepare($insert_sql);
     $stmt->bind_param("sdsi", $urun_ad, $urun_fiyat, $urun_gorsel, $id);
+
     if ($stmt->execute()) {
         $_SESSION['success_message'] = 'Ürün başarıyla eklendi.';
     } else {
@@ -63,17 +69,14 @@ if (isset($_POST['add_product'])) {
     <title>Ürün Yönetimi</title>
 </head>
 <body>
-<?php include('admin_panel.php');?>
-
+<?php include('admin_panel.php'); ?>
 <div class="all">
     <div class="headers">
         <?php 
-        // Kategorileri select box içinde listele
         echo "<form method='GET' action=''>";
         echo "<select name='kategori_id' id='kategori' onchange='this.form.submit()'>";
         $sql = "SELECT * FROM kategoriler";
         $result = $conn->query($sql);
-
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 echo "<option value='" . $row['kategori_id'] . "'" . ($id == $row['kategori_id'] ? ' selected' : '') . ">" . $row['kategori_ad'] . "</option>";
@@ -84,46 +87,50 @@ if (isset($_POST['add_product'])) {
         echo "</select>";
         echo "</form>";
         ?>
-        <span>Ürün Yönetimi</span>
+        <span>Ürün Ekle</span>
     </div>
 
+    <div class="add-product-form" style="margin-left: 35%;">
+
+<form method="POST" action="" enctype="multipart/form-data">
+<div style="text-align: center; background-color:rgb(204, 204, 204); display: flex; flex-direction: column; justify-content: center; align-items: center; margin: 0;">
+    <h1 style="margin: 0; padding: 5%;">YENİ ÜRÜN</h1>
+    <?php if ($id && isset($kategori['kategori_ad'])): ?>
+        <p style="margin: 0;">Seçili Kategori: <strong><?php echo htmlspecialchars($kategori['kategori_ad']); ?></strong></p>
+    <?php endif; ?>
+</div>
+
+<div class="input-container">
+    <label>Ürün Adı:</label>
+    <input type="text" name="urun_ad" required>
+</div>
+<div class="input-container">
+    <label>Ürün Fiyatı:</label>
+    <input type="number" name="urun_fiyat" step="0.01" required>
+</div>
+<div class="input-container" style="margin-bottom: 5%;">
+    <label>Ürün Görseli:</label>
+    <input type="file" class="search_image" name="urun_gorsel" accept="image/*" required>
+</div>
+<button type="submit" name="add_product" class="add-button">+ Ekle</button>
+</form>
+</div>
+>
+
     <div class="product-list">
-       <?php
+        <?php
         if ($urun_result && $urun_result->num_rows > 0) {
             while ($row = $urun_result->fetch_assoc()) {
                 echo "<div class='product'>";
-                echo "<img src='/BETA_ALBUM/Beta_Album/image/" . htmlspecialchars($row['urun_gorsel']) . "' alt='Ürün Görseli'>";
+                echo "<img src='../image/" . htmlspecialchars($row['urun_gorsel']) . "' alt='Ürün Görseli'>";
                 echo "<h4>" . htmlspecialchars($row['urun_ad']) . "</h4>";
                 echo "<p>Fiyat: " . htmlspecialchars($row['urun_fiyat']) . " TL</p>";
                 echo "</div>";
             }
         } else {
-            echo "<div class='error-container'>";
-            echo "<p class='error'>Bu kategoride ürün bulunmamaktadır.</p>";
-            echo "</div>";
+            echo "<div class='error-container'><p class='error'>Bu kategoride ürün bulunmamaktadır.</p></div>";
         }
         ?>
-    </div>
-
-    <div class="add-product-form">
-        <form method="POST" action="">
-            <div>
-                <label>Ürün Adı:</label>
-                <input type="text" name="urun_ad" required>
-            </div>
-
-            <div>
-                <label>Ürün Fiyatı:</label>
-                <input type="number" name="urun_fiyat" step="0.01" required>
-            </div>
-           
-            <div>
-                <label>Ürün Görsel URL:</label>
-                <input type="text" name="urun_gorsel" required>
-            </div>
-   
-            <button type="submit" name="add_product" class="add-button">+</button>
-        </form>
     </div>
 </div>
 
@@ -132,7 +139,6 @@ if (isset($_SESSION['success_message'])) {
     echo "<script>alert('" . $_SESSION['success_message'] . "');</script>";
     unset($_SESSION['success_message']);
 }
-
 if (isset($_SESSION['error_message'])) {
     echo "<script>alert('" . $_SESSION['error_message'] . "');</script>";
     unset($_SESSION['error_message']);
