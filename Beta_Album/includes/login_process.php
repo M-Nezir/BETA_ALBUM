@@ -13,17 +13,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     //kullanıcıyı veritabanında bul
     $query = $conn->prepare("SELECT * FROM kullanicilar WHERE email = ?");
-    $query->execute([$email]);
-    $user = $query->fetch(PDO::FETCH_ASSOC);
+    $query->bind_param("s", $email);
+    $query->execute();
+    $result = $query->get_result();  // Sonuçları al
 
-    if ($user && password_verify($password, $user['password'])) {
-        //giriş başarılı. oturum aç
-        $_SESSION['user_id'] = $user['id'];
-        header("Location: login.php"); //kullanıcı giriş yaptıktan sonra yönlendir
+    if ($user = $result->fetch_assoc()) {  
+        if (password_verify($password, $user['password'])) {
+            $_SESSION['user_id'] = $user['user_id'];
+    
+            header("Location: login.php");
         exit();
+        } else {
+            die("Geçersiz e-posta veya şifre.");
+        }
     } else {
-        die("Geçersiz e-posta veya şifre.");
-    }
+        die("Bu e-posta ile kayıtlı bir kullanıcı bulunamadı.");
+    }    
 } else {
     die("Geçersiz istek.");
 }

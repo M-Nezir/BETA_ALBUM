@@ -18,9 +18,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     //e-posta veya TC zaten kayıtlı mı?
     $query = $conn->prepare("SELECT * FROM kullanicilar WHERE email = ? OR tcKimlik = ?");
-    $query->execute([$email, $tcKimlik]);
+    $query->bind_param("ss", $email, $tcKimlik);
+    $query->execute();
+    $result = $query->get_result(); 
 
-    if ($query->rowCount() > 0) {
+    if ($result->num_rows > 0) {  // rowCount() yerine num_rows kullanıyoruz
         die("Bu e-posta veya T.C. Kimlik Numarası zaten kayıtlı.");
     }
 
@@ -32,13 +34,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $insert = $query->execute([$user_name, $user_surname, $phoneNumber, $tcKimlik, $email, $hashed_password]);
 
     if ($insert) {
-        //kullanıcıyı giriş yaptır ve oturumu başlat
-        $_SESSION['user_id'] = $conn->lastInsertId();
+        $_SESSION['user_id'] = $conn->insert_id; // lastInsertId() yerine insert_id kullan
         header("Location: login.php");
         exit();
     } else {
         die("Kayıt işlemi başarısız oldu.");
-    }
+    }    
 } else {
     die("Geçersiz istek.");
 }
