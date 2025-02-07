@@ -1,0 +1,118 @@
+.product-list {
+    margin-top: 3%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    }
+    
+
+.product {
+display: inline-block;
+height: 50%;
+width: 30%;
+border: 1px solid rgb(79, 79, 79);
+margin: 3px;
+padding-bottom: 0;
+
+}
+
+.product img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product h4 {
+ margin-top: 10px;
+ margin-left: 5px;
+ margin-bottom: 3px;
+}
+
+.product p {
+    margin-left: 5px;
+}
+
+.add-to-cart {
+    display: block;
+    width: 100%;
+    background-color: rgb(241, 241, 241);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.error-container {
+
+    text-align: center; /* İçeriği ortalar */
+    display: flex;
+    flex-direction: column; /* Öğeleri dikey hizalar */
+    align-items: center; /* Ortaya alır */
+}
+
+.error {
+    color: rgb(0, 0, 0);
+    text-align: center;
+    margin-top: 50px;
+    font-size: 30px;
+}
+.fa-xmark {
+    display: block!important;
+    color: red;
+    font-size: 150px;
+    align-items: center;
+    margin-bottom: 500px;
+
+}
+
+.all{
+    display: block;
+    height: 100%;
+    width: 80%;
+    margin-left: 20%;
+}
+
+.headers {
+    display: flex;
+    background-color: rgb(223, 223, 223);
+    font-size: 250%;
+    padding: 0;
+    text-align: center; /* İçeriği yatayda ortalamak için */
+}
+
+.headers form {
+    display: inline-block;
+    margin: 1%;
+}
+
+.headers span {
+    position: absolute;
+    margin-left: 35%;
+    padding: 1%;
+}
+
+.add-product-form {
+    display: inline-block;
+    height: 50%;
+    width: 30%;
+    border: 1px solid rgb(79, 79, 79);
+    margin: 3px;
+    padding-bottom: 0;
+}
+
+.add-product-form div{
+    display: flex;
+    border: 1px solid rgb(79, 79, 79);
+    margin: 3px;
+    padding-bottom: 0;
+}
+
+.add-product-form div input {
+    display: inline-block;
+    height: 50%;
+    width: 30%;
+    border: 1px solid rgb(79, 79, 79);
+    margin-left: 3%;
+    padding-bottom: 0;
+}
