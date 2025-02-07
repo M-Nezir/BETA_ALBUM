@@ -123,14 +123,17 @@ if (isset($_POST['add_product'])) {
 <button type="submit" name="add_product" class="add-button">+ Ekle</button>
 </form>
 </div>
->
+
 
     <div class="product-list">
         <?php
         if ($urun_result && $urun_result->num_rows > 0) {
             while ($row = $urun_result->fetch_assoc()) {
-                echo "<div class='product'>";
+                
+                echo "<div class='product'>"; 
+                echo "<div style='height: 20vw;' width: 50vh;>";
                 echo "<img src='../image/" . htmlspecialchars($row['urun_gorsel']) . "' alt='Ürün Görseli'>";
+                echo "</div>";
                 echo "<h4>" . htmlspecialchars($row['urun_ad']) . "</h4>";
                 echo "<p>Fiyat: " . htmlspecialchars($row['urun_fiyat']) . " TL</p>";
                 echo "</div>";

@@ -26,6 +26,7 @@ if (isset($_SESSION['user_id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Üye Giriş / Hesabım</title>
     <link rel="stylesheet" href="/BETA_ALBUM/Beta_Album/css/backgraund.css">
+    <link rel="stylesheet" href="/BETA_ALBUM/Beta_Album/css/login.css">
 </head>
 <body class="body">
     <?php include('navbar.php'); ?>

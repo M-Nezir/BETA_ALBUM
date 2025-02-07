@@ -123,13 +123,15 @@ padding-bottom: 0;
 }
 
 .add-product-form div input {
-    display: inline-block;
-    height: 50%;
+    display: block; /* Input'u alt alta getirir */
     width: 50%;
     border: 1px solid rgb(79, 79, 79);
     margin-left: 3%;
     padding-bottom: 0;
+    margin-top: 5px; /* Etiket ve input arasına boşluk ekler */
 }
+
+
 
 .add-button {
     display: block;

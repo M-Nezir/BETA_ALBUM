@@ -7,7 +7,7 @@ if (!isset($_SESSION['admin_logged_in'])) {
 ?>
 
 <?php
-session_start(); // Session başlat
+session_start(); // Session başlata
 include('../includes/config.php');
 
 // Kategori seçildiğinde ürünleri çek
