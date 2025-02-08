@@ -10,6 +10,16 @@
     <?php include('navbar.php');?>
     <div class="main">
         <h1 class='head'>İLETİŞİM</h1>
+        <div style="margin: 8%;">
+        <p>Kampanyalar, ürünler ve hizmetlerimiz hakkında sorularınız için bizimle her zaman iletişime geçebilirsiniz.<br>
+Güler yüzlü ekibimiz, her türlü taleplerinizi en hızlı şekilde karşılamak için hazırdır.<br>
+Ayrıca, web üzerinden de bizlere ulaşabilir, gerekli bilgileri edinebilirsiniz.<br>
+Şubemizdeki fırsatları kaçırmamak ve kampanyalardan faydalanmak için bizi arayabilir veya ziyaret edebilirsiniz.<br>
+Size yardımcı olmak için buradayız, her zaman bekleriz! <br></p>
+        İletişim için; <br> mail adresimiz: betacolor@hotmail.com <br> telefon numaramız: +90 536 977 15 95.<br>
+Şubemize Ayanbey, Ateşbaz Sk. No:54 D:3, 42090 Konya / Meram adresinden kolayca ulaşabilirsiniz.<br>
+
+    </div>
     </div>
 
     <?php include('footer.php');?>

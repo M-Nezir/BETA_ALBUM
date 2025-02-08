@@ -28,6 +28,7 @@ $query->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/BETA_ALBUM/Beta_Album/css/backgraund.css">
+    <link rel="stylesheet" href="/BETA_ALBUM/Beta_Album/css/product_details.css">
     <title><?php echo htmlspecialchars($urun['urun_ad']); ?></title>
 </head>
 <body>
@@ -35,7 +36,7 @@ $query->close();
 
 <div class="main">
     <h1 class="head"><?php echo htmlspecialchars($urun['urun_ad']); ?></h1>
-    <img src="/BETA_ALBUM/Beta_Album/image/<?php echo htmlspecialchars($urun['urun_gorsel']); ?>" alt="<?php echo htmlspecialchars($urun['urun_ad']); ?>" width="300">
+    <img class="imagess" src="/BETA_ALBUM/Beta_Album/image/<?php echo htmlspecialchars($urun['urun_gorsel']); ?>" alt="<?php echo htmlspecialchars($urun['urun_ad']); ?>" width="300">
     <p><strong>Fiyat:</strong> <?php echo number_format($urun['urun_fiyat'], 2); ?> TL</p>
 
     <?php if (!empty($urun['urun_aciklama'])): ?>

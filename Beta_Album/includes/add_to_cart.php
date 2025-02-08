@@ -15,6 +15,22 @@ $urun_ad = $_POST['urun_ad'];
 $urun_fiyat = floatval($_POST['urun_fiyat']);
 $adet = intval($_POST['adet']);
 
+// Ürün bilgilerini veritabanından al
+$query = $conn->prepare("SELECT urun_ad, urun_fiyat, urun_gorsel FROM urunler WHERE urun_id = ?");
+$query->bind_param("i", $urun_id);
+$query->execute();
+$result = $query->get_result();
+$urun = $result->fetch_assoc();
+
+if (!$urun) {
+    die("Ürün bulunamadı.");
+}
+
+$query->close();
+
+// Ürün görselini al
+$urun_gorsel = $urun['urun_gorsel']; 
+
 // Kullanıcının mevcut sepetini al
 $query = $conn->prepare("SELECT sepet FROM kullanicilar WHERE user_id = ?");
 $query->bind_param("i", $user_id);
@@ -42,7 +58,8 @@ if (!$found) {
         'urun_id' => $urun_id,
         'urun_ad' => $urun_ad,
         'urun_fiyat' => $urun_fiyat,
-        'adet' => $adet
+        'adet' => $adet,
+        'urun_gorsel' => $urun_gorsel // Ürün görselini de ekliyoruz
     ];
 }
 

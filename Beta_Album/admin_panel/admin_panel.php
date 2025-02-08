@@ -15,6 +15,32 @@ if (!isset($_SESSION['admin_logged_in'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/BETA_ALBUM/Beta_Album/css/admin_panel.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        .metin {
+    width: 98%;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.metin h1 {
+    padding-left: 50%;
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.metin span {
+    margin-left: 20%;
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #555;
+}
+
+    </style>
     <title>Admin Panel</title>
 </head>
 <body>
@@ -51,8 +77,8 @@ if (!isset($_SESSION['admin_logged_in'])) {
     </div>
 
 </div>
-<div class="metin" style="margin-left: 20%;">
-    <h1 style="margin-top: 0; margin-left: 32%; padding-top: 3%; ">Admin Panele Hoşgeldiniz</h1>
+<div class="metin">
+    <h1>Admin Panele Hoşgeldiniz</h1>
     <span>Admin panelde sipariş takibi ayrıca ürün ekleme,silme ve güncelleme işlemlerini yapabilirsiniz</span>
 </div>
 

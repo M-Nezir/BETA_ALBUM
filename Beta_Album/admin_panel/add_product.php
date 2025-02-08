@@ -80,6 +80,7 @@ if (isset($_POST['add_product'])) {
         <?php 
         echo "<form method='GET' action=''>";
         echo "<select name='kategori_id' id='kategori' onchange='this.form.submit()'>";
+        echo "<option value='' disabled selected>Kategori Seçiniz</option>"; // Başlangıç seçeneği
         $sql = "SELECT * FROM kategoriler";
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
@@ -136,7 +137,7 @@ if (isset($_POST['add_product'])) {
                 echo "</div>";
             }
         } else {
-            echo "<div class='error-container'><p class='error'>Bu kategoride ürün bulunmamaktadır.</p></div>";
+            echo "<div class='error-container'><p class='error'>Bu kategoride ürün bulunmamaktadır<br> lütfen sol üstten yeni bir kategori seçiniz.</p></div>";
         }
         ?>
     </div>

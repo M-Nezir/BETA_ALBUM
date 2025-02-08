@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 06 Şub 2025, 19:54:36
+-- Üretim Zamanı: 08 Şub 2025, 04:46:15
 -- Sunucu sürümü: 10.4.32-MariaDB
 -- PHP Sürümü: 8.2.12
 
@@ -32,6 +32,13 @@ CREATE TABLE `admin` (
   `admin_email` varchar(255) NOT NULL,
   `admin_password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Tablo döküm verisi `admin`
+--
+
+INSERT INTO `admin` (`admin_id`, `admin_email`, `admin_password`) VALUES
+(1, 'betacolor@hotmail.com', 'admin');
 
 -- --------------------------------------------------------
 
@@ -72,6 +79,14 @@ CREATE TABLE `kullanicilar` (
   `sepet` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Tablo döküm verisi `kullanicilar`
+--
+
+INSERT INTO `kullanicilar` (`user_id`, `user_name`, `user_surname`, `phoneNumber`, `tcKimlik`, `email`, `password`, `sepet`) VALUES
+(1, 'Mehmetcan', 'Aydın', '05554443322', '12345678912', 'mehmetc@gmail.com', '$2y$10$x9skIyoOPd0JJKr88gkloeyxha8WMRHbfjhdnBUL6ARirxq5fiUby', '[{\"urun_id\":5,\"urun_ad\":\"Camilla\",\"urun_fiyat\":200,\"adet\":3},{\"urun_id\":6,\"urun_ad\":\"Cara\",\"urun_fiyat\":210,\"adet\":3},{\"urun_id\":7,\"urun_ad\":\"Carla\",\"urun_fiyat\":220,\"adet\":1}]'),
+(2, 'Mehmet', 'Aydın', '05556667788', '12345678978', 'mehmet13@gmail.com', '$2y$10$NU.GUfg9.Ku/qIqQmzRnl.wEkH6eOQ51IPiArWMP4.LOlUGzZ2oT6', NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -83,25 +98,25 @@ CREATE TABLE `urunler` (
   `urun_ad` varchar(255) NOT NULL,
   `kategori_id` int(11) DEFAULT NULL,
   `urun_gorsel` varchar(255) DEFAULT NULL,
-  `urun_fiyat` decimal(10,2) DEFAULT NULL
+  `urun_fiyat` decimal(10,2) DEFAULT NULL,
+  `urun_aciklama` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Tablo döküm verisi `urunler`
 --
 
-INSERT INTO `urunler` (`urun_id`, `urun_ad`, `kategori_id`, `urun_gorsel`, `urun_fiyat`) VALUES
-(1, 'Leo', 1, 'Leo.jpg', 150.00),
-(2, 'Lina', 1, 'Lina.jpg', 160.00),
-(3, 'Lion', 1, 'Lion.jpg', 170.00),
-(4, 'Mia', 1, 'Mia.jpg', 180.00),
-(5, 'Camilla', 2, 'Camilla.jpg', 200.00),
-(6, 'Cara', 2, 'Cara.jpg', 210.00),
-(7, 'Carla', 2, 'Carla.jpg', 220.00),
-(8, 'Dream', 2, 'Dream.jpg', 230.00),
-(9, 'Natura', 2, 'Natura.jpg', 240.00),
-(10, 'New Dream', 2, 'New Dream.jpg', 250.00),
-(11, 'Patulya', 2, 'Patulya.jpg', 260.00);
+INSERT INTO `urunler` (`urun_id`, `urun_ad`, `kategori_id`, `urun_gorsel`, `urun_fiyat`, `urun_aciklama`) VALUES
+(1, 'Leo', 1, 'Leo.jpg', 150.00, 'Klasik tasarımına, estetik dokunuşlar ile daha modern bir hal \nalan Leo, nubuk ve ipeksi görünüşte laminasyon kaplamalı kapak \nfotoğrafı alanı ile, beğenileri üstünde topluyor.'),
+(2, 'Lina', 1, 'Lina.jpg', 160.00, NULL),
+(3, 'Lion', 1, 'Lion.jpg', 170.00, NULL),
+(4, 'Mia', 1, 'Mia.jpg', 180.00, NULL),
+(5, 'Camilla', 2, 'Camilla.jpg', 200.00, NULL),
+(6, 'Cara', 2, 'Cara.jpg', 210.00, NULL),
+(7, 'Carla', 2, 'Carla.jpg', 220.00, NULL),
+(8, 'Dream', 2, 'Dream.jpg', 230.00, NULL),
+(9, 'Natura', 2, 'Natura.jpg', 240.00, NULL),
+(10, 'New Dream', 2, 'New Dream.jpg', 250.00, NULL);
 
 --
 -- Dökümü yapılmış tablolar için indeksler
@@ -143,7 +158,7 @@ ALTER TABLE `urunler`
 -- Tablo için AUTO_INCREMENT değeri `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `kategoriler`
@@ -155,7 +170,7 @@ ALTER TABLE `kategoriler`
 -- Tablo için AUTO_INCREMENT değeri `kullanicilar`
 --
 ALTER TABLE `kullanicilar`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `urunler`

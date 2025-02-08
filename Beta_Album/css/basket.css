@@ -1,0 +1,77 @@
+/* Sepet Başlığı */
+.basket-message {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Sepet İçeriği */
+.basket-item {
+    font-size: 18px;
+    padding: 10px;
+    border-bottom: 3px solid #ddd;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.basket-item:last-child {
+    border-bottom: none;
+}
+
+/* Ürün Adı */
+.product-name {
+    font-weight: bold;
+}
+
+/* Ürün Adet ve Fiyat */
+.product-quantity,
+.product-price {
+    font-size: 16px;
+    color: #007bff;
+}
+
+/* Toplam Fiyat */
+.basket-total {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 20px;
+    text-align: right;
+}
+
+/* Sepete Ürün Eklenmediğinde Mesaj */
+.empty-basket-message {
+    font-size: 18px;
+    color: #ff0000;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* Hover Efekti */
+.basket-itemmm:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+.basket-itemmm{
+   display: flex;
+   align-items: center;
+   margin-bottom: 2px;
+}
+
+.product-imagee{
+    display: inline-block;
+    border: 1px solid black;
+    height: 10%;
+    width: 10%;
+}
+
+.product-imagee img{
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+}
+
+

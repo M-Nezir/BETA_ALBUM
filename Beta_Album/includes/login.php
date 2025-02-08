@@ -46,7 +46,7 @@ if (isset($_SESSION['user_id'])) {
             <p style="display: block; width: auto; font-size: 120%; margin-bottom: 0; margin-left: 3%;">
               Hoş geldin <?= htmlspecialchars($user['user_name']) ?> Sepetine buradan ulaşabilirsin</p>
 
-              <a href="" style="text-decoration: none; display: block; width: 18%;">
+              <a href="/BETA_ALBUM/Beta_Album/includes/Basket.php" style="text-decoration: none; display: block; width: 18%;">
                 <div class="basket_button">
                   <h3>SEPETİME GİT</h3>
                 </div>

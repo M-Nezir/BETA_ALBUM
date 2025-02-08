@@ -74,6 +74,7 @@ if (isset($_POST['delete_product'])) {
         // Kategorileri select box içinde listele
         echo "<form method='GET' action=''>";
         echo "<select name='kategori_id' id='kategori' onchange='this.form.submit()'>";
+        echo "<option value='' disabled selected>Kategori Seçiniz</option>"; // Başlangıç seçeneği
         $sql = "SELECT * FROM kategoriler";
         $result = $conn->query($sql);
 
@@ -111,8 +112,7 @@ if (isset($_POST['delete_product'])) {
             }
         } else {
             echo "<div class='error-container'>";
-            echo "<p class='error'>Maalesef Bu Kategoride Ürün Bulunmamaktadır.</p>";
-            echo "<i class='fa-solid fa-xmark'></i>";
+            echo "<p class='error'>Bu kategoride ürün bulunmamaktadır<br> lütfen sol üstten yeni bir kategori seçiniz.</p>";
             echo "</div>";
         }
         ?>
