@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 08 Şub 2025, 04:46:15
+-- Üretim Zamanı: 09 Şub 2025, 00:01:08
 -- Sunucu sürümü: 10.4.32-MariaDB
 -- PHP Sürümü: 8.2.12
 
@@ -84,8 +84,33 @@ CREATE TABLE `kullanicilar` (
 --
 
 INSERT INTO `kullanicilar` (`user_id`, `user_name`, `user_surname`, `phoneNumber`, `tcKimlik`, `email`, `password`, `sepet`) VALUES
-(1, 'Mehmetcan', 'Aydın', '05554443322', '12345678912', 'mehmetc@gmail.com', '$2y$10$x9skIyoOPd0JJKr88gkloeyxha8WMRHbfjhdnBUL6ARirxq5fiUby', '[{\"urun_id\":5,\"urun_ad\":\"Camilla\",\"urun_fiyat\":200,\"adet\":3},{\"urun_id\":6,\"urun_ad\":\"Cara\",\"urun_fiyat\":210,\"adet\":3},{\"urun_id\":7,\"urun_ad\":\"Carla\",\"urun_fiyat\":220,\"adet\":1}]'),
-(2, 'Mehmet', 'Aydın', '05556667788', '12345678978', 'mehmet13@gmail.com', '$2y$10$NU.GUfg9.Ku/qIqQmzRnl.wEkH6eOQ51IPiArWMP4.LOlUGzZ2oT6', NULL);
+(1, 'Mehmetcan', 'Aydın', '05554443322', '12345678912', 'mehmetc@gmail.com', '$2y$10$x9skIyoOPd0JJKr88gkloeyxha8WMRHbfjhdnBUL6ARirxq5fiUby', '[]'),
+(2, 'Mehmet', 'Aydın', '05556667788', '12345678978', 'mehmet13@gmail.com', '$2y$10$NU.GUfg9.Ku/qIqQmzRnl.wEkH6eOQ51IPiArWMP4.LOlUGzZ2oT6', '[]');
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `siparisler`
+--
+
+CREATE TABLE `siparisler` (
+  `order_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `order_details` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL CHECK (json_valid(`order_details`)),
+  `total_price` decimal(10,2) NOT NULL,
+  `address` text NOT NULL,
+  `order_date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `status` enum('Hazırlanıyor','Kargoda','Teslim Edildi') DEFAULT 'Hazırlanıyor'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Tablo döküm verisi `siparisler`
+--
+
+INSERT INTO `siparisler` (`order_id`, `user_id`, `order_details`, `total_price`, `address`, `order_date`, `status`) VALUES
+(1, 1, '[{\"urun_id\":5,\"urun_ad\":\"Camilla\",\"urun_fiyat\":200,\"adet\":8,\"urun_gorsel\":\"Camilla.jpg\"},{\"urun_id\":2,\"urun_ad\":\"Lina\",\"urun_fiyat\":160,\"adet\":4,\"urun_gorsel\":\"Lina.jpg\"}]', 2240.00, 'Keçiören/Ankara', '2025-02-08 22:17:53', 'Hazırlanıyor'),
+(2, 1, '[{\"urun_id\":7,\"urun_ad\":\"Carla\",\"urun_fiyat\":220,\"adet\":1,\"urun_gorsel\":\"Carla.jpg\"}]', 220.00, 'Malatya', '2025-02-08 22:24:58', 'Hazırlanıyor'),
+(3, 2, '[{\"urun_id\":5,\"urun_ad\":\"Camilla\",\"urun_fiyat\":200,\"adet\":1,\"urun_gorsel\":\"Camilla.jpg\"},{\"urun_id\":4,\"urun_ad\":\"Mia\",\"urun_fiyat\":180,\"adet\":2,\"urun_gorsel\":\"Mia.jpg\"}]', 560.00, 'Afyonkarahisar/TÜRKİYE', '2025-02-08 22:42:41', 'Hazırlanıyor');
 
 -- --------------------------------------------------------
 
@@ -144,6 +169,13 @@ ALTER TABLE `kullanicilar`
   ADD UNIQUE KEY `tcKimlik` (`tcKimlik`);
 
 --
+-- Tablo için indeksler `siparisler`
+--
+ALTER TABLE `siparisler`
+  ADD PRIMARY KEY (`order_id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
 -- Tablo için indeksler `urunler`
 --
 ALTER TABLE `urunler`
@@ -173,6 +205,12 @@ ALTER TABLE `kullanicilar`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- Tablo için AUTO_INCREMENT değeri `siparisler`
+--
+ALTER TABLE `siparisler`
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- Tablo için AUTO_INCREMENT değeri `urunler`
 --
 ALTER TABLE `urunler`
@@ -181,6 +219,12 @@ ALTER TABLE `urunler`
 --
 -- Dökümü yapılmış tablolar için kısıtlamalar
 --
+
+--
+-- Tablo kısıtlamaları `siparisler`
+--
+ALTER TABLE `siparisler`
+  ADD CONSTRAINT `siparisler_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `kullanicilar` (`user_id`) ON DELETE CASCADE;
 
 --
 -- Tablo kısıtlamaları `urunler`
