@@ -32,32 +32,101 @@ if (isset($_SESSION['user_id'])) {
     <?php include('navbar.php'); ?>
     <div class="main">
         <?php if ($user): ?>
-            <h1 class='head'>HESABIM</h1>  
+            <h1 class='head'>HESABIM</h1> 
+            <div class="login_user" >
             <p>Ad: <?= htmlspecialchars($user['user_name']) ?></p>
             <p>Soyad: <?= htmlspecialchars($user['user_surname']) ?></p>
             <p>Email: <?= htmlspecialchars($user['email']) ?></p>
             <p>Telefon: <?= htmlspecialchars($user['phoneNumber']) ?></p>
             <a href="logout.php">Çıkış Yap</a>
+            </div>
+         
         <?php else: ?>
-            <h1 class='head'>GİRİŞ</h1>
-            <form action="login_process.php" method="POST">
-                <input type="email" name="email" placeholder="E-posta" required>
-                <input type="password" name="password" placeholder="Şifre" required>
-                <button type="submit">Giriş Yap</button>
-            </form>
 
-            <h2>Üye Ol</h2>
-            <form action="register_process.php" method="POST">
-                <input type="text" name="user_name" placeholder="Ad" required>
-                <input type="text" name="user_surname" placeholder="Soyad" required>
-                <input type="text" name="phoneNumber" placeholder="Telefon Numarası" required>
-                <input type="text" name="tcKimlik" placeholder="T.C. Kimlik Numarası" required>
-                <input type="email" name="email" placeholder="E-posta" required>
-                <input type="password" name="password" placeholder="Şifre" required>
-                <button type="submit">Üye Ol</button>
-            </form>
+            <section class="forms-section" style="background-color:rgb(146, 146, 146);">
+  <div class="forms" style="background-color:rgb(177, 177, 177);">
+    <div class="form-wrapper is-active">
+      <button type="button" class="switcher switcher-login">
+        Giriş Yap
+        <span class="underline"></span>
+      </button>
+      <form class="form form-login" action="login_process.php" method="POST">
+        <fieldset>
+          <legend>Lütfen giriş yapmak için e-posta ve şifrenizi girin.</legend>
+          <div class="input-block">
+            <label for="login-email" style="color: black;">E-posta</label>
+            <input id="login-email" type="email" name="email" required>
+          </div>
+          <div class="input-block">
+            <label for="login-password" style="color: black;">Şifre</label>
+            <input id="login-password" type="password" name="password" required>
+          </div>
+        </fieldset>
+        <button type="submit" class="btn-login">Giriş Yap</button>
+      </form>
+    </div>
+    <div class="form-wrapper">
+      <button type="button" class="switcher switcher-signup">
+        Üye Ol
+        <span class="underline"></span>
+      </button>
+      <form class="form form-signup" action="register_process.php" method="POST">
+        <fieldset>
+          <legend>Lütfen kayıt olmak için bilgilerinizi girin.</legend>
+          <div style="display: block;">
+          <div class="input-block">
+            <label for="signup-name" style="color: black;">Ad</label>
+            <input id="signup-name" type="text" name="user_name" required>
+          </div>
+          <div class="input-block">
+            <label for="signup-surname" style="color: black;">Soyad</label>
+            <input id="signup-surname" type="text" name="user_surname" required>
+          </div>
+          </div>
+          <div style="display: block;">
+          <div class="input-block">
+            <label for="signup-phone" style="color: black;">Telefon Numarası</label>
+            <input id="signup-phone" type="text" name="phoneNumber" required>
+          </div>
+          <div class="input-block">
+            <label for="signup-tc" style="color: black;">T.C. Kimlik Numarası</label>
+            <input id="signup-tc" type="text" name="tcKimlik" required>
+          </div>
+          </div>
+          <div style="display: block;">
+          <div class="input-block">
+            <label for="signup-email" style="color: black;">E-posta</label>
+            <input id="signup-email" type="email" name="email" required>
+          </div>
+          <div class="input-block">
+            <label for="signup-password" style="color: black;">Şifre</label>
+            <input id="signup-password" type="password" name="password" required>
+          </div>
+          </div>
+        </fieldset>
+        <button type="submit" class="btn-signup">Üye Ol</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+            </div>
+
         <?php endif; ?>
+
+        
     </div>
     <?php include('footer.php'); ?>
+
+    <script>
+    const switchers = [...document.querySelectorAll('.switcher')]
+
+switchers.forEach(item => {
+	item.addEventListener('click', function() {
+		switchers.forEach(item => item.parentElement.classList.remove('is-active'))
+		this.parentElement.classList.add('is-active')
+	})
+})
+</script>
 </body>
 </html>

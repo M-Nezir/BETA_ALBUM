@@ -202,6 +202,12 @@ nav ul li {
     border: none;
 }
 
+.menu .dropdown-content .dropdown-item a{
+    padding: 0;
+    border: none;
+}
+
+
 .menu .dropdown-content .dropdown-item:hover {
     padding: 8px 16px;
     background-color: #f4e3d4;
@@ -239,6 +245,7 @@ nav ul li {
     text-align: center;
     justify-content: center;
 }
+
 .search_icon {
     display: inline-block;
     font-size: 20px;
@@ -246,9 +253,11 @@ nav ul li {
     margin-right: 10px; /* Sağ tarafa 5px boşluk ekle */
     text-decoration: none;
 }
+
 .search-icon-container {
     display: flex;
     justify-content: center;
+    width: auto;
     align-items: center;
     gap: 10px;
 }
@@ -382,3 +391,4 @@ header nav {
 }
 
 }
+

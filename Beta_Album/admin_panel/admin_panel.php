@@ -22,8 +22,10 @@ if (!isset($_SESSION['admin_logged_in'])) {
 <div class="menu">
 
    <div class="header-container">
+    <a href="/BETA_ALBUM/Beta_Album/admin_panel/admin_panel.php" style="text-decoration: none; color: black;">
    <b class="header">BETA ALBUM&trade;</b> <br>
    Admin Panel
+   </a>
    </div>
 
    <div class="menu-item">
@@ -49,6 +51,11 @@ if (!isset($_SESSION['admin_logged_in'])) {
     </div>
 
 </div>
+<div style="margin-left: 20%;">
+    <h1 style="margin-top: 0; margin-left: 32%; padding-top: 3%; ">Admin Panele Hoşgeldiniz</h1>
+    <span>Admin panelde sipariş takibi ayrıca ürün ekleme,silme ve güncelleme işlemlerini yapabilirsiniz</span>
+</div>
+
 
 </body>
 </html>

@@ -36,7 +36,7 @@ if ($kategori) {
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="main">
+    <div class="main" style="padding-bottom: 10%;">
         <h1 class='head'><?php echo $kategori ? htmlspecialchars($kategori['kategori_ad']) : 'Kategori Bulunamadı'; ?></h1>
         
         <div class="product-list">
@@ -44,7 +44,9 @@ if ($kategori) {
             if ($urun_result && $urun_result->num_rows > 0) {
                 while ($row = $urun_result->fetch_assoc()) {
                     echo "<div class='product'>";
+                    echo "<div style='height: 50vh; width: 100%;'>";
                     echo "<img src='/BETA_ALBUM/Beta_Album/image/" . htmlspecialchars($row['urun_gorsel']) . "' alt='Ürün Görseli'>";
+                    echo "</div>";
                     echo "<h4>" . htmlspecialchars($row['urun_ad']) . "</h4>";
                     echo "<p>Fiyat: " . htmlspecialchars($row['urun_fiyat']) . " TL</p>";
                     echo "<a href='/BETA_ALBUM/Beta_Album/includes/product_detail.php?urun_ad=" . htmlspecialchars($row['urun_ad']) . "'>";

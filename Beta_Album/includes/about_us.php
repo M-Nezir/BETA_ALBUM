@@ -10,6 +10,7 @@
     <?php include('navbar.php');?>
     <div class="main">
         <h1 class='head'>HAKKIMIZDA</h1>
+        <div style="margin: 8%;">
         <p>Beta Album, Konya'da fotoğrafçılık sektöründe her zaman yenilikçiliğin öncüsü olarak hizmet vermektedir.</p>
         <br>
         <p>Teknolojiyi yakından takip eden ve kaliteden asla ödün vermeyen ilkemiz ile bugün tam dijital teknoloji ile donatılmış şubelerimizde fotoğraf stüyolarına, ajanslara ve bireysel müşterilerimize hizmet etmekteyiz.</p>
@@ -19,6 +20,7 @@
         <p>Beta Album Fotoğrafçılık Baskı Ambalaj Turizm İnş. San. Tic. Ltd. Şti.</p>
         <br>
         <p>Adres: Ayanbey, Ateşbaz Sk. No:54 D:3, 42090 Meram/Konya, Türkiye</p>
+    </div>
     </div>
 
     <?php include('footer.php');?>

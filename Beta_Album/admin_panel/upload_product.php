@@ -123,7 +123,9 @@ if (isset($_POST['update_product'])) {
         if ($urun_result && $urun_result->num_rows > 0) {
             while ($row = $urun_result->fetch_assoc()) {
                 echo "<div class='product'>";
+                echo "<div style='height: 50vh; width: 50vh;'>";
                 echo "<img src='../image/" . htmlspecialchars($row['urun_gorsel']) . "' alt='Ürün Görseli'>";
+                echo "</div>";
                 echo "<h4>" . htmlspecialchars($row['urun_ad']) . "</h4>";
                 echo "<p>Fiyat: " . htmlspecialchars($row['urun_fiyat']) . " TL</p>";
                 echo "<button  style='width: 100%;' onclick=\"toggleUpdateForm(" . $row['urun_id'] . ")\">Güncelle</button>";
