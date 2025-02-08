@@ -130,3 +130,7 @@ padding-bottom: 0;
 .upload-container button:hover {
     background-color: #45a049;
 }
+
+.metin{
+    display: none;
+}

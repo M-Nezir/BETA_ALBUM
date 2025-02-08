@@ -32,15 +32,27 @@ if (isset($_SESSION['user_id'])) {
     <?php include('navbar.php'); ?>
     <div class="main">
         <?php if ($user): ?>
-            <h1 class='head'>HESABIM</h1> 
+            <h1 class='head'>HESABIM</h1>
             <div class="login_user" >
+
             <p>Ad: <?= htmlspecialchars($user['user_name']) ?></p>
             <p>Soyad: <?= htmlspecialchars($user['user_surname']) ?></p>
             <p>Email: <?= htmlspecialchars($user['email']) ?></p>
             <p>Telefon: <?= htmlspecialchars($user['phoneNumber']) ?></p>
             <a href="logout.php">Çıkış Yap</a>
             </div>
-         
+            <div style="display: flex; align-items: center; margin-top: 3%;">
+              
+            <p style="display: block; width: auto; font-size: 120%; margin-bottom: 0; margin-left: 3%;">
+              Hoş geldin <?= htmlspecialchars($user['user_name']) ?> Sepetine buradan ulaşabilirsin</p>
+
+              <a href="" style="text-decoration: none; display: block; width: 18%;">
+                <div class="basket_button">
+                  <h3>SEPETİME GİT</h3>
+                </div>
+              </a>
+            </div>
+           
         <?php else: ?>
 
             <section class="forms-section" style="background-color:rgb(146, 146, 146);">

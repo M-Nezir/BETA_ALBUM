@@ -53,12 +53,18 @@ if (isset($_GET['query'])) {
 </head>
 <body>
 <?php include('navbar.php');?>
+<div style="display: flex; align-items: center;">   
+            <h2 class="mb-4" style="display: inline-block; margin-left: 10%;">Arama Sonuçları</h2>
+
+        <form id="search-form" action="/BETA_ALBUM/Beta_Album/includes/search.php" method="GET" style=" display: inline-block; margin-left: 10%; margin-bottom: 6%; position: relative;">
+                        <input type="text" name="query" placeholder="Ürün ara..." required>
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+
+
+        </div>
     <div class="container mt-4" style="padding-bottom: 300px;">
-        <div>   <h2 class="mb-4" style="display: inline-block;">Arama Sonuçları</h2>
-        <form id="search-form" action="/BETA_ALBUM/Beta_Album/includes/search.php" method="GET" style="display: inline-block; margin-left: 23%;">
-            <input type="text" name="query" placeholder="Ürün ara..." required>
-            <button type="submit"><i class="fas fa-search"></i></button>
-        </form></div>
+        
      
         <div class="row">
             <?php if (isset($result) && $result->num_rows > 0): ?>

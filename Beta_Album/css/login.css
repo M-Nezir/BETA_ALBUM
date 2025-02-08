@@ -107,6 +107,26 @@ form .bottom-link a:hover {
 	border-radius: 3px;
 }
 
+.basket_button{
+	color: #000000;
+	text-align: center;
+	background-color: #b1b1b1;
+	border-radius: 5px;
+	margin-left: 10%;
+}
+
+.basket_button:hover{
+	color: #000000;
+	text-align: center;
+	background-color: #7ddf60;
+	border-radius: 5px;
+}
+
+
+.basket_button h3{
+	margin-bottom: 0;
+}
+
 *,
 *::before,
 *::after {
