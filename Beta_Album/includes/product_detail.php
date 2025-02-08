@@ -1,4 +1,5 @@
 <?php
+session_start();
 include('config.php'); // Veritabanına bağlan
 
 if (!isset($_GET['urun_id'])) {
@@ -8,15 +9,12 @@ if (!isset($_GET['urun_id'])) {
 $urun_id = intval($_GET['urun_id']); // Güvenlik için ID'yi integer'a çevir
 
 // Sorguyu hazırla
-$query = $conn->prepare("SELECT urun_ad, urun_gorsel, urun_fiyat, urun_aciklama FROM urunler WHERE urun_id = ?");
+$query = $conn->prepare("SELECT urun_id, urun_ad, urun_gorsel, urun_fiyat, urun_aciklama FROM urunler WHERE urun_id = ?");
 $query->bind_param("i", $urun_id);
 $query->execute();
-
-// Sonuçları al
 $result = $query->get_result();
 $urun = $result->fetch_assoc();
 
-// Eğer ürün yoksa hata ver
 if (!$urun) {
     die("Ürün bulunamadı.");
 }
@@ -44,7 +42,18 @@ $query->close();
         <p><strong>Açıklama:</strong> <?php echo nl2br(htmlspecialchars($urun['urun_aciklama'])); ?></p>
     <?php endif; ?>
 
-    <a href="login.php" class="add-to-cart-btn">Sepete Ekle</a>
+    <?php if (isset($_SESSION['user_id'])): ?>
+        <form action="add_to_cart.php" method="POST">
+            <input type="hidden" name="urun_id" value="<?php echo $urun['urun_id']; ?>">
+            <input type="hidden" name="urun_ad" value="<?php echo htmlspecialchars($urun['urun_ad']); ?>">
+            <input type="hidden" name="urun_fiyat" value="<?php echo $urun['urun_fiyat']; ?>">
+            <label for="adet">Adet:</label>
+            <input type="number" id="adet" name="adet" value="1" min="1" required>
+            <button type="submit">Sepete Ekle</button>
+        </form>
+    <?php else: ?>
+        <a href="login.php" class="add-to-cart-btn">Giriş Yap ve Sepete Ekle</a>
+    <?php endif; ?>
 </div>
 
 <?php include('footer.php'); ?>
