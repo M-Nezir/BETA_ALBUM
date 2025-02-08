@@ -49,7 +49,7 @@ if ($kategori) {
                     echo "</div>";
                     echo "<h4>" . htmlspecialchars($row['urun_ad']) . "</h4>";
                     echo "<p>Fiyat: " . htmlspecialchars($row['urun_fiyat']) . " TL</p>";
-                    echo "<a href='/BETA_ALBUM/Beta_Album/includes/product_detail.php?urun_ad=" . htmlspecialchars($row['urun_ad']) . "'>";
+                    echo "<a href='/BETA_ALBUM/Beta_Album/includes/product_detail.php?urun_id=" . htmlspecialchars($row['urun_id']) . "'>";
                     echo "<div class='add-to-cart'>";
                     echo "<i class='fa-solid fa-cart-shopping'></i>";
                     echo "</div>";
