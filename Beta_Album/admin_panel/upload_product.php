@@ -43,6 +43,7 @@ if (isset($_POST['update_product'])) {
     $urun_id = $_POST['urun_id'];
     $urun_ad = $_POST['urun_ad'];
     $urun_fiyat = $_POST['urun_fiyat'];
+    $urun_aciklama = $_POST['urun_aciklama'];  // Yeni eklenen açıklama alanı
 
     if (isset($_FILES["urun_gorsel"]) && $_FILES["urun_gorsel"]["error"] == 0) {
         // Dosya yükleme işlemi
@@ -52,13 +53,13 @@ if (isset($_POST['update_product'])) {
 
         $urun_gorsel = basename($_FILES["urun_gorsel"]["name"]); // DB'ye kaydedilecek dosya adı
 
-        $update_sql = "UPDATE urunler SET urun_ad = ?, urun_fiyat = ?, urun_gorsel = ? WHERE urun_id = ?";
+        $update_sql = "UPDATE urunler SET urun_ad = ?, urun_fiyat = ?, urun_gorsel = ?, urun_aciklama = ? WHERE urun_id = ?";
         $stmt = $conn->prepare($update_sql);
-        $stmt->bind_param("sdsi", $urun_ad, $urun_fiyat, $urun_gorsel, $urun_id);
+        $stmt->bind_param("sdssi", $urun_ad, $urun_fiyat, $urun_gorsel, $urun_aciklama, $urun_id);
     } else {
-        $update_sql = "UPDATE urunler SET urun_ad = ?, urun_fiyat = ? WHERE urun_id = ?";
+        $update_sql = "UPDATE urunler SET urun_ad = ?, urun_fiyat = ?, urun_aciklama = ? WHERE urun_id = ?";
         $stmt = $conn->prepare($update_sql);
-        $stmt->bind_param("sdi", $urun_ad, $urun_fiyat, $urun_id);
+        $stmt->bind_param("sdsi", $urun_ad, $urun_fiyat, $urun_aciklama, $urun_id);
     }
 
     if ($stmt->execute()) {
@@ -147,7 +148,13 @@ if (isset($_POST['update_product'])) {
                 echo "<label>Ürün Fiyatı:</label>";
                 echo "<input type='number' name='urun_fiyat' step='0.01' value='" . htmlspecialchars($row['urun_fiyat']) . "' required>";
                 echo "</div>";
-                
+
+                // Ürün Açıklaması
+                echo "<div style='margin-bottom: 10px;'>";
+                echo "<label>Ürün Açıklaması:</label>";
+                echo "<textarea name='urun_aciklama' style='width: 100%;' required>" . htmlspecialchars($row['urun_aciklama']) . "</textarea>";
+                echo "</div>";
+
                 // Ürün Görseli
                 echo "<div style='margin-bottom: 10px;'>";
                 echo "<label>Ürün Görseli:</label>";

@@ -43,6 +43,7 @@ if ($id) {
 if (isset($_POST['add_product'])) {
     $urun_ad = $_POST['urun_ad'];
     $urun_fiyat = $_POST['urun_fiyat'];
+    $urun_aciklama = $_POST['urun_aciklama']; // Açıklamayı al
 
     // Dosya yükleme işlemi
     $target_dir = "../image/"; // Kayıt edilecek dizin
@@ -51,9 +52,9 @@ if (isset($_POST['add_product'])) {
 
     $urun_gorsel = basename($_FILES["urun_gorsel"]["name"]); // DB'ye kaydedilecek dosya adı
 
-    $insert_sql = "INSERT INTO urunler (urun_ad, urun_fiyat, urun_gorsel, kategori_id) VALUES (?, ?, ?, ?)";
+    $insert_sql = "INSERT INTO urunler (urun_ad, urun_fiyat, urun_gorsel, urun_aciklama, kategori_id) VALUES (?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($insert_sql);
-    $stmt->bind_param("sdsi", $urun_ad, $urun_fiyat, $urun_gorsel, $id);
+    $stmt->bind_param("sdssi", $urun_ad, $urun_fiyat, $urun_gorsel, $urun_aciklama, $id); // Açıklama parametresi de eklendi
 
     if ($stmt->execute()) {
         $_SESSION['success_message'] = 'Ürün başarıyla eklendi.';
@@ -114,6 +115,10 @@ if (isset($_POST['add_product'])) {
     <label>Ürün Fiyatı:</label>
     <input type="number" name="urun_fiyat" step="0.01" required>
 </div>
+<div class="input-container">
+    <label>Ürün Açıklaması:</label>
+    <textarea name="urun_aciklama" required></textarea>
+</div>
 <div class="input-container" style="margin-bottom: 5%;">
     <label>Ürün Görseli:</label>
     <input type="file" class="search_image" name="urun_gorsel" accept="image/*" required>
@@ -134,6 +139,7 @@ if (isset($_POST['add_product'])) {
                 echo "</div>";
                 echo "<h4>" . htmlspecialchars($row['urun_ad']) . "</h4>";
                 echo "<p>Fiyat: " . htmlspecialchars($row['urun_fiyat']) . " TL</p>";
+                echo "<p><strong>Açıklama:</strong> " . nl2br(htmlspecialchars($row['urun_aciklama'])) . "</p>"; // Açıklama ekleniyor
                 echo "</div>";
             }
         } else {
