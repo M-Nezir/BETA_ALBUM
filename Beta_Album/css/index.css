@@ -64,39 +64,39 @@ header nav ul li a:hover {
     position: relative;
 }
 
-.content {
-    padding: 20px;
+.about{
+    min-height: 38vh;
+    width: 100vw;
+    margin-top: 3rem;
+    margin-bottom: -2rem;
+    top: -2rem;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+    line-height: 6rem;
 }
 
-.content h2 {
-    margin-bottom: 20px;
-    font-size: 1.8em;
-}
-
-.content p {
-    margin-bottom: 15px;
-    color: #555;
-}
-
-.albums {
+.about .row{
+    line-height: 2rem;
     display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 4rem;
 }
 
-.album {
-    width: 250px;
-    border: 1px solid #ddd;
-    padding: 10px;
+.about .row .content{
     text-align: center;
 }
 
-.album img {
-    width: 100%;
-    height: auto;
-    margin-bottom: 10px;
+.about .row .content h3{
+    font-size: 2rem;
+    color: var(--color);
+}
+
+.about .row .content p{
+    font-size: 1.3rem;
+    color: #333;
+    padding: 1rem 0;
 }
 
 nav {
@@ -281,6 +281,7 @@ a i {
 .search_icon_mobile {
     display: none;
 }
+
 
 @media screen and (max-width: 768px) {
 body {
