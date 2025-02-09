@@ -1,0 +1,95 @@
+.admina_container {
+    width: 40%;
+    margin: 50px auto;
+    margin-top: 0;
+    padding: 30px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.admina_title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.admina_message {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.admina_success {
+    color: #28a745;
+}
+
+.admina_error {
+    color: #dc3545;
+}
+
+.admina_form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.admina_label {
+    font-size: 16px;
+    font-weight: 500;
+    text-align: left;
+    color: #555;
+}
+
+.admina_input {
+    width: 100%;
+}
+
+.admina_input_field {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.admina_button {
+    margin-top: 20px;
+}
+
+.admina_submit {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.admina_submit:hover {
+    background: #0056b3;
+}
+
+.admina_back {
+    margin-top: 15px;
+}
+
+.admina_back_link {
+    font-size: 14px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.admina_back_link:hover {
+    text-decoration: underline;
+}
+
+.metin{
+    display: none;
+}

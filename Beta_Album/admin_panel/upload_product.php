@@ -152,7 +152,7 @@ if (isset($_POST['update_product'])) {
                 // Ürün Açıklaması
                 echo "<div style='margin-bottom: 10px;'>";
                 echo "<label>Ürün Açıklaması:</label>";
-                echo "<textarea name='urun_aciklama' style='width: 100%;' required>" . htmlspecialchars($row['urun_aciklama']) . "</textarea>";
+                echo "<textarea name='urun_aciklama' style='width: 100%;  resize: vertical;' required>" . htmlspecialchars($row['urun_aciklama']) . "</textarea>";
                 echo "</div>";
 
                 // Ürün Görseli

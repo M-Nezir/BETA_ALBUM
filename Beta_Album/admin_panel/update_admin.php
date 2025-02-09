@@ -42,24 +42,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <title>Admin Bilgilerini Güncelle</title>
     <link rel="stylesheet" href="/BETA_ALBUM/Beta_Album/css/admin_panel.css">
+    <link rel="stylesheet" href="/BETA_ALBUM/Beta_Album/css/update_admin.css">
 </head>
+<?php include('admin_panel.php'); ?>
 <body>
-    <div class="container">
-        <h2>Admin Bilgilerini Güncelle</h2>
-        <?php if ($success) echo "<p style='color: green;'>$success</p>"; ?>
-        <?php if ($error) echo "<p style='color: red;'>$error</p>"; ?>
+<div class="admina_container">
+    <div class="admina_title">Admin Bilgilerini Güncelle</div>
+    
+    <div class="admina_message admina_success"><?php if ($success) echo $success; ?></div>
+    <div class="admina_message admina_error"><?php if ($error) echo $error; ?></div>
 
-        <form method="POST">
-            <label for="new_email">Yeni Email:</label>
-            <input type="email" name="new_email" required>
+    <div class="admina_form">
+        <div class="admina_label">Yeni Email:</div>
+        <div class="admina_input">
+            <input class="admina_input_field" type="email" name="new_email" required>
+        </div>
 
-            <label for="new_password">Yeni Şifre:</label>
-            <input type="password" name="new_password" required>
+        <div class="admina_label">Yeni Şifre:</div>
+        <div class="admina_input">
+            <input class="admina_input_field" type="password" name="new_password" required>
+        </div>
 
-            <button type="submit">Güncelle</button>
-        </form>
-        <br>
-        <a href="admin_panel.php">Geri Dön</a>
+        <div class="admina_button">
+            <button class="admina_submit">Güncelle</button>
+        </div>
     </div>
+</div>
+
 </body>
 </html>

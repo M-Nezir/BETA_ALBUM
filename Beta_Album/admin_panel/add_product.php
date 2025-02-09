@@ -117,7 +117,7 @@ if (isset($_POST['add_product'])) {
 </div>
 <div class="input-container">
     <label>Ürün Açıklaması:</label>
-    <textarea name="urun_aciklama" required></textarea>
+    <textarea name="urun_aciklama" required style=" resize: vertical;"></textarea>
 </div>
 <div class="input-container" style="margin-bottom: 5%;">
     <label>Ürün Görseli:</label>
