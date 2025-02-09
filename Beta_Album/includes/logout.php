@@ -1,6 +1,6 @@
 <?php
 session_start();
 session_destroy(); //tüm oturum verilerini sil
-header("Location: login.php"); //kullanıcıyı giriş sayfasına yönlendir
+header("Location: ../index.php"); //kullanıcıyı giriş sayfasına yönlendir
 exit();
 ?>

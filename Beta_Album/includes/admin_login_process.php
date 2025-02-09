@@ -15,16 +15,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bind_result($admin_id, $admin_email, $admin_password);
         $stmt->fetch();
         
-        if ($password == $admin_password) {  // DİKKAT: Geçici olarak!
+        // 🔥 HATALI KISIM DÜZELTİLDİ: Şifre doğrulama `password_verify()` ile yapıldı.
+        if (password_verify($password, $admin_password)) {
             $_SESSION['admin_logged_in'] = true;
             $_SESSION['admin_email'] = $admin_email;
             header("Location: ../admin_panel/admin_panel.php");
             exit();
         } else {
-            echo "Hatalı şifre. Tekrar deneyin.";
+            echo "❌ Hatalı şifre. Tekrar deneyin.";
         }
     } else {
-        echo "Bu e-posta ile kayıtlı admin bulunamadı.";
+        echo "❌ Bu e-posta ile kayıtlı admin bulunamadı.";
     }
     $stmt->close();
     $conn->close();

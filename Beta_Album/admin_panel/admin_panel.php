@@ -71,6 +71,12 @@ if (!isset($_SESSION['admin_logged_in'])) {
     </div>
 
     <div class="menu-item">
+        <a href="/BETA_ALBUM/Beta_Album/admin_panel/update_admin.php">
+            <i class="fa-solid fa-user-cog"></i> Admin Bilgilerini Güncelle
+        </a>
+    </div>
+
+    <div class="menu-item">
         <a href="../includes/logout.php">
             <button>Çıkış Yap</button>
         </a>

@@ -35,7 +35,7 @@
         <ul>
             <li><h3>Hesabım</h3></li>
             <li><a href="/BETA_ALBUM/Beta_Album/includes/login.php">Hesabım</a></li>
-            <li><a href="/BETA_ALBUM/Beta_Album/includes/basket.php">Siparişlerim</a></li>
+            <li><a href="/BETA_ALBUM/Beta_Album/includes/siparislerim.php">Siparişlerim</a></li>
         </ul>
     </div>
 
