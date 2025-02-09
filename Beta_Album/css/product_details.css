@@ -1,7 +1,7 @@
 
 /* Ana içerik */
 .main {
-    width: 80%;
+    width: 50%;
     margin: 30px auto;
     padding: 20px;
     background-color: #fff;
@@ -10,7 +10,7 @@
 }
 
 .head {
-    text-align: center;
+    display: block;
     font-size: 28px;
     font-weight: bold;
     margin-bottom: 20px;
@@ -19,7 +19,6 @@
 
 .imagess {
     display: block;
-    margin: 0 auto 20px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }

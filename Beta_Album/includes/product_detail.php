@@ -35,13 +35,23 @@ $query->close();
 <?php include('navbar.php'); ?>
 
 <div class="main">
-    <h1 class="head"><?php echo htmlspecialchars($urun['urun_ad']); ?></h1>
-    <img class="imagess" src="/BETA_ALBUM/Beta_Album/image/<?php echo htmlspecialchars($urun['urun_gorsel']); ?>" alt="<?php echo htmlspecialchars($urun['urun_ad']); ?>" width="300">
-    <p><strong>Fiyat:</strong> <?php echo number_format($urun['urun_fiyat'], 2); ?> TL</p>
-
-    <?php if (!empty($urun['urun_aciklama'])): ?>
+    <div style="display: flex; flex-direction: center;">
+    <div style="display: inline-flex;  justify-content: flex-start; flex-direction: column;">
+         <h1 class="head"><?php echo htmlspecialchars($urun['urun_ad']); ?></h1><br>
+         <img class="imagess" src="/BETA_ALBUM/Beta_Album/image/<?php echo htmlspecialchars($urun['urun_gorsel']); ?>" alt="<?php echo htmlspecialchars($urun['urun_ad']); ?>" width="300"> <br>
+         <div style=" width: 60%;word-wrap: break-word; overflow-wrap: break-word;">
+         <p><strong>Fiyat:</strong> <?php echo number_format($urun['urun_fiyat'], 2); ?> TL</p>
+         <?php if (!empty($urun['urun_aciklama'])): ?>
         <p><strong>Açıklama:</strong> <?php echo nl2br(htmlspecialchars($urun['urun_aciklama'])); ?></p>
     <?php endif; ?>
+
+         </div>
+     
+    </div>
+ 
+    </div>
+  
+   
 
     <?php if (isset($_SESSION['user_id'])): ?>
         <form action="add_to_cart.php" method="POST">
