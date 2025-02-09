@@ -32,7 +32,7 @@
         <li ><a class="icon" href="/BETA_ALBUM/Beta_Album/index.php" style="text-decoration: none !important;"><img src="/BETA_ALBUM/Beta_Album/image/betaalbümyatay.svg" alt="Logo" width="140" height=auto></a></li>
         <div class="center">
         <li class="dropdown">
-            <a class="categoryList" href="#">Panoramik Albüm ▽</a>
+            <a class="categoryList" href="">Panoramik Albüm ▽</a>
             <div class="dropdown-content">
                 <div class="dropdown-item">
                     <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=1"><p>Bebek Albümleri</p></a>
@@ -52,7 +52,7 @@
             </div>
         </li>
         <li class="dropdown">
-            <a class="categoryList" href="#">Fotoğraf Baskı ▽</a>
+            <a class="categoryList" href="">Fotoğraf Baskı ▽</a>
             <div class="dropdown-content">
                 <div class="dropdown-item">
                     <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=6"><p>Laboratuvar Baskı</p></a>
@@ -60,7 +60,7 @@
             </div>
         </li>
         <li class="dropdown">
-            <a class="categoryList" href="#">Fotokitap ▽</a>
+            <a class="categoryList" href="">Fotokitap ▽</a>
             <div class="dropdown-content">
                 <div class="dropdown-item">
                     <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=7"><p>Fotokitap</p></a>
@@ -68,7 +68,7 @@
             </div>
         </li>
         <li class="dropdown">
-            <a class="categoryList" href="#">Fotoğraf Kutusu ▽</a>
+            <a class="categoryList" href="">Fotoğraf Kutusu ▽</a>
             <div class="dropdown-content">
                 <div class="dropdown-item">
                     <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=8"><p>Fotoğraf Kutusu</p></a>
@@ -79,7 +79,7 @@
             </div>
         </li>
         <li class="dropdown">
-            <a class="categoryList" href="#">Duvar Sanatı ▽</a>
+            <a class="categoryList" href="">Duvar Sanatı ▽</a>
             <div class="dropdown-content">
                 <div class="dropdown-item">
                     <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=10"><p>Fotoğraf Baskılı Çerçeve</p></a>
@@ -96,7 +96,7 @@
             </div>
         </li>
         <li class="dropdown">
-            <a class="categoryList" href="#">Fotoğraflı Ürün ▽</a>
+            <a class="categoryList" href="">Fotoğraflı Ürün ▽</a>
             <div class="dropdown-content">
                 <div class="dropdown-item">
                     <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=14"><p>Mezuniyet Albümü</p></a>
@@ -110,7 +110,7 @@
             </div>
         </li>
         <li class="dropdown">
-            <a class="categoryList" href="#">Photoshop Tasarım ▽</a>
+            <a class="categoryList" href="">Photoshop Tasarım ▽</a>
             <div class="dropdown-content">
                 <div class="dropdown-item">
                     <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=17"><p>Albüm Çalışması</p></a>
@@ -137,7 +137,7 @@
 
 <div class="hamburger-button">
     <a href="/BETA_ALBUM/Beta_Album/index.php"  class="icon_mobile left"><img src="/BETA_ALBUM/Beta_Album/image/betaalbümyatay.svg" alt="Logo" width="140" height=auto></a>
-    <a class="search_icon_mobile"href="#"><i class="fas fa-search"></i></a>
+    <a class="search_icon_mobile"href=""><i class="fas fa-search"></i></a>
     <a class="search_icon_mobile" href="/BETA_ALBUM/Beta_Album/includes/login.php"><i class="fas fa-user"></i></a>
     <a class="search_icon_mobile" href="/BETA_ALBUM/Beta_Album/includes/basket.php"><i class="fa-solid fa-basket-shopping"></i></a>
 <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu">

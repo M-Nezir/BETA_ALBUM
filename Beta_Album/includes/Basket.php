@@ -72,16 +72,12 @@ $total_price = 0;
             <button type="submit" id="place-order" class="order-button">Satın Al</button>
         </form>
 
-        <script>
-$(document).ready(function () {
+<script>
+    $(document).ready(function () {
     $(document).on("click", ".increase-qty, .decrease-qty", function () {
         var button = $(this);
         var productId = button.data("id");
         var action = button.hasClass("increase-qty") ? "increase" : "decrease";
-        var qtyElement = button.siblings(".qty");
-        var basketItem = button.closest(".basket-itemmm");
-        var priceElement = basketItem.find(".product-price");
-        var totalPriceElement = $("#total-price");
 
         $.ajax({
             url: "update_basket.php",
@@ -90,18 +86,7 @@ $(document).ready(function () {
             dataType: "json",
             success: function (response) {
                 if (response.status === "success") {
-                    var newQty = response.new_quantity;
-                    var newItemTotal = parseFloat(response.new_item_total).toFixed(2);
-                    var newTotalPrice = parseFloat(response.new_total_price).toFixed(2);
-
-                    if (newQty > 0) {
-                        qtyElement.text(newQty);
-                        priceElement.text(newItemTotal + " TL"); // **Ürün fiyatı doğru güncellenecek**
-                    } else {
-                        basketItem.remove(); // **Ürün sıfırsa sepetten kaldır**
-                    }
-
-                    totalPriceElement.text(newTotalPrice); // **TL eklemiyoruz, zaten PHP tarafında var**
+                    window.location.reload(); // **Sayfayı yenile**
                 } else {
                     alert("Sepet güncellenemedi!");
                 }
@@ -112,6 +97,7 @@ $(document).ready(function () {
         });
     });
 });
+
 </script>
 
     </div>
