@@ -43,8 +43,10 @@ $total_price = 0;
                     echo "<div class='basket-itemmm' data-id='{$item['urun_id']}'>";
                     echo "<div class='product-imagee'><img src='/BETA_ALBUM/Beta_Album/image/{$item["urun_gorsel"]}' alt=''></div>";
                     echo "<div style='display: inline-block; margin-left: 3%; text-align: center;'>";
+
                     $item_total = $item['urun_fiyat'] * $item['adet'];
                     $total_price += $item_total;
+
                     echo "<div class='product-name'>{$item['urun_ad']}</div>";
                     echo "<div class='quantity-control'>
                         <button class='qty-btn decrease-qty' data-id='{$item['urun_id']}' aria-label='Adeti Azalt'>−</button>
@@ -52,7 +54,8 @@ $total_price = 0;
                         <button class='qty-btn increase-qty' data-id='{$item['urun_id']}' aria-label='Adeti Artır'>+</button>
                         </div>";
 
-                    echo "<div class='product-price'>" . number_format($item_total, 2) . " TL</div>";
+                    // **Düzeltme: PHP'de doğru fiyat formatı**
+                    echo "<div class='product-price'>" . number_format($item_total, 2, '.', '') . " TL</div>";
                     echo "</div>";
                     echo "</div>";
                     echo "<hr>";
@@ -63,80 +66,55 @@ $total_price = 0;
         <?php endif; ?>
 
         <form id="order-form" class="order-form">
-        <p class="basket-total" style='text-align: center;'><strong>Toplam Fiyat:</strong> <span id="total-price"><?php echo number_format($total_price, 2); ?></span> TL</p>
-    <label for="address" class="form-label">Teslimat Adresi</label>
-    <textarea id="address" name="address" class="form-input" placeholder="Adresinizi buraya yazın..." required></textarea>
-    <button type="submit" id="place-order" class="order-button">Satın Al</button>
-</form>
+            <p class="basket-total" style='text-align: center;'><strong>Toplam Fiyat:</strong> <span id="total-price"><?php echo number_format($total_price, 2, '.', ''); ?></span> TL</p>
+            <label for="address" class="form-label">Teslimat Adresi</label>
+            <textarea id="address" name="address" class="form-input" placeholder="Adresinizi buraya yazın..." required></textarea>
+            <button type="submit" id="place-order" class="order-button">Satın Al</button>
+        </form>
 
-<script>
-    $(document).ready(function () {
-        $("#order-form").submit(function (event) {
-            event.preventDefault();
-            var address = $("#address").val();
+        <script>
+$(document).ready(function () {
+    $(document).on("click", ".increase-qty, .decrease-qty", function () {
+        var button = $(this);
+        var productId = button.data("id");
+        var action = button.hasClass("increase-qty") ? "increase" : "decrease";
+        var qtyElement = button.siblings(".qty");
+        var basketItem = button.closest(".basket-itemmm");
+        var priceElement = basketItem.find(".product-price");
+        var totalPriceElement = $("#total-price");
 
-            $.ajax({
-                url: "place_order.php",
-                type: "POST",
-                data: { address: address },
-                dataType: "json",
-                success: function (response) {
-                    if (response.status === "success") {
-                        alert("Siparişiniz başarıyla oluşturuldu!");
-                        window.location.href = "order_success.php";
+        $.ajax({
+            url: "update_basket.php",
+            type: "POST",
+            data: { urun_id: productId, action: action },
+            dataType: "json",
+            success: function (response) {
+                if (response.status === "success") {
+                    var newQty = response.new_quantity;
+                    var newItemTotal = parseFloat(response.new_item_total).toFixed(2);
+                    var newTotalPrice = parseFloat(response.new_total_price).toFixed(2);
+
+                    if (newQty > 0) {
+                        qtyElement.text(newQty);
+                        priceElement.text(newItemTotal + " TL"); // **Ürün fiyatı doğru güncellenecek**
                     } else {
-                        alert("Sipariş oluşturulamadı!");
+                        basketItem.remove(); // **Ürün sıfırsa sepetten kaldır**
                     }
+
+                    totalPriceElement.text(newTotalPrice); // **TL eklemiyoruz, zaten PHP tarafında var**
+                } else {
+                    alert("Sepet güncellenemedi!");
                 }
-            });
+            },
+            error: function (xhr, status, error) {
+                console.log("AJAX Hatası:", error);
+            }
         });
     });
+});
 </script>
 
     </div>
-
     <?php include('footer.php'); ?>
-
-    <script>
-    $(document).ready(function () {
-        $(".increase-qty, .decrease-qty").click(function () {
-            var button = $(this);
-            var productId = button.data("id");
-            var action = button.hasClass("increase-qty") ? "increase" : "decrease";
-            var qtyElement = button.siblings(".qty"); // Miktar gösteren span
-            var priceElement = button.closest(".basket-itemmm").find(".product-price"); // Fiyatı güncellemek için
-            var totalPriceElement = $("#total-price"); // Toplam fiyat
-
-            $.ajax({
-                url: "update_basket.php",
-                type: "POST",
-                data: { urun_id: productId, action: action }, // product_id yerine urun_id kullandık
-                dataType: "json",
-                success: function (response) {
-                    if (response.status === "success") {
-                        var newQty = response.new_quantity;
-                        var newItemTotal = response.new_item_total;
-                        var newTotalPrice = response.new_total_price;
-
-                        if (newQty > 0) {
-                            qtyElement.text(newQty); // Ürün miktarını güncelle
-                            priceElement.text(newItemTotal.toFixed(2) + " TL"); // Ürün fiyatını güncelle
-                        } else {
-                            button.closest(".basket-itemmm").remove(); // Eğer miktar 0 ise ürünü kaldır
-                        }
-
-                        totalPriceElement.text(newTotalPrice.toFixed(2) + " TL"); // Toplam fiyatı güncelle
-                    } else {
-                        alert("Sepet güncellenemedi!");
-                    }
-                },
-                error: function (xhr, status, error) {
-                    console.log("AJAX Hatası:", error);
-                }
-            });
-        });
-    });
-</script>
-
 </body>
 </html>

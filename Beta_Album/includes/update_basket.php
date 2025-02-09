@@ -10,7 +10,7 @@ if (!isset($_SESSION['user_id']) || !isset($_POST['urun_id']) || !isset($_POST['
 }
 
 $user_id = $_SESSION['user_id'];
-$product_id = $_POST['urun_id']; // Düzeltildi: urun_id olarak alınıyor
+$product_id = $_POST['urun_id'];
 $action = $_POST['action'];
 
 $query = $conn->prepare("SELECT sepet FROM kullanicilar WHERE user_id = ?");
@@ -34,22 +34,22 @@ foreach ($basket as $key => &$item) {
             $item['adet'] -= 1;
             if ($item['adet'] <= 0) {
                 unset($basket[$key]);
+                continue;
             }
         }
-        $new_quantity = isset($item['adet']) ? $item['adet'] : 0;
+        $new_quantity = $item['adet'];
         $new_item_total = $new_quantity * $item['urun_fiyat'];
-        break;
     }
 }
 
-// Güncellenmiş sepeti veritabanına kaydet
-$updated_basket = json_encode(array_values($basket));
+$basket = array_values($basket);
+$updated_basket = json_encode($basket);
+
 $update_query = $conn->prepare("UPDATE kullanicilar SET sepet = ? WHERE user_id = ?");
 $update_query->bind_param("si", $updated_basket, $user_id);
 $update_query->execute();
 $update_query->close();
 
-// Yeni toplam fiyatı hesapla
 foreach ($basket as $item) {
     $total_price += $item['urun_fiyat'] * $item['adet'];
 }
@@ -57,7 +57,7 @@ foreach ($basket as $item) {
 echo json_encode([
     "status" => "success",
     "new_quantity" => $new_quantity,
-    "new_item_total" => $new_item_total,
-    "new_total_price" => $total_price
+    "new_item_total" => number_format($new_item_total, 2, '.', ''),
+    "new_total_price" => number_format($total_price, 2, '.', '')
 ]);
 exit();
