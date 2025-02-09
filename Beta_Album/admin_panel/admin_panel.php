@@ -77,6 +77,10 @@ if (!isset($_SESSION['admin_logged_in'])) {
     </div>
 
     <div class="menu-item">
+        <a href="/BETA_ALBUM/Beta_Album/admin_panel/edit_home.php"><i class="fa-solid fa-image"></i>Ana Ekranı Düzenle</a>
+    </div>
+
+    <div class="menu-item">
         <a href="../includes/logout.php">
             <button>Çıkış Yap</button>
         </a>

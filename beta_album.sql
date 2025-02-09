@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 09 Şub 2025, 00:01:08
+-- Üretim Zamanı: 09 Şub 2025, 21:58:28
 -- Sunucu sürümü: 10.4.32-MariaDB
 -- PHP Sürümü: 8.2.12
 
@@ -38,7 +38,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`admin_id`, `admin_email`, `admin_password`) VALUES
-(1, 'betacolor@hotmail.com', 'admin');
+(1, 'betacolor@hotmail.com', '$2y$10$vI/ZyXpTnl01aoxp81LOWelWfyK.jxup.c1J/VXql.vX/VKACMEXG');
 
 -- --------------------------------------------------------
 
@@ -84,8 +84,26 @@ CREATE TABLE `kullanicilar` (
 --
 
 INSERT INTO `kullanicilar` (`user_id`, `user_name`, `user_surname`, `phoneNumber`, `tcKimlik`, `email`, `password`, `sepet`) VALUES
-(1, 'Mehmetcan', 'Aydın', '05554443322', '12345678912', 'mehmetc@gmail.com', '$2y$10$x9skIyoOPd0JJKr88gkloeyxha8WMRHbfjhdnBUL6ARirxq5fiUby', '[]'),
+(1, 'Mehmetcan', 'Aydın', '05554443322', '12345678912', 'mehmetc@gmail.com', '$2y$10$x9skIyoOPd0JJKr88gkloeyxha8WMRHbfjhdnBUL6ARirxq5fiUby', '[{\"urun_id\":5,\"urun_ad\":\"Camilla\",\"urun_fiyat\":200,\"adet\":3,\"urun_gorsel\":\"Camilla.jpg\"}]'),
 (2, 'Mehmet', 'Aydın', '05556667788', '12345678978', 'mehmet13@gmail.com', '$2y$10$NU.GUfg9.Ku/qIqQmzRnl.wEkH6eOQ51IPiArWMP4.LOlUGzZ2oT6', '[]');
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `settings`
+--
+
+CREATE TABLE `settings` (
+  `id` int(11) NOT NULL,
+  `main_image` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Tablo döküm verisi `settings`
+--
+
+INSERT INTO `settings` (`id`, `main_image`) VALUES
+(1, 'image/anasayfa.jpeg');
 
 -- --------------------------------------------------------
 
@@ -108,9 +126,14 @@ CREATE TABLE `siparisler` (
 --
 
 INSERT INTO `siparisler` (`order_id`, `user_id`, `order_details`, `total_price`, `address`, `order_date`, `status`) VALUES
-(1, 1, '[{\"urun_id\":5,\"urun_ad\":\"Camilla\",\"urun_fiyat\":200,\"adet\":8,\"urun_gorsel\":\"Camilla.jpg\"},{\"urun_id\":2,\"urun_ad\":\"Lina\",\"urun_fiyat\":160,\"adet\":4,\"urun_gorsel\":\"Lina.jpg\"}]', 2240.00, 'Keçiören/Ankara', '2025-02-08 22:17:53', 'Hazırlanıyor'),
-(2, 1, '[{\"urun_id\":7,\"urun_ad\":\"Carla\",\"urun_fiyat\":220,\"adet\":1,\"urun_gorsel\":\"Carla.jpg\"}]', 220.00, 'Malatya', '2025-02-08 22:24:58', 'Hazırlanıyor'),
-(3, 2, '[{\"urun_id\":5,\"urun_ad\":\"Camilla\",\"urun_fiyat\":200,\"adet\":1,\"urun_gorsel\":\"Camilla.jpg\"},{\"urun_id\":4,\"urun_ad\":\"Mia\",\"urun_fiyat\":180,\"adet\":2,\"urun_gorsel\":\"Mia.jpg\"}]', 560.00, 'Afyonkarahisar/TÜRKİYE', '2025-02-08 22:42:41', 'Hazırlanıyor');
+(1, 1, '[{\"urun_id\":5,\"urun_ad\":\"Camilla\",\"urun_fiyat\":200,\"adet\":8,\"urun_gorsel\":\"Camilla.jpg\"},{\"urun_id\":2,\"urun_ad\":\"Lina\",\"urun_fiyat\":160,\"adet\":4,\"urun_gorsel\":\"Lina.jpg\"}]', 2240.00, 'Keçiören/Ankara', '2025-02-08 22:17:53', 'Teslim Edildi'),
+(2, 1, '[{\"urun_id\":7,\"urun_ad\":\"Carla\",\"urun_fiyat\":220,\"adet\":1,\"urun_gorsel\":\"Carla.jpg\"}]', 220.00, 'Malatya', '2025-02-08 22:24:58', 'Teslim Edildi'),
+(3, 2, '[{\"urun_id\":5,\"urun_ad\":\"Camilla\",\"urun_fiyat\":200,\"adet\":1,\"urun_gorsel\":\"Camilla.jpg\"},{\"urun_id\":4,\"urun_ad\":\"Mia\",\"urun_fiyat\":180,\"adet\":2,\"urun_gorsel\":\"Mia.jpg\"}]', 560.00, 'Afyonkarahisar/TÜRKİYE', '2025-02-08 22:42:41', 'Teslim Edildi'),
+(4, 1, '[{\"urun_id\":5,\"urun_ad\":\"Camilla\",\"urun_fiyat\":200,\"adet\":82,\"urun_gorsel\":\"Camilla.jpg\"},{\"urun_id\":7,\"urun_ad\":\"Carla\",\"urun_fiyat\":220,\"adet\":26,\"urun_gorsel\":\"Carla.jpg\"},{\"urun_id\":1,\"urun_ad\":\"Leo\",\"urun_fiyat\":150,\"adet\":3,\"urun_gorsel\":\"Leo.jpg\"},{\"urun_id\":9,\"urun_ad\":\"Natura\",\"urun_fiyat\":240,\"adet\":2,\"urun_gorsel\":\"Natura.jpg\"},{\"urun_id\":8,\"urun_ad\":\"Dream\",\"urun_fiyat\":230,\"adet\":4,\"urun_gorsel\":\"Dream.jpg\"},{\"urun_id\":4,\"urun_ad\":\"Mia\",\"urun_fiyat\":180,\"adet\":1,\"urun_gorsel\":\"Mia.jpg\"},{\"urun_id\":3,\"urun_ad\":\"Lion\",\"urun_fiyat\":170,\"adet\":1,\"urun_gorsel\":\"Lion.jpg\"}]', 24320.00, 'selamünaleyküm', '2025-02-09 03:08:15', 'Teslim Edildi'),
+(5, 1, '[{\"urun_id\":1,\"urun_ad\":\"Leo\",\"urun_fiyat\":150,\"adet\":5,\"urun_gorsel\":\"Leo.jpg\"}]', 750.00, 'ev adresim', '2025-02-09 17:20:52', 'Hazırlanıyor'),
+(6, 1, '[{\"urun_id\":1,\"urun_ad\":\"Leo\",\"urun_fiyat\":150,\"adet\":4,\"urun_gorsel\":\"Leo.jpg\"},{\"urun_id\":5,\"urun_ad\":\"Camilla\",\"urun_fiyat\":200,\"adet\":3,\"urun_gorsel\":\"Camilla.jpg\"}]', 1200.00, 'selam', '2025-02-09 17:23:11', 'Hazırlanıyor'),
+(7, 1, '[{\"urun_id\":1,\"urun_ad\":\"Leo\",\"urun_fiyat\":150,\"adet\":1,\"urun_gorsel\":\"Leo.jpg\"}]', 150.00, 'deneme', '2025-02-09 17:26:58', 'Hazırlanıyor'),
+(8, 1, '[{\"urun_id\":1,\"urun_ad\":\"Leo\",\"urun_fiyat\":150,\"adet\":3,\"urun_gorsel\":\"Leo.jpg\"}]', 450.00, 'selam', '2025-02-09 17:29:11', 'Hazırlanıyor');
 
 -- --------------------------------------------------------
 
@@ -169,6 +192,12 @@ ALTER TABLE `kullanicilar`
   ADD UNIQUE KEY `tcKimlik` (`tcKimlik`);
 
 --
+-- Tablo için indeksler `settings`
+--
+ALTER TABLE `settings`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Tablo için indeksler `siparisler`
 --
 ALTER TABLE `siparisler`
@@ -205,10 +234,16 @@ ALTER TABLE `kullanicilar`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- Tablo için AUTO_INCREMENT değeri `settings`
+--
+ALTER TABLE `settings`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- Tablo için AUTO_INCREMENT değeri `siparisler`
 --
 ALTER TABLE `siparisler`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `urunler`
