@@ -22,6 +22,7 @@
 /* Ürün Adı */
 .product-name {
     font-weight: bold;
+    margin-bottom: 3%;
 }
 
 /* Ürün Adet ve Fiyat */
@@ -74,4 +75,75 @@
     width: 100%;
 }
 
+.order-form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+    min-height: 100px;
+    font-size: 14px;
+}
+
+.order-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.order-button:hover {
+    background-color: #0056b3;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.qty-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.qty-btn:hover {
+    background-color: #0056b3;
+}
+
+.qty {
+    font-size: 16px;
+    font-weight: bold;
+    min-width: 30px;
+    text-align: center;
+}
 

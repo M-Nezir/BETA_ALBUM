@@ -42,15 +42,16 @@ $total_price = 0;
                 foreach ($basket as $key => $item) {
                     echo "<div class='basket-itemmm' data-id='{$item['urun_id']}'>";
                     echo "<div class='product-imagee'><img src='/BETA_ALBUM/Beta_Album/image/{$item["urun_gorsel"]}' alt=''></div>";
-                    echo "<div style='display: inline-block; margin-left: 3%;'>";
+                    echo "<div style='display: inline-block; margin-left: 3%; text-align: center;'>";
                     $item_total = $item['urun_fiyat'] * $item['adet'];
                     $total_price += $item_total;
                     echo "<div class='product-name'>{$item['urun_ad']}</div>";
-                    echo "<div class='product-quantity'>
-                            <button class='decrease-qty' data-id='{$item['urun_id']}'>-</button>
-                            <span class='qty'>{$item['adet']}</span>
-                            <button class='increase-qty' data-id='{$item['urun_id']}'>+</button>
-                          </div>";
+                    echo "<div class='quantity-control'>
+                        <button class='qty-btn decrease-qty' data-id='{$item['urun_id']}' aria-label='Adeti Azalt'>−</button>
+                        <span class='qty'>" . htmlspecialchars($item['adet']) . "</span>
+                        <button class='qty-btn increase-qty' data-id='{$item['urun_id']}' aria-label='Adeti Artır'>+</button>
+                        </div>";
+
                     echo "<div class='product-price'>" . number_format($item_total, 2) . " TL</div>";
                     echo "</div>";
                     echo "</div>";
@@ -58,13 +59,14 @@ $total_price = 0;
                 }
                 ?>
             </div>
-            <p class="basket-total" style='margin-right: 2%;'><strong>Toplam Fiyat:</strong> <span id="total-price"><?php echo number_format($total_price, 2); ?></span> TL</p>
+            
         <?php endif; ?>
 
-        <form id="order-form">
-    <label for="address">Teslimat Adresi:</label>
-    <textarea id="address" name="address" required></textarea>
-    <button type="submit" id="place-order">Satın Al</button>
+        <form id="order-form" class="order-form">
+        <p class="basket-total" style='text-align: center;'><strong>Toplam Fiyat:</strong> <span id="total-price"><?php echo number_format($total_price, 2); ?></span> TL</p>
+    <label for="address" class="form-label">Teslimat Adresi</label>
+    <textarea id="address" name="address" class="form-input" placeholder="Adresinizi buraya yazın..." required></textarea>
+    <button type="submit" id="place-order" class="order-button">Satın Al</button>
 </form>
 
 <script>
