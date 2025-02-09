@@ -43,14 +43,23 @@ if (isset($_SESSION['user_id'])) {
             </div>
             <div style="display: flex; justify-content: center;">
             <div class="welcome-container">
-    <p class="welcome-message">
-        Hoş geldin <?= htmlspecialchars($user['user_name']) ?>! Sepetine buradan ulaşabilirsin.
+            Hoş geldin <?= htmlspecialchars($user['user_name']) ?>!
+              <div>
+              <p class="welcome-message">
+        Sepetine buradan ulaşabilirsin:
     </p>
     <a href="/BETA_ALBUM/Beta_Album/includes/Basket.php" class="basket-link">
         <div class="basket-button">
             <h3>SEPETİME GİT</h3>
         </div>
     </a>
+              </div>
+              <div>   <p class="welcome-message">Siparişlerine Buradan Ulaşabilirsin:</p>
+    <a href="/BETA_ALBUM/Beta_Album/includes/siparislerim.php" class="basket-link">
+        <div class="basket-button">
+            <h3>SİPARİŞLERİM</h3>
+        </div>
+    </a></div>
   </div>
 </div>
            

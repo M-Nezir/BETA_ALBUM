@@ -25,15 +25,15 @@ $result = $stmt->get_result();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Siparişlerim</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; padding: 20px; }
         .order-container { max-width: 600px; margin: 0 auto; }
-        .order-card { background: #f9f9f9; padding: 15px; margin: 10px 0; border-radius: 8px; }
+        .order-card { background:rgb(220, 220, 220); padding: 15px; margin: 10px 0; border-radius: 8px; }
         .order-card h3 { margin: 0 0 10px; color: #333; }
         .order-status { font-weight: bold; color: #d35400; }
         .product-img { width: 50px; height: 50px; margin-right: 10px; border-radius: 5px; object-fit: cover; }
     </style>
 </head>
 <body>
+<?php include('navbar.php');?>
 
 <div class="order-container">
     <h2>Siparişlerim</h2>
@@ -86,7 +86,7 @@ $result = $stmt->get_result();
     <?php endif; ?>
 
 </div>
-
+<?php include('footer.php');?>
 </body>
 </html>
 

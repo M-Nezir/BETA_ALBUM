@@ -98,7 +98,7 @@ select:focus {
 
 <div class="all">
     <div class="headers">
-        <h2>Siparişler</h2>
+        <h2 style="margin-top: 1%; margin-bottom: 1%;">Siparişler</h2>
     </div>
 <div class="table-container">
     <table>

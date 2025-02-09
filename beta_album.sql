@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 09 Şub 2025, 21:58:28
+-- Üretim Zamanı: 10 Şub 2025, 00:30:25
 -- Sunucu sürümü: 10.4.32-MariaDB
 -- PHP Sürümü: 8.2.12
 
@@ -51,17 +51,6 @@ CREATE TABLE `kategoriler` (
   `kategori_ad` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Tablo döküm verisi `kategoriler`
---
-
-INSERT INTO `kategoriler` (`kategori_id`, `kategori_ad`) VALUES
-(1, 'Bebek Albümleri'),
-(2, 'Ekonomik Albümler'),
-(3, 'Exclusive Albümler'),
-(4, 'Kampanyalı Albümler'),
-(5, 'Fırsat Albümleri');
-
 -- --------------------------------------------------------
 
 --
@@ -85,7 +74,8 @@ CREATE TABLE `kullanicilar` (
 
 INSERT INTO `kullanicilar` (`user_id`, `user_name`, `user_surname`, `phoneNumber`, `tcKimlik`, `email`, `password`, `sepet`) VALUES
 (1, 'Mehmetcan', 'Aydın', '05554443322', '12345678912', 'mehmetc@gmail.com', '$2y$10$x9skIyoOPd0JJKr88gkloeyxha8WMRHbfjhdnBUL6ARirxq5fiUby', '[{\"urun_id\":5,\"urun_ad\":\"Camilla\",\"urun_fiyat\":200,\"adet\":3,\"urun_gorsel\":\"Camilla.jpg\"}]'),
-(2, 'Mehmet', 'Aydın', '05556667788', '12345678978', 'mehmet13@gmail.com', '$2y$10$NU.GUfg9.Ku/qIqQmzRnl.wEkH6eOQ51IPiArWMP4.LOlUGzZ2oT6', '[]');
+(2, 'Mehmet', 'Aydın', '05556667788', '12345678978', 'mehmet13@gmail.com', '$2y$10$NU.GUfg9.Ku/qIqQmzRnl.wEkH6eOQ51IPiArWMP4.LOlUGzZ2oT6', '[]'),
+(3, 'mahmut', 'malkoçoğlu', '05489678548578', '12587898985', 'betacolor@hotmail.com', '$2y$10$KWyJ/gsNo8IOBZJ5CrsboO9Mz7wuUTEBQw5EvEjfoO0LGvPeV6.0e', '[{\"urun_id\":1,\"urun_ad\":\"Leo\",\"urun_fiyat\":150,\"adet\":2,\"urun_gorsel\":\"Leo.jpg\"}]');
 
 -- --------------------------------------------------------
 
@@ -133,7 +123,10 @@ INSERT INTO `siparisler` (`order_id`, `user_id`, `order_details`, `total_price`,
 (5, 1, '[{\"urun_id\":1,\"urun_ad\":\"Leo\",\"urun_fiyat\":150,\"adet\":5,\"urun_gorsel\":\"Leo.jpg\"}]', 750.00, 'ev adresim', '2025-02-09 17:20:52', 'Hazırlanıyor'),
 (6, 1, '[{\"urun_id\":1,\"urun_ad\":\"Leo\",\"urun_fiyat\":150,\"adet\":4,\"urun_gorsel\":\"Leo.jpg\"},{\"urun_id\":5,\"urun_ad\":\"Camilla\",\"urun_fiyat\":200,\"adet\":3,\"urun_gorsel\":\"Camilla.jpg\"}]', 1200.00, 'selam', '2025-02-09 17:23:11', 'Hazırlanıyor'),
 (7, 1, '[{\"urun_id\":1,\"urun_ad\":\"Leo\",\"urun_fiyat\":150,\"adet\":1,\"urun_gorsel\":\"Leo.jpg\"}]', 150.00, 'deneme', '2025-02-09 17:26:58', 'Hazırlanıyor'),
-(8, 1, '[{\"urun_id\":1,\"urun_ad\":\"Leo\",\"urun_fiyat\":150,\"adet\":3,\"urun_gorsel\":\"Leo.jpg\"}]', 450.00, 'selam', '2025-02-09 17:29:11', 'Hazırlanıyor');
+(8, 1, '[{\"urun_id\":1,\"urun_ad\":\"Leo\",\"urun_fiyat\":150,\"adet\":3,\"urun_gorsel\":\"Leo.jpg\"}]', 450.00, 'selam', '2025-02-09 17:29:11', 'Hazırlanıyor'),
+(9, 3, '[{\"urun_id\":1,\"urun_ad\":\"Leo\",\"urun_fiyat\":150,\"adet\":1,\"urun_gorsel\":\"Leo.jpg\"}]', 150.00, 'evime gelsinko...', '2025-02-09 19:06:48', 'Hazırlanıyor'),
+(10, 3, '[{\"urun_id\":1,\"urun_ad\":\"Leo\",\"urun_fiyat\":150,\"adet\":1,\"urun_gorsel\":\"Leo.jpg\"}]', 150.00, 'Adres Kayıt Sistemi, Türk Vatandaşları ve Türkiye\'de yaşayan yerleşik yabancıların yerleşim yeri ve diğer adres bilgilerinin elektronik ortamda merkezi bir ...', '2025-02-09 19:08:05', 'Hazırlanıyor'),
+(11, 3, '[{\"urun_id\":2,\"urun_ad\":\"Lina\",\"urun_fiyat\":160,\"adet\":1,\"urun_gorsel\":\"Lina.jpg\"},{\"urun_id\":5,\"urun_ad\":\"Camilla\",\"urun_fiyat\":200,\"adet\":1,\"urun_gorsel\":\"Camilla.jpg\"},{\"urun_id\":6,\"urun_ad\":\"Cara\",\"urun_fiyat\":210,\"adet\":1,\"urun_gorsel\":\"Cara.jpg\"},{\"urun_id\":7,\"urun_ad\":\"Carla\",\"urun_fiyat\":220,\"adet\":1,\"urun_gorsel\":\"Carla.jpg\"},{\"urun_id\":8,\"urun_ad\":\"Dream\",\"urun_fiyat\":230,\"adet\":1,\"urun_gorsel\":\"Dream.jpg\"}]', 1020.00, 'iş yeri adresime istiyorum', '2025-02-09 20:25:16', 'Teslim Edildi');
 
 -- --------------------------------------------------------
 
@@ -149,22 +142,6 @@ CREATE TABLE `urunler` (
   `urun_fiyat` decimal(10,2) DEFAULT NULL,
   `urun_aciklama` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Tablo döküm verisi `urunler`
---
-
-INSERT INTO `urunler` (`urun_id`, `urun_ad`, `kategori_id`, `urun_gorsel`, `urun_fiyat`, `urun_aciklama`) VALUES
-(1, 'Leo', 1, 'Leo.jpg', 150.00, 'Klasik tasarımına, estetik dokunuşlar ile daha modern bir hal \nalan Leo, nubuk ve ipeksi görünüşte laminasyon kaplamalı kapak \nfotoğrafı alanı ile, beğenileri üstünde topluyor.'),
-(2, 'Lina', 1, 'Lina.jpg', 160.00, NULL),
-(3, 'Lion', 1, 'Lion.jpg', 170.00, NULL),
-(4, 'Mia', 1, 'Mia.jpg', 180.00, NULL),
-(5, 'Camilla', 2, 'Camilla.jpg', 200.00, NULL),
-(6, 'Cara', 2, 'Cara.jpg', 210.00, NULL),
-(7, 'Carla', 2, 'Carla.jpg', 220.00, NULL),
-(8, 'Dream', 2, 'Dream.jpg', 230.00, NULL),
-(9, 'Natura', 2, 'Natura.jpg', 240.00, NULL),
-(10, 'New Dream', 2, 'New Dream.jpg', 250.00, NULL);
 
 --
 -- Dökümü yapılmış tablolar için indeksler
@@ -231,7 +208,7 @@ ALTER TABLE `kategoriler`
 -- Tablo için AUTO_INCREMENT değeri `kullanicilar`
 --
 ALTER TABLE `kullanicilar`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `settings`
@@ -243,13 +220,13 @@ ALTER TABLE `settings`
 -- Tablo için AUTO_INCREMENT değeri `siparisler`
 --
 ALTER TABLE `siparisler`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `urunler`
 --
 ALTER TABLE `urunler`
-  MODIFY `urun_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `urun_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Dökümü yapılmış tablolar için kısıtlamalar

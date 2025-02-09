@@ -38,26 +38,41 @@ $main_image = $row['main_image'];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/BETA_ALBUM/Beta_Album/css/edit_home.css">
     <title>Ana Ekranı Düzenle</title>
 </head>
 <body>
+<?php include('admin_panel.php'); ?>
+<div class="image_updatee">
+<div class="update-container">
+    <div class="update-title">Ana Sayfa Fotoğrafını Güncelle</div>
 
-<h2>Ana Sayfa Fotoğrafını Güncelle</h2>
+    <?php if (isset($_GET['success'])) { ?>
+        <div class="update-message success-message">Görsel başarıyla güncellendi!</div>
+    <?php } ?>
+    <?php if (isset($error)) { ?>
+        <div class="update-message error-message"><?php echo $error; ?></div>
+    <?php } ?>
 
-<?php if (isset($_GET['success'])) { echo "<p style='color:green;'>Görsel başarıyla güncellendi!</p>"; } ?>
-<?php if (isset($error)) { echo "<p style='color:red;'>$error</p>"; } ?>
+    <form action="" method="post" enctype="multipart/form-data" class="update-form">
+        <div class="form-group">
+            <div class="form-label">Mevcut Görsel:</div>
+            <div class="form-image">
+                <img src="<?php echo "/BETA_ALBUM/Beta_Album/$main_image"; ?>" alt="Mevcut Görsel" class="current-image">
+            </div>
+        </div>
 
-<form action="" method="post" enctype="multipart/form-data">
-    <p>Mevcut Görsel:</p>
-    <img src="<?php echo $main_image; ?>" width="300"><br><br>
-    
-    <label>Yeni Görsel Seç:</label>
-    <input type="file" name="new_image" required><br><br>
-    
-    <button type="submit">Güncelle</button>
-</form>
+        <div class="form-group">
+            <label for="new_image" class="form-label">Yeni Görsel Seç:</label>
+            <input type="file" name="new_image" id="new_image" class="form-input" required>
+        </div>
 
-<a href="admin_panel.php">Admin Paneline Geri Dön</a>
+        <div class="form-group">
+            <button type="submit" class="form-button">Güncelle</button>
+        </div>
+    </form>
+</div>
 
+</div>
 </body>
 </html>

@@ -45,6 +45,7 @@ session_start();
     padding: 12px 20px;
     text-decoration: none;
     font-size: 16px;
+    border: 1px solid black;
     border-radius: 5px;
     transition: background 0.3s ease-in-out;
 }
@@ -64,7 +65,7 @@ session_start();
     <div class="order-success">
         <h1 class="title">Siparişiniz Başarıyla Alındı!</h1>
         <p class="message">Teşekkür ederiz! Siparişiniz başarıyla alındı ve işleme konuldu. En kısa sürede hazırlanıp kargoya verilecektir.</p>
-        <a href="../index.php" class="btn">Anasayfaya Dön</a>
+        <a href="siparislerim.php" class="btn">Siparişlerime Git</a>
     </div>
 </div>
     </div>
