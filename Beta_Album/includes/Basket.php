@@ -65,7 +65,7 @@ $total_price = 0;
             
         <?php endif; ?>
 
-        <form id="order-form" class="order-form">
+        <form id="order-form" class="order-form" action="order_process.php" method="POST">
             <p class="basket-total" style='text-align: center;'><strong>Toplam Fiyat:</strong> <span id="total-price"><?php echo number_format($total_price, 2, '.', ''); ?></span> TL</p>
             <label for="address" class="form-label">Teslimat Adresi</label>
             <textarea id="address" name="address" class="form-input" placeholder="Adresinizi buraya yazın..." required></textarea>
