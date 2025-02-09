@@ -79,7 +79,7 @@ if (!isset($_SESSION['admin_logged_in'])) {
 </div>
 <div class="metin">
     <h1>Admin Panele Hoşgeldiniz</h1>
-    <span>Admin panelde sipariş takibi ayrıca ürün ekleme,silme ve güncelleme işlemlerini yapabilirsiniz</span>
+    <span>Admin panelde ürün ekleme, silme, güncelleme ve ayrıca sipariş takibi işlemlerini sol tarafta görmüş olsuğunuz menüden yapabilirsiniz.</span>
 </div>
 
 

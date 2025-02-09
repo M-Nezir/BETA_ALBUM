@@ -16,30 +16,68 @@ include('../includes/config.php'); // Veritabanı bağlantısı
     <link rel="stylesheet" href="/BETA_ALBUM/Beta_Album/css/products_operations.css">
     <title>Siparişler</title>
     <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: center;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        tr:hover {
-            background-color: #f1f1f1;
-        }
-        .product-image {
-            width: 50px;
-            height: 50px;
-            object-fit: cover;
-            border-radius: 5px;
-        }
-        select {
-            padding: 5px;
-        }
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    color: #333;
+    table-layout: auto; /* İçeriğe göre hücre genişliklerini ayarla */
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 9px;
+    text-align: left;
+    word-wrap: break-word; /* Uzun metinleri alt satıra kaydır */
+    white-space: normal;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+
+
+.product-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+select:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+.metin{
+    display: none;
+}
+
     </style>
     <script>
         function updateStatus(orderId, newStatus) {
@@ -62,7 +100,7 @@ include('../includes/config.php'); // Veritabanı bağlantısı
     <div class="headers">
         <h2>Siparişler</h2>
     </div>
-
+<div class="table-container">
     <table>
         <thead>
             <tr>
@@ -128,6 +166,7 @@ include('../includes/config.php'); // Veritabanı bağlantısı
             ?>
         </tbody>
     </table>
+    </div>
 </div>
 
 </body>

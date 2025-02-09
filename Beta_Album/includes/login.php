@@ -41,17 +41,18 @@ if (isset($_SESSION['user_id'])) {
             <p>Telefon: <?= htmlspecialchars($user['phoneNumber']) ?></p>
             <a href="logout.php">Çıkış Yap</a>
             </div>
-            <div style="display: flex; align-items: center; margin-top: 3%;">
-              
-            <p style="display: block; width: auto; font-size: 120%; margin-bottom: 0; margin-left: 3%;">
-              Hoş geldin <?= htmlspecialchars($user['user_name']) ?> Sepetine buradan ulaşabilirsin</p>
-
-              <a href="/BETA_ALBUM/Beta_Album/includes/Basket.php" style="text-decoration: none; display: block; width: 18%;">
-                <div class="basket_button">
-                  <h3>SEPETİME GİT</h3>
-                </div>
-              </a>
-            </div>
+            <div style="display: flex; justify-content: center;">
+            <div class="welcome-container">
+    <p class="welcome-message">
+        Hoş geldin <?= htmlspecialchars($user['user_name']) ?>! Sepetine buradan ulaşabilirsin.
+    </p>
+    <a href="/BETA_ALBUM/Beta_Album/includes/Basket.php" class="basket-link">
+        <div class="basket-button">
+            <h3>SEPETİME GİT</h3>
+        </div>
+    </a>
+  </div>
+</div>
            
         <?php else: ?>
 

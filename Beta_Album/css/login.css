@@ -11,6 +11,52 @@ body {
     height: auto;
 }
 
+.welcome-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f8f9fa;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    max-width: 700px;
+    width: 100%;
+}
+
+/* Hoş Geldin Mesajı */
+.welcome-message {
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    margin: 0;
+}
+
+/* Sepete Git Butonu */
+.basket-link {
+    text-decoration: none;
+    display: flex;
+}
+
+.basket-button {
+    background: #4CAF50;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 6px;
+    text-align: center;
+    transition: background 0.3s ease-in-out;
+}
+
+.basket-button h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.basket-button:hover {
+    background: #388E3C;
+}
+
 .head {
     text-align: center;
     font-size: 2em;

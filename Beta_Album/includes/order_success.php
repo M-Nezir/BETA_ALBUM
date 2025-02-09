@@ -9,14 +9,64 @@ session_start();
     <title>Sipariş Başarılı</title>
     <link rel="stylesheet" href="/BETA_ALBUM/Beta_Album/css/backgraund.css">
     <link rel="stylesheet" href="/BETA_ALBUM/Beta_Album/css/basket.css">
+    <style>
+
+/* Sayfa Kapsayıcı */
+.container {
+    text-align: center;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 90%;
+}
+
+/* Başlık */
+.title {
+    color: #4CAF50;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Mesaj */
+.message {
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Buton */
+.btn {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 12px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #388E3C;
+}
+
+    </style>
 </head>
 <body class="body">
     <?php include('navbar.php'); ?>
 
     <div class="main">
-        <h1 class="head">Siparişiniz Başarıyla Alındı!</h1>
-        <p class="success-message">Siparişiniz alındı ve işleme kondu. Teşekkür ederiz!</p>
-        <p><a href="../index.php">Anasayfaya dön</a></p>
+     
+<div class="container">
+    <div class="order-success">
+        <h1 class="title">Siparişiniz Başarıyla Alındı!</h1>
+        <p class="message">Teşekkür ederiz! Siparişiniz başarıyla alındı ve işleme konuldu. En kısa sürede hazırlanıp kargoya verilecektir.</p>
+        <a href="../index.php" class="btn">Anasayfaya Dön</a>
+    </div>
+</div>
     </div>
 
     <?php include('footer.php'); ?>
