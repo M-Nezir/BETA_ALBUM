@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($insert) {
         $_SESSION['user_id'] = $conn->insert_id; // lastInsertId() yerine insert_id kullan
-        header("Location: login.php");
+        header("Location: login");
         exit();
     } else {
         die("Kayıt işlemi başarısız oldu.");

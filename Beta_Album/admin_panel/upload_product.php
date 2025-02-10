@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['admin_logged_in'])) {
-    header("Location: ../includes/adminlogin.php");
+    header("Location: ../includes/adminlogin");
     exit();
 }
 include('../includes/config.php');

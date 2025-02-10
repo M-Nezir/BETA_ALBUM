@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['admin_logged_in'])) {
-    header("Location: ../includes/adminlogin.php");
+    header("Location: ../includes/adminlogin");
     exit();
 }
 
@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["new_image"])) {
         $updateQuery = "UPDATE settings SET main_image = '$file_path' WHERE id = 1";
         mysqli_query($conn, $updateQuery);
 
-        header("Location: edit_home.php?success=1");
+        header("Location: edit_home?success=1");
         exit();
     } else {
         $error = "Dosya yüklenirken bir hata oluştu.";

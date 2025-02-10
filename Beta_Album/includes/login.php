@@ -39,7 +39,7 @@ if (isset($_SESSION['user_id'])) {
             <p>Soyad: <?= htmlspecialchars($user['user_surname']) ?></p>
             <p>Email: <?= htmlspecialchars($user['email']) ?></p>
             <p>Telefon: <?= htmlspecialchars($user['phoneNumber']) ?></p>
-            <a href="logout.php">Çıkış Yap</a>
+            <a href="logout">Çıkış Yap</a>
             </div>
             <div style="display: flex; justify-content: center;">
             <div class="welcome-container">
@@ -48,14 +48,14 @@ if (isset($_SESSION['user_id'])) {
               <p class="welcome-message">
         Sepetine buradan ulaşabilirsin:
     </p>
-    <a href="/BETA_ALBUM/Beta_Album/includes/Basket.php" class="basket-link">
+    <a href="/BETA_ALBUM/Beta_Album/includes/Basket" class="basket-link">
         <div class="basket-button">
             <h3>SEPETİME GİT</h3>
         </div>
     </a>
               </div>
               <div>   <p class="welcome-message">Siparişlerine Buradan Ulaşabilirsin:</p>
-    <a href="/BETA_ALBUM/Beta_Album/includes/siparislerim.php" class="basket-link">
+    <a href="/BETA_ALBUM/Beta_Album/includes/siparislerim" class="basket-link">
         <div class="basket-button">
             <h3>SİPARİŞLERİM</h3>
         </div>

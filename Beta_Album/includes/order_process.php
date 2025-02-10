@@ -21,7 +21,8 @@ $query->close();
 $basket = !empty($user['sepet']) ? json_decode($user['sepet'], true) : [];
 
 if (empty($basket)) {
-    echo "empty_basket";
+    echo "<h2 style='text-align: center; color: red;'>Hata: Sepetiniz Boş!</h2>
+    <div style='text-align: center;'><a href='/BETA_ALBUM/Beta_Album/index'> Ana Sayfaya Dön</a></div>";
     exit();
 }
 
@@ -45,7 +46,7 @@ if ($insert_order->execute()) {
     $clear_cart->execute();
 
     // Başarıyla tamamlandıysa, order_success.php sayfasına yönlendir
-    header("Location: order_success.php");
+    header("Location: order_success");
     exit();
 } else {
     echo "error"; // Sipariş başarısız oldu

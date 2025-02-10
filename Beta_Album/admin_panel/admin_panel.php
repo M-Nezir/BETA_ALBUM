@@ -3,7 +3,7 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 if (!isset($_SESSION['admin_logged_in'])) {
-    header("Location: ../includes/adminlogin.php");
+    header("Location: ../includes/adminlogin");
     exit();
 }
 ?>
@@ -48,40 +48,40 @@ if (!isset($_SESSION['admin_logged_in'])) {
 <div class="menu">
 
    <div class="header-container">
-    <a href="/BETA_ALBUM/Beta_Album/admin_panel/admin_panel.php" style="text-decoration: none; color: black;">
+    <a href="/BETA_ALBUM/Beta_Album/admin_panel/admin_panel" style="text-decoration: none; color: black;">
    <b class="header">BETA ALBUM&trade;</b> <br>
    Admin Panel
    </a>
    </div>
 
    <div class="menu-item">
-    <a href="/BETA_ALBUM/Beta_Album/admin_panel/add_product.php"><i class="fa-solid fa-plus"></i>Ürün Ekle</a>
+    <a href="/BETA_ALBUM/Beta_Album/admin_panel/add_product"><i class="fa-solid fa-plus"></i>Ürün Ekle</a>
    </div>
 
    <div class="menu-item">
-    <a href="/BETA_ALBUM/Beta_Album/admin_panel/del_product.php"><i class="fa-solid fa-trash"></i>Ürün Sil</a>
+    <a href="/BETA_ALBUM/Beta_Album/admin_panel/del_product"><i class="fa-solid fa-trash"></i>Ürün Sil</a>
    </div>
 
    <div class="menu-item">
-    <a href="/BETA_ALBUM/Beta_Album/admin_panel/upload_product.php"><i class="fa fa-edit"></i>Ürün Güncelle</a>
+    <a href="/BETA_ALBUM/Beta_Album/admin_panel/upload_product"><i class="fa fa-edit"></i>Ürün Güncelle</a>
    </div>
 
    <div class="menu-item">
-    <a href="/BETA_ALBUM/Beta_Album/admin_panel/update_category.php"><i class="fa fa-edit"></i> Kategori Güncelle</a>
+    <a href="/BETA_ALBUM/Beta_Album/admin_panel/update_category"><i class="fa fa-edit"></i> Kategori Güncelle</a>
    </div>
 
    
     <div class="menu-item">
-        <a href="/BETA_ALBUM/Beta_Album/admin_panel/edit_home.php"><i class="fa-solid fa-image"></i>Ana Ekranı Düzenle</a>
+        <a href="/BETA_ALBUM/Beta_Album/admin_panel/edit_home"><i class="fa-solid fa-image"></i>Ana Ekranı Düzenle</a>
     </div>
 
     <div class="menu-item">
-     <a href="/BETA_ALBUM/Beta_Album/admin_panel/view_orders.php"><i class="fa-solid fa-truck-fast"></i>Siparişleri Görüntüle</a>
+     <a href="/BETA_ALBUM/Beta_Album/admin_panel/view_orders"><i class="fa-solid fa-truck-fast"></i>Siparişleri Görüntüle</a>
     </div>
 
 
     <div class="menu-item">
-        <a href="/BETA_ALBUM/Beta_Album/admin_panel/update_admin.php">
+        <a href="/BETA_ALBUM/Beta_Album/admin_panel/update_admin">
             <i class="fa-solid fa-user-cog"></i> Admin Bilgilerini Güncelle
         </a>
     </div>
@@ -89,7 +89,7 @@ if (!isset($_SESSION['admin_logged_in'])) {
 
 
     <div class="menu-item">
-        <a href="../includes/logout.php">
+        <a href="../includes/logout">
             <button>Çıkış Yap</button>
         </a>
     </div>

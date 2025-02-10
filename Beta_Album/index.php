@@ -33,10 +33,10 @@
                 </div>
             </div>
             <div>
-                <a href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=3" style="height: auto; width: auto; text-decoration: none; color: black;">
+                <a href="/BETA_ALBUM/Beta_Album/includes/products?Kategori=3" style="height: auto; width: auto; text-decoration: none; color: black;">
                     <div style="display: flex; align-items: center; padding-bottom: 3%; padding-top: 3%;">
                         <div style="display: inline-block; height: 80%; width: 40%; border: 1px solid black; padding: 0; overflow: hidden; margin-left: 10%;">
-                            <img src="image/1-600x430_002.jpg" alt="" style="height: 100%; width: 100%; object-fit: cover;">
+                            <img src="image/Leo.jpg" alt="" style="height: 100%; width: 100%; object-fit: cover;">
                         </div>
                         <div style="height: 5%; width: 40%;">
                             <h1 style="display: inline-block; margin-left: 10%; text-decoration: underline;">EXCLUSIVE ALBÜMLER</h1>
@@ -44,21 +44,21 @@
                     </div>
                 </a>
                 <hr>
-                <a href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=4" style="height: auto; width: auto; text-decoration: none; color: black;">
+                <a href="/BETA_ALBUM/Beta_Album/includes/products?Kategori=4" style="height: auto; width: auto; text-decoration: none; color: black;">
                     <div style="display: flex; align-items: center; padding-bottom: 3%; padding-top: 3%;">
                         <div style="height: 5%; width: 40%;">
                             <h1 style="display: inline-block; margin-left: 10%; text-decoration: underline;">KAMPANYALI ALBÜMLER</h1>
                         </div>
                         <div style="display: inline-block; height: 80%; width: 40%; border: 1px solid black; padding: 0; overflow: hidden; margin-left: 10%;">
-                            <img src="image/1-600x430_005.jpg" alt="" style="height: 100%; width: 100%; object-fit: cover;">
+                            <img src="image/Cara.jpg" alt="" style="height: 100%; width: 100%; object-fit: cover;">
                         </div> 
                     </div>
                 </a>
                 <hr>
-                <a href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=6" style="height: auto; width: auto; text-decoration: none; color: black;">
+                <a href="/BETA_ALBUM/Beta_Album/includes/products?Kategori=6" style="height: auto; width: auto; text-decoration: none; color: black;">
                     <div style="display: flex; align-items: center; padding-bottom: 3%; padding-top: 3%;">
                         <div style="display: inline-block; height: 80%; width: 40%; border: 1px solid black; padding: 0; overflow: hidden; margin-left: 10%;">
-                            <img src="image/1-600x430_006.jpg" alt="" style="height: 100%; width: 100%; object-fit: cover;">
+                            <img src="image/Lion.jpg" alt="" style="height: 100%; width: 100%; object-fit: cover;">
                         </div>
                         <div style="height: 5%; width: 40%;">
                             <h1 style="display: inline-block; margin-left: 10%; text-decoration: underline;">LABORATUVAR BASKI</h1>
@@ -66,13 +66,13 @@
                     </div>
                 </a>
                 <hr>
-                <a href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=7" style="height: auto; width: auto; text-decoration: none; color: black;">
+                <a href="/BETA_ALBUM/Beta_Album/includes/products?Kategori=7" style="height: auto; width: auto; text-decoration: none; color: black;">
                     <div style="display: flex; align-items: center; padding-bottom: 3%; padding-top: 3%;">
                         <div style="height: 5%; width: 40%;">
                             <h1 style="display: inline-block; margin-left: 10%; text-decoration: underline;">FOTOKİTAP</h1>
                         </div>
                         <div style="display: inline-block; height: 80%; width: 40%; border: 1px solid black; padding: 0; overflow: hidden; margin-left: 10%;">
-                            <img src="image/1-600x430_004.jpg" alt="" style="height: 100%; width: 100%; object-fit: cover;">
+                            <img src="image/Mia.jpg" alt="" style="height: 100%; width: 100%; object-fit: cover;">
                         </div>
                     </div>
                 </a>

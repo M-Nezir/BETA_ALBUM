@@ -63,7 +63,7 @@ $query->close();
             <button type="submit">Sepete Ekle</button>
         </form>
     <?php else: ?>
-        <a href="login.php" class="add-to-cart-btn">Giriş Yap ve Sepete Ekle</a>
+        <a href="login" class="add-to-cart-btn">Giriş Yap ve Sepete Ekle</a>
     <?php endif; ?>
 </div>
 

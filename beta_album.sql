@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 10 Şub 2025, 00:30:25
+-- Üretim Zamanı: 10 Şub 2025, 02:11:16
 -- Sunucu sürümü: 10.4.32-MariaDB
 -- PHP Sürümü: 8.2.12
 
@@ -50,6 +50,22 @@ CREATE TABLE `kategoriler` (
   `kategori_id` int(11) NOT NULL,
   `kategori_ad` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Tablo döküm verisi `kategoriler`
+--
+
+INSERT INTO `kategoriler` (`kategori_id`, `kategori_ad`) VALUES
+(1, 'Exclusive Albümler'),
+(2, 'Kampanyalı Albümler'),
+(3, 'Kategori 3'),
+(4, 'Kategori 4'),
+(5, 'Kategori 5'),
+(6, 'Kategori 6'),
+(7, 'Kategori 7'),
+(8, 'Kategori 8'),
+(9, 'Kategori 9'),
+(10, 'Kategori 10');
 
 -- --------------------------------------------------------
 
@@ -202,7 +218,7 @@ ALTER TABLE `admin`
 -- Tablo için AUTO_INCREMENT değeri `kategoriler`
 --
 ALTER TABLE `kategoriler`
-  MODIFY `kategori_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `kategori_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `kullanicilar`

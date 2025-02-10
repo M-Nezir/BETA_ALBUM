@@ -39,40 +39,43 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/BETA_ALBUM/Beta_Album/css/update_category.css">
     <title>Kategori Güncelle</title>
 </head>
 <body>
-
-<div class="metin">
-    <h1>Kategori Güncelle</h1>
+<?php include('admin_panel.php');?>
+<div class="headerss">_</div>
+<div style="display: flex; align-items: center; justify-content: center;">
+<div class="container">
     
-    <?php if (isset($success_message)) : ?>
-        <p style="color: green;"><?= htmlspecialchars($success_message); ?></p>
-    <?php endif; ?>
+        <h1 class="title">Kategori Güncelle</h1>
+        
+        <?php if (isset($success_message)) : ?>
+            <p class="success-message"><?= htmlspecialchars($success_message); ?></p>
+        <?php endif; ?>
 
-    <?php if (isset($error_message)) : ?>
-        <p style="color: red;"><?= htmlspecialchars($error_message); ?></p>
-    <?php endif; ?>
+        <?php if (isset($error_message)) : ?>
+            <p class="error-message"><?= htmlspecialchars($error_message); ?></p>
+        <?php endif; ?>
 
-    <form method="POST">
-        <label for="kategori">Güncellenecek Kategori:</label>
-        <select name="kategori_id" id="kategori">
-            <option value="">Kategori Seçin</option>
-            <?php foreach ($categories as $category) : ?>
-                <option value="<?= $category['kategori_id']; ?>"><?= htmlspecialchars($category['kategori_ad']); ?></option>
-            <?php endforeach; ?>
-        </select>
+        <form class="form" method="POST">
+            <label class="label" for="kategori">Güncellenecek Kategori:</label>
+            <select class="select" name="kategori_id" id="kategori">
+                <option class="option" value="">Kategori Seçin</option>
+                <?php foreach ($categories as $category) : ?>
+                    <option class="option" value="<?= $category['kategori_id']; ?>">
+                        <?= htmlspecialchars($category['kategori_ad']); ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
 
-        <br><br>
+            <label class="label" for="yeni_ad">Yeni Kategori Adı:</label>
+            <input class="input" type="text" name="yeni_ad" id="yeni_ad" required>
 
-        <label for="yeni_ad">Yeni Kategori Adı:</label>
-        <input type="text" name="yeni_ad" id="yeni_ad" required>
-
-        <br><br>
-
-        <button type="submit">Güncelle</button>
-    </form>
-</div>
+            <button class="button" type="submit">Güncelle</button>
+        </form>
+    </div>
+    </div>
 
 </body>
 </html>

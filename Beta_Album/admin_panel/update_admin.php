@@ -3,7 +3,7 @@ session_start();
 require_once "../includes/config.php"; // Veritabanı bağlantısı
 
 if (!isset($_SESSION['admin_logged_in'])) {
-    header("Location: ../includes/adminlogin.php");
+    header("Location: ../includes/adminlogin");
     exit();
 }
 
@@ -48,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
 <div class="admina_container">
     <div class="admina_title">Admin Bilgilerini Güncelle</div>
-    
+    <form method="POST">
     <div class="admina_message admina_success"><?php if ($success) echo $success; ?></div>
     <div class="admina_message admina_error"><?php if ($error) echo $error; ?></div>
 
@@ -64,9 +64,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
 
         <div class="admina_button">
-            <button class="admina_submit">Güncelle</button>
+            <button class="admina_submit" type="submit">Güncelle</button>
         </div>
     </div>
+    </form>
 </div>
 
 </body>

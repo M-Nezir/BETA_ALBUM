@@ -65,7 +65,7 @@ session_start();
     <div class="order-success">
         <h1 class="title">Siparişiniz Başarıyla Alındı!</h1>
         <p class="message">Teşekkür ederiz! Siparişiniz başarıyla alındı ve işleme konuldu. En kısa sürede hazırlanıp kargoya verilecektir.</p>
-        <a href="siparislerim.php" class="btn">Siparişlerime Git</a>
+        <a href="siparislerim" class="btn">Siparişlerime Git</a>
     </div>
 </div>
     </div>

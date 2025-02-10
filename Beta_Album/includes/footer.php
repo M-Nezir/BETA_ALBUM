@@ -15,27 +15,27 @@
     <div class="footer-items">
         <ul>
             <li><h3>Bilgiler</h3></li>
-            <li><a href="/BETA_ALBUM/Beta_Album/includes/distance_selling_agreement.php">Mesafeli Satış Sözleşmesi</a></li>
-            <li><a href="/BETA_ALBUM/Beta_Album/includes/payment_and_delivery_information.php">Ödeme ve Teslimat Bilgileri</a></li>
-            <li><a href="/BETA_ALBUM/Beta_Album/includes/about_us.php">Hakkımızda</a></li>
-            <li><a href="/BETA_ALBUM/Beta_Album/includes/privacy_and_security.php">Gizlilik ve Güvenlik</a></li>
-            <li><a href="/BETA_ALBUM/Beta_Album/includes/contact.php">İletişim</a></li>
+            <li><a href="/BETA_ALBUM/Beta_Album/includes/distance_selling_agreement">Mesafeli Satış Sözleşmesi</a></li>
+            <li><a href="/BETA_ALBUM/Beta_Album/includes/payment_and_delivery_information">Ödeme ve Teslimat Bilgileri</a></li>
+            <li><a href="/BETA_ALBUM/Beta_Album/includes/about_us">Hakkımızda</a></li>
+            <li><a href="/BETA_ALBUM/Beta_Album/includes/privacy_and_security">Gizlilik ve Güvenlik</a></li>
+            <li><a href="/BETA_ALBUM/Beta_Album/includes/contact">İletişim</a></li>
         </ul>
     </div>
 
     <div class="footer-items">
         <ul>
             <li><h3>Ekstralar</h3></li>
-            <li><a href="/BETA_ALBUM/Beta_Album/includes/campaigns.php">Kampanyalar</a></li>
-            <li><a href="/BETA_ALBUM/Beta_Album/includes/adminlogin.php">Yönetici Girişi</a></li>
+            <li><a href="/BETA_ALBUM/Beta_Album/includes/campaigns">Kampanyalar</a></li>
+            <li><a href="/BETA_ALBUM/Beta_Album/includes/adminlogin">Yönetici Girişi</a></li>
         </ul>
     </div>
 
     <div class="footer-items">
         <ul>
             <li><h3>Hesabım</h3></li>
-            <li><a href="/BETA_ALBUM/Beta_Album/includes/login.php">Hesabım</a></li>
-            <li><a href="/BETA_ALBUM/Beta_Album/includes/siparislerim.php">Siparişlerim</a></li>
+            <li><a href="/BETA_ALBUM/Beta_Album/includes/login">Hesabım</a></li>
+            <li><a href="/BETA_ALBUM/Beta_Album/includes/siparislerim">Siparişlerim</a></li>
         </ul>
     </div>
 
@@ -52,7 +52,7 @@
 
 <div  class="logo">
     <div>
-        <a class="footer_icon" href="/BETA_ALBUM/Beta_Album/index.php"><img src="/BETA_ALBUM/Beta_Album/image/betaalbümkare.svg" alt="Logo" width="200" height="200"></a>
+        <a class="footer_icon" href="/BETA_ALBUM/Beta_Album/index"><img src="/BETA_ALBUM/Beta_Album/image/betaalbümkare.svg" alt="Logo" width="200" height="200"></a>
 
     </div> 
     <div class="text">

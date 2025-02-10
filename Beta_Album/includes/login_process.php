@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (password_verify($password, $user['password'])) {
             $_SESSION['user_id'] = $user['user_id'];
     
-            header("Location: login.php");
+            header("Location: login");
         exit();
         } else {
             die("Geçersiz e-posta veya şifre.");

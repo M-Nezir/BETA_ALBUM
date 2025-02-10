@@ -3,7 +3,7 @@ session_start();
 include('config.php');
 
 if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
+    header("Location: login");
     exit();
 }
 
@@ -73,6 +73,6 @@ $update_query->execute();
 $update_query->close();
 
 // Sepet sayfasına yönlendir
-header("Location: basket.php");
+header("Location: basket");
 exit();
 ?>

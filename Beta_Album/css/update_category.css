@@ -1,0 +1,91 @@
+/* Ana Konteyner */
+.container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    margin-left: 20%;
+    text-align: center;
+}
+
+/* Başlık */
+.title {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Mesaj Stilleri */
+.success-message {
+    color: #28a745;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* Form Stili */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Etiketler */
+.label {
+    font-size: 14px;
+    color: #555;
+    text-align: left;
+    display: block;
+}
+
+/* Seçim Kutusu */
+.select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100%;
+}
+
+/* Giriş Alanı */
+.input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100%;
+}
+
+/* Buton Stili */
+.button {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.button:hover {
+    background: #0056b3;
+}
+
+.metin{
+    display: none;
+}
+
+.headerss {
+    display: flex;
+    background-color: rgb(223, 223, 223);
+    font-size: 250%;
+    padding: 0;
+    text-align: center; /* İçeriği yatayda ortalamak için */
+}

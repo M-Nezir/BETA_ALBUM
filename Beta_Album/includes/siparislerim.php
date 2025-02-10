@@ -4,7 +4,7 @@ require_once "config.php"; // Veritabanı bağlantısı
 
 // Kullanıcı giriş yapmış mı kontrol et
 if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
+    header("Location: login");
     exit();
 }
 

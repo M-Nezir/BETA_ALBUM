@@ -15,17 +15,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bind_result($admin_id, $admin_email, $admin_password);
         $stmt->fetch();
         
-        // 🔥 HATALI KISIM DÜZELTİLDİ: Şifre doğrulama `password_verify()` ile yapıldı.
+        // HATALI KISIM DÜZELTİLDİ: Şifre doğrulama `password_verify()` ile yapıldı.
         if (password_verify($password, $admin_password)) {
             $_SESSION['admin_logged_in'] = true;
             $_SESSION['admin_email'] = $admin_email;
-            header("Location: ../admin_panel/admin_panel.php");
+            header("Location: ../admin_panel/admin_panel");
             exit();
         } else {
-            echo "❌ Hatalı şifre. Tekrar deneyin.";
+            echo "<h2 style='text-align: center; margin-top: 3%;'>❌ Hatalı şifre. Tekrar deneyin.</h2>
+                    <div style='text-align: center;'><a href='/BETA_ALBUM/Beta_Album/includes/adminlogin'> Tekrar Dene</a></div>";
         }
     } else {
-        echo "❌ Bu e-posta ile kayıtlı admin bulunamadı.";
+        echo " <h2 style='text-align: center; margin-top: 3%;>❌ Bu e-posta ile kayıtlı admin bulunamadı.</h2>";
     }
     $stmt->close();
     $conn->close();

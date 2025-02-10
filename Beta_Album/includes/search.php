@@ -71,7 +71,7 @@ if (isset($_GET['query'])) {
                 <?php while ($urun = $result->fetch_assoc()): ?>
                     <div class="col-md-4">
                         <div class="product-card">
-                            <a href="/BETA_ALBUM/Beta_Album/includes/product_detail.php?urun_id=<?= $urun['urun_id']; ?>">
+                            <a href="/BETA_ALBUM/Beta_Album/includes/product_detail?urun_id=<?= $urun['urun_id']; ?>">
                             <img src="/BETA_ALBUM/Beta_Album/image/<?= htmlspecialchars($urun['urun_gorsel']); ?>" 
                                 alt="<?= htmlspecialchars($urun['urun_ad']); ?>" 
                                 class="product-img">

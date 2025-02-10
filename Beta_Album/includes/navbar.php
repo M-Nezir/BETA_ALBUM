@@ -36,18 +36,18 @@ while ($row = mysqli_fetch_assoc($result)) {
 <header>
     <nav>
         <ul>
-            <li><a href="/BETA_ALBUM/Beta_Album/includes/login.php">Üye Giriş / Hesabım</a></li> |
-            <li><a href="/BETA_ALBUM/Beta_Album/includes/about_us.php">Hakkımızda</a></li> |
-            <li><a href="/BETA_ALBUM/Beta_Album/includes/contact.php">İletişim</a></li> |
-            <li><a href="/BETA_ALBUM/Beta_Album/includes/basket.php">Sepetim</a></li> |
-            <li><a href="/BETA_ALBUM/Beta_Album/includes/basket.php">Kasaya git</a></li>
+            <li><a href="/BETA_ALBUM/Beta_Album/includes/login">Üye Giriş / Hesabım</a></li> |
+            <li><a href="/BETA_ALBUM/Beta_Album/includes/about_us">Hakkımızda</a></li> |
+            <li><a href="/BETA_ALBUM/Beta_Album/includes/contact">İletişim</a></li> |
+            <li><a href="/BETA_ALBUM/Beta_Album/includes/basket">Sepetim</a></li> |
+            <li><a href="/BETA_ALBUM/Beta_Album/includes/basket">Kasaya git</a></li>
         </ul>
     </nav>
 </header>
 
 <nav class="fixed">
     <ul class="menu">
-        <li><a class="icon" href="/BETA_ALBUM/Beta_Album/index.php"><img src="/BETA_ALBUM/Beta_Album/image/betaalbümyatay.svg" alt="Logo" width="140"></a></li>
+        <li><a class="icon" href="/BETA_ALBUM/Beta_Album/index"><img src="/BETA_ALBUM/Beta_Album/image/betaalbümyatay.svg" alt="Logo" width="140"></a></li>
         <div class="center">
             <?php foreach ($category_groups as $group_name => $category_ids): ?>
                 <li class="dropdown">
@@ -56,7 +56,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                         <?php foreach ($category_ids as $category_id): ?>
                             <?php if (isset($categories[$category_id])): ?>
                                 <div class="dropdown-item">
-                                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=<?= $category_id; ?>">
+                                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products?Kategori=<?= $category_id; ?>">
                                         <p><?= htmlspecialchars($categories[$category_id]); ?></p>
                                     </a>
                                 </div>
@@ -67,9 +67,9 @@ while ($row = mysqli_fetch_assoc($result)) {
             <?php endforeach; ?>
         </div>
         <li class="search-icon-container">
-            <a class="search_icon" id="search-btn" href="/BETA_ALBUM/Beta_Album/includes/search.php"><i class="fas fa-search"></i></a>
-            <a class="search_icon" href="/BETA_ALBUM/Beta_Album/includes/login.php"><i class="fas fa-user"></i></a>
-            <a class="search_icon" href="/BETA_ALBUM/Beta_Album/includes/basket.php"><i class="fa-solid fa-basket-shopping"></i></a>
+            <a class="search_icon" id="search-btn" href="/BETA_ALBUM/Beta_Album/includes/search"><i class="fas fa-search"></i></a>
+            <a class="search_icon" href="/BETA_ALBUM/Beta_Album/includes/login"><i class="fas fa-user"></i></a>
+            <a class="search_icon" href="/BETA_ALBUM/Beta_Album/includes/basket"><i class="fa-solid fa-basket-shopping"></i></a>
         </li>
     </ul>
 </nav>
