@@ -75,10 +75,10 @@ while ($row = mysqli_fetch_assoc($result)) {
 </nav>
 
 <div class="hamburger-button">
-    <a href="/BETA_ALBUM/Beta_Album/index.php"  class="icon_mobile left"><img src="/BETA_ALBUM/Beta_Album/image/betaalbümyatay.svg" alt="Logo" width="140" height=auto></a>
+    <a href="/BETA_ALBUM/Beta_Album/index"  class="icon_mobile left"><img src="/BETA_ALBUM/Beta_Album/image/betaalbümyatay.svg" alt="Logo" width="140" height=auto></a>
     <a class="search_icon_mobile"href=""><i class="fas fa-search"></i></a>
-    <a class="search_icon_mobile" href="/BETA_ALBUM/Beta_Album/includes/login.php"><i class="fas fa-user"></i></a>
-    <a class="search_icon_mobile" href="/BETA_ALBUM/Beta_Album/includes/basket.php"><i class="fa-solid fa-basket-shopping"></i></a>
+    <a class="search_icon_mobile" href="/BETA_ALBUM/Beta_Album/includes/login"><i class="fas fa-user"></i></a>
+    <a class="search_icon_mobile" href="/BETA_ALBUM/Beta_Album/includes/basket"><i class="fa-solid fa-basket-shopping"></i></a>
 <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu">
       ☰
     </button>
@@ -98,11 +98,8 @@ while ($row = mysqli_fetch_assoc($result)) {
           </a>
           <div class="collapse" id="submenu1">
             <div class="list-group">
-              <a href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Bebek Albümleri" class="list-group-item list-group-item-action menu-item">Bebek Albümleri</a>
-              <a href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Ekonomik Albümler" class="list-group-item list-group-item-action menu-item">Ekonomik Albümler</a>
-              <a href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Exclusive Albümler" class="list-group-item list-group-item-action menu-item">Exclusive Albümler</a>
-              <a href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Kampanyalı Albümler" class="list-group-item list-group-item-action menu-item">Kampanyalı Albümler</a>
-              <a href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Fırsat Albümleri" class="list-group-item list-group-item-action menu-item">Fırsat Albümleri</a>
+              <a href="/BETA_ALBUM/Beta_Album/includes/products?Kategori=1" class="list-group-item list-group-item-action menu-item">Exclusive Albümler</a>
+              <a href="/BETA_ALBUM/Beta_Album/includes/products?Kategori=2" class="list-group-item list-group-item-action menu-item">Kampanyalı Albümler</a>
             </div>
           </div>
 
@@ -112,67 +109,45 @@ while ($row = mysqli_fetch_assoc($result)) {
           </a>
           <div class="collapse" id="submenu2">
             <div class="list-group">
-              <a href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Laboratuvar Baskı" class="list-group-item list-group-item-action menu-item">Laboratuvar Baskı</a>
+              <a href="/BETA_ALBUM/Beta_Album/includes/products?Kategori=3" class="list-group-item list-group-item-action menu-item">kategori 3</a>
+              <a href="/BETA_ALBUM/Beta_Album/includes/products?Kategori=4" class="list-group-item list-group-item-action menu-item">kategori 4</a>
+              <a href="/BETA_ALBUM/Beta_Album/includes/products?Kategori=5" class="list-group-item list-group-item-action menu-item">kategori 5</a>
             </div>
           </div>
 
           <!-- Dropdown açılır liste 2 -->
           <a href="#submenu3" class="list-group-item list-group-item-action menu-item d-flex justify-content-between align-items-center dropdown-toggle">
-          <b>Fotokitap</b>
+          <b>Canvas</b>
           </a>
           <div class="collapse" id="submenu3">
             <div class="list-group">
-              <a href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Fotokitap" class="list-group-item list-group-item-action menu-item">Fotokitap</a>
+              <a href="/BETA_ALBUM/Beta_Album/includes/products?Kategori=6" class="list-group-item list-group-item-action menu-item">kategori 6</a>
+              <a href="/BETA_ALBUM/Beta_Album/includes/products?Kategori=7" class="list-group-item list-group-item-action menu-item">kategori 7</a>
+              <a href="/BETA_ALBUM/Beta_Album/includes/products?Kategori=8" class="list-group-item list-group-item-action menu-item">kategori 8</a>
             </div>
           </div>
 
           <!-- Dropdown açılır liste 2 -->
           <a href="#submenu4" class="list-group-item list-group-item-action menu-item d-flex justify-content-between align-items-center dropdown-toggle">
-          <b>Fotoğraf Kutusu</b>
+          <b>Vesikalık</b>
           </a>
           <div class="collapse" id="submenu4">
             <div class="list-group">
-              <a href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Fotoğraf Kutusu" class="list-group-item list-group-item-action menu-item">Fotoğraf Kutusu</a>
-              <a href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Album Kutusu" class="list-group-item list-group-item-action menu-item">Album Kutusu</a>
+              <a href="/BETA_ALBUM/Beta_Album/includes/products?Kategori=9" class="list-group-item list-group-item-action menu-item">kategori 9</a>
             </div>
           </div>
 
           <!-- Dropdown açılır liste 2 -->
           <a href="#submenu5" class="list-group-item list-group-item-action menu-item d-flex justify-content-between align-items-center dropdown-toggle">
-          <b>Duvar Sanatı</b>
+          <b>PS Tasarım</b>
           </a>
           <div class="collapse" id="submenu5">
             <div class="list-group">
-              <a href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Fotoğraf Baskılı Çerçeve" class="list-group-item list-group-item-action menu-item">Fotoğraf Baskılı Çerçeve</a>
-              <a href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Foto Akordeon" class="list-group-item list-group-item-action menu-item">Foto Akordeon</a>
-              <a href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Kanvas Tablo" class="list-group-item list-group-item-action menu-item">Kanvas Tablo</a>
-              <a href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Yapışkanlı Çerçeve" class="list-group-item list-group-item-action menu-item">Yapışkanlı Çerçeve</a>
+              <a href="/BETA_ALBUM/Beta_Album/includes/products?Kategori=Fotoğraf Baskılı Çerçeve" class="list-group-item list-group-item-action menu-item">kategori 10</a>
             </div>
           </div>
-
-          <!-- Dropdown açılır liste 2 -->
-          <a href="#submenu6" class="list-group-item list-group-item-action menu-item d-flex justify-content-between align-items-center dropdown-toggle">
-          <b>Fotoğraflı Ürün</b>
-          </a>
-          <div class="collapse" id="submenu6">
-            <div class="list-group">
-              <a href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Mezuniyet Albümü" class="list-group-item list-group-item-action menu-item">Mezuniyet Albümü</a>
-              <a href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Puzzle" class="list-group-item list-group-item-action menu-item">Puzzle</a>
-              <a href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Bardak Baskı" class="list-group-item list-group-item-action menu-item">Bardak Baskı</a>
-            </div>
-          </div>
-
-          <!-- Dropdown açılır liste 2 -->
-          <a href="#submenu7" class="list-group-item list-group-item-action menu-item d-flex justify-content-between align-items-center dropdown-toggle">
-          <b>Photoshop Tasarım</b>
-          </a>
-          <div class="collapse" id="submenu7">
-            <div class="list-group">
-              <a href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Albüm Çalışması" class="list-group-item list-group-item-action menu-item">Albüm Çalışması</a>
-              <a href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Tekli Poz" class="list-group-item list-group-item-action menu-item">Tekli Poz</a>
-              <a href="/BETA_ALBUM/Beta_Album/includes/products.php?Kategori=Restore" class="list-group-item list-group-item-action menu-item">Restore</a>
-            </div>
-        </div>
+ 
+        
         <div class="single-items">
                 <a href="/BETA_ALBUM/Beta_Album/includes/login" class="list-group-item list-group-item-action menu-item">Üye Giriş / Hesabım</a>
                 <a href="/BETA_ALBUM/Beta_Album/includes/about_us" class="list-group-item list-group-item-action menu-item">Hakkımızda</a>
