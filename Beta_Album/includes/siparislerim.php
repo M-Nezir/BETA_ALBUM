@@ -25,9 +25,8 @@ $result = $stmt->get_result();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Siparişlerim</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; padding: 20px; }
         .order-container { max-width: 600px; margin: 0 auto; }
-        .order-card { background: #f9f9f9; padding: 15px; margin: 10px 0; border-radius: 8px; }
+        .order-card { background:rgb(220, 220, 220); padding: 15px; margin: 10px 0; border-radius: 8px; }
         .order-card h3 { margin: 0 0 10px; color: #333; }
         .order-status { font-weight: bold; color: #d35400; }
         .product-img { width: 50px; height: 50px; margin-right: 10px; border-radius: 5px; object-fit: cover; }
@@ -35,8 +34,9 @@ $result = $stmt->get_result();
 </head>
 <body>
 
+<div>
 <div class="order-container">
-    <h2>Siparişlerim</h2>
+    <h2>Siparişlerim <a href="/BETA_ALBUM/Beta_Album/index" style="margin-left: 5%;">Anasayfaya Dön</a></h2>
 
     <?php if ($result->num_rows > 0): ?>
         <?php while ($row = $result->fetch_assoc()): ?>
@@ -86,7 +86,8 @@ $result = $stmt->get_result();
     <?php endif; ?>
 
 </div>
-
+</div>
+<?php include('footer.php');?>
 </body>
 </html>
 

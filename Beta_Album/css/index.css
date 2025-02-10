@@ -282,22 +282,9 @@ a i {
     display: none;
 }
 
-.mobile_icinn{
-    display: none;
-}
 
 @media screen and (max-width: 768px) {
-    .uzun_yazi{
-        display: none;
 
-    }
-    .mobile_icinn{
-        display: block;
-    }
-    
-.pc_icinn{
-    display: none;
-}
 body {
     margin: 0;
     font-family: Arial, sans-serif;
