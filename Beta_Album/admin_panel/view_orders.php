@@ -63,6 +63,9 @@ include('../includes/config.php'); // Veritabanı bağlantısı
             border-color: #4CAF50;
             outline: none;
         }
+        .metin{
+            display: none;
+        }
     </style>
     <script>
         function updateStatus(orderId, newStatus) {
