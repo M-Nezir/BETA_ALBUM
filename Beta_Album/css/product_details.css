@@ -79,3 +79,42 @@ button:hover {
 .add-to-cart-btn:hover {
     background-color: #218838;
 }
+
+@media (max-width: 768px) {
+    /* Görseller ekran genişliğine uyumlu */
+    .imagess {
+        width: 100%;
+        height: auto;
+    }
+    
+    /* Form elemanlarını dikey sırala */
+    form {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    label {
+        margin-right: 0;
+        text-align: center;
+    }
+
+    input[type="number"] {
+        width: 100%;
+        max-width: 200px;
+        margin-right: 0;
+        margin: 0 auto;
+    }
+
+    .button {
+        width: 100%;
+        max-width: 200px;
+        margin: 0 auto;
+    }
+
+    .add-to-cart-btn {
+        width: 100%;
+        max-width: 200px;
+        margin: 0 auto;
+    }
+}

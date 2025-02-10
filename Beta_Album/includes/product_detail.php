@@ -60,7 +60,7 @@ $query->close();
             <input type="hidden" name="urun_fiyat" value="<?php echo $urun['urun_fiyat']; ?>">
             <label for="adet">Adet:</label>
             <input type="number" id="adet" name="adet" value="1" min="1" required>
-            <button type="submit">Sepete Ekle</button>
+            <button class="button" type="submit">Sepete Ekle</button>
         </form>
     <?php else: ?>
         <a href="login" class="add-to-cart-btn">Giriş Yap ve Sepete Ekle</a>

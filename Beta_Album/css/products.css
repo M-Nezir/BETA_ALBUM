@@ -1,3 +1,7 @@
+.main{
+    height: auto;
+}
+
 .product-list {
     margin-top: 3%;
     display: flex;
@@ -64,4 +68,59 @@ padding-bottom: 0;
     align-items: center;
     margin-bottom: 500px;
 
+}
+
+@media (max-width: 768px) {
+    .product-list {
+        margin-top: 3%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px; /* Mobil cihazlarda daha küçük bir boşluk */
+    }
+    
+    .product {
+        display: inline-block;
+        height: auto; /* Mobil cihazlarda yüksekliği otomatik ayarla */
+        width: auto; /* Mobil cihazlarda daha dar bir genişlik */
+        border: 1px solid rgb(79, 79, 79);
+        margin: 3px;
+        padding-bottom: 0;
+    }
+    
+    .product img {
+        width: 98%;
+        height: auto; /* Mobil cihazlarda yüksekliği otomatik ayarla */
+        object-fit: cover;
+    }
+    
+    .product h4 {
+        margin-top: 10px;
+        margin-left: 5px;
+        margin-bottom: 3px;
+        font-size: 14px; /* Mobil cihazlarda daha küçük yazı boyutu */
+    }
+    
+    .product p {
+        margin-left: 5px;
+        font-size: 12px; /* Mobil cihazlarda daha küçük yazı boyutu */
+    }
+    
+    .add-to-cart {
+        display: block;
+        width: 98%;
+        background-color: rgb(241, 241, 241);
+        color: rgb(0, 0, 0);
+        text-align: center;
+        padding: 5px;
+        cursor: pointer;
+        font-size: 14px; /* Mobil cihazlarda daha küçük yazı boyutu */
+    }
+    .product {
+        width: 100%; /* Mobil cihazlarda tam genişlik */
+    }
+
+    .product-list {
+        gap: 5px; /* Mobil cihazlarda daha küçük bir boşluk */
+    }    
 }

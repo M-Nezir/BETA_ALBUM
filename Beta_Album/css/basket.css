@@ -147,3 +147,23 @@
     text-align: center;
 }
 
+@media (max-width: 768px) {
+    .basket-itemmm {
+        /* Sepet öğelerini dikey sıralıyoruz */
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+    
+    .product-imagee {
+        /* Görselin mobilde daha belirgin olması için boyutunu artırıyoruz */
+        width: 50%;       /* İstenilen orana göre %50 veya farklı bir değer seçilebilir */
+        height: auto;     /* Yüksekliği otomatik belirlenir */
+        margin-bottom: 10px;  /* Alt boşluk ekleniyor */
+    }
+    
+    .product-imagee img {
+        width: 100%;
+        height: auto;
+    }
+}
