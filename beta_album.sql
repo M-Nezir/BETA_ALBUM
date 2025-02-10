@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 10 Şub 2025, 02:11:16
+-- Üretim Zamanı: 10 Şub 2025, 08:35:38
 -- Sunucu sürümü: 10.4.32-MariaDB
 -- PHP Sürümü: 8.2.12
 
@@ -84,15 +84,6 @@ CREATE TABLE `kullanicilar` (
   `sepet` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Tablo döküm verisi `kullanicilar`
---
-
-INSERT INTO `kullanicilar` (`user_id`, `user_name`, `user_surname`, `phoneNumber`, `tcKimlik`, `email`, `password`, `sepet`) VALUES
-(1, 'Mehmetcan', 'Aydın', '05554443322', '12345678912', 'mehmetc@gmail.com', '$2y$10$x9skIyoOPd0JJKr88gkloeyxha8WMRHbfjhdnBUL6ARirxq5fiUby', '[{\"urun_id\":5,\"urun_ad\":\"Camilla\",\"urun_fiyat\":200,\"adet\":3,\"urun_gorsel\":\"Camilla.jpg\"}]'),
-(2, 'Mehmet', 'Aydın', '05556667788', '12345678978', 'mehmet13@gmail.com', '$2y$10$NU.GUfg9.Ku/qIqQmzRnl.wEkH6eOQ51IPiArWMP4.LOlUGzZ2oT6', '[]'),
-(3, 'mahmut', 'malkoçoğlu', '05489678548578', '12587898985', 'betacolor@hotmail.com', '$2y$10$KWyJ/gsNo8IOBZJ5CrsboO9Mz7wuUTEBQw5EvEjfoO0LGvPeV6.0e', '[{\"urun_id\":1,\"urun_ad\":\"Leo\",\"urun_fiyat\":150,\"adet\":2,\"urun_gorsel\":\"Leo.jpg\"}]');
-
 -- --------------------------------------------------------
 
 --
@@ -109,7 +100,7 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`id`, `main_image`) VALUES
-(1, 'image/anasayfa.jpeg');
+(1, 'image/mainpage.jpg');
 
 -- --------------------------------------------------------
 
@@ -126,23 +117,6 @@ CREATE TABLE `siparisler` (
   `order_date` timestamp NOT NULL DEFAULT current_timestamp(),
   `status` enum('Hazırlanıyor','Kargoda','Teslim Edildi') DEFAULT 'Hazırlanıyor'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Tablo döküm verisi `siparisler`
---
-
-INSERT INTO `siparisler` (`order_id`, `user_id`, `order_details`, `total_price`, `address`, `order_date`, `status`) VALUES
-(1, 1, '[{\"urun_id\":5,\"urun_ad\":\"Camilla\",\"urun_fiyat\":200,\"adet\":8,\"urun_gorsel\":\"Camilla.jpg\"},{\"urun_id\":2,\"urun_ad\":\"Lina\",\"urun_fiyat\":160,\"adet\":4,\"urun_gorsel\":\"Lina.jpg\"}]', 2240.00, 'Keçiören/Ankara', '2025-02-08 22:17:53', 'Teslim Edildi'),
-(2, 1, '[{\"urun_id\":7,\"urun_ad\":\"Carla\",\"urun_fiyat\":220,\"adet\":1,\"urun_gorsel\":\"Carla.jpg\"}]', 220.00, 'Malatya', '2025-02-08 22:24:58', 'Teslim Edildi'),
-(3, 2, '[{\"urun_id\":5,\"urun_ad\":\"Camilla\",\"urun_fiyat\":200,\"adet\":1,\"urun_gorsel\":\"Camilla.jpg\"},{\"urun_id\":4,\"urun_ad\":\"Mia\",\"urun_fiyat\":180,\"adet\":2,\"urun_gorsel\":\"Mia.jpg\"}]', 560.00, 'Afyonkarahisar/TÜRKİYE', '2025-02-08 22:42:41', 'Teslim Edildi'),
-(4, 1, '[{\"urun_id\":5,\"urun_ad\":\"Camilla\",\"urun_fiyat\":200,\"adet\":82,\"urun_gorsel\":\"Camilla.jpg\"},{\"urun_id\":7,\"urun_ad\":\"Carla\",\"urun_fiyat\":220,\"adet\":26,\"urun_gorsel\":\"Carla.jpg\"},{\"urun_id\":1,\"urun_ad\":\"Leo\",\"urun_fiyat\":150,\"adet\":3,\"urun_gorsel\":\"Leo.jpg\"},{\"urun_id\":9,\"urun_ad\":\"Natura\",\"urun_fiyat\":240,\"adet\":2,\"urun_gorsel\":\"Natura.jpg\"},{\"urun_id\":8,\"urun_ad\":\"Dream\",\"urun_fiyat\":230,\"adet\":4,\"urun_gorsel\":\"Dream.jpg\"},{\"urun_id\":4,\"urun_ad\":\"Mia\",\"urun_fiyat\":180,\"adet\":1,\"urun_gorsel\":\"Mia.jpg\"},{\"urun_id\":3,\"urun_ad\":\"Lion\",\"urun_fiyat\":170,\"adet\":1,\"urun_gorsel\":\"Lion.jpg\"}]', 24320.00, 'selamünaleyküm', '2025-02-09 03:08:15', 'Teslim Edildi'),
-(5, 1, '[{\"urun_id\":1,\"urun_ad\":\"Leo\",\"urun_fiyat\":150,\"adet\":5,\"urun_gorsel\":\"Leo.jpg\"}]', 750.00, 'ev adresim', '2025-02-09 17:20:52', 'Hazırlanıyor'),
-(6, 1, '[{\"urun_id\":1,\"urun_ad\":\"Leo\",\"urun_fiyat\":150,\"adet\":4,\"urun_gorsel\":\"Leo.jpg\"},{\"urun_id\":5,\"urun_ad\":\"Camilla\",\"urun_fiyat\":200,\"adet\":3,\"urun_gorsel\":\"Camilla.jpg\"}]', 1200.00, 'selam', '2025-02-09 17:23:11', 'Hazırlanıyor'),
-(7, 1, '[{\"urun_id\":1,\"urun_ad\":\"Leo\",\"urun_fiyat\":150,\"adet\":1,\"urun_gorsel\":\"Leo.jpg\"}]', 150.00, 'deneme', '2025-02-09 17:26:58', 'Hazırlanıyor'),
-(8, 1, '[{\"urun_id\":1,\"urun_ad\":\"Leo\",\"urun_fiyat\":150,\"adet\":3,\"urun_gorsel\":\"Leo.jpg\"}]', 450.00, 'selam', '2025-02-09 17:29:11', 'Hazırlanıyor'),
-(9, 3, '[{\"urun_id\":1,\"urun_ad\":\"Leo\",\"urun_fiyat\":150,\"adet\":1,\"urun_gorsel\":\"Leo.jpg\"}]', 150.00, 'evime gelsinko...', '2025-02-09 19:06:48', 'Hazırlanıyor'),
-(10, 3, '[{\"urun_id\":1,\"urun_ad\":\"Leo\",\"urun_fiyat\":150,\"adet\":1,\"urun_gorsel\":\"Leo.jpg\"}]', 150.00, 'Adres Kayıt Sistemi, Türk Vatandaşları ve Türkiye\'de yaşayan yerleşik yabancıların yerleşim yeri ve diğer adres bilgilerinin elektronik ortamda merkezi bir ...', '2025-02-09 19:08:05', 'Hazırlanıyor'),
-(11, 3, '[{\"urun_id\":2,\"urun_ad\":\"Lina\",\"urun_fiyat\":160,\"adet\":1,\"urun_gorsel\":\"Lina.jpg\"},{\"urun_id\":5,\"urun_ad\":\"Camilla\",\"urun_fiyat\":200,\"adet\":1,\"urun_gorsel\":\"Camilla.jpg\"},{\"urun_id\":6,\"urun_ad\":\"Cara\",\"urun_fiyat\":210,\"adet\":1,\"urun_gorsel\":\"Cara.jpg\"},{\"urun_id\":7,\"urun_ad\":\"Carla\",\"urun_fiyat\":220,\"adet\":1,\"urun_gorsel\":\"Carla.jpg\"},{\"urun_id\":8,\"urun_ad\":\"Dream\",\"urun_fiyat\":230,\"adet\":1,\"urun_gorsel\":\"Dream.jpg\"}]', 1020.00, 'iş yeri adresime istiyorum', '2025-02-09 20:25:16', 'Teslim Edildi');
 
 -- --------------------------------------------------------
 
@@ -236,13 +210,13 @@ ALTER TABLE `settings`
 -- Tablo için AUTO_INCREMENT değeri `siparisler`
 --
 ALTER TABLE `siparisler`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `urunler`
 --
 ALTER TABLE `urunler`
-  MODIFY `urun_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `urun_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Dökümü yapılmış tablolar için kısıtlamalar
