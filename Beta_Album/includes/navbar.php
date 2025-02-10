@@ -91,63 +91,28 @@ while ($row = mysqli_fetch_assoc($result)) {
       </div>
 
       <div class="offcanvas-body p-0">
-        <div class="list-group" id="menuList">
-          <!-- Dropdown açılır liste 1 -->
-          <a href="#submenu1" class="list-group-item list-group-item-action menu-item d-flex justify-content-between align-items-center dropdown-toggle">
-            <b>Panoramik Albüm </b>
-          </a>
-          <div class="collapse" id="submenu1">
-            <div class="list-group">
-              <a href="/BETA_ALBUM/Beta_Album/includes/products?Kategori=1" class="list-group-item list-group-item-action menu-item">Exclusive Albümler</a>
-              <a href="/BETA_ALBUM/Beta_Album/includes/products?Kategori=2" class="list-group-item list-group-item-action menu-item">Kampanyalı Albümler</a>
-            </div>
+          <div class="list-group" id="menuList">
+              <?php foreach ($category_groups as $group_name => $category_ids): ?>
+                  <a href="#submenu<?= $category_ids[0] ?>" 
+                    class="list-group-item list-group-item-action menu-item d-flex justify-content-between align-items-center dropdown-toggle">
+                      <b><?= htmlspecialchars($group_name); ?></b>
+                  </a>
+                  <div class="collapse" id="submenu<?= $category_ids[0] ?>">
+                      <div class="list-group">
+                          <?php foreach ($category_ids as $category_id): ?>
+                              <?php if (isset($categories[$category_id])): ?>
+                                  <a href="/BETA_ALBUM/Beta_Album/includes/products?Kategori=<?= $category_id; ?>" 
+                                    class="list-group-item list-group-item-action menu-item">
+                                      <?= htmlspecialchars($categories[$category_id]); ?>
+                                  </a>
+                              <?php endif; ?>
+                          <?php endforeach; ?>
+                      </div>
+                  </div>
+              <?php endforeach; ?>
           </div>
+      </div>
 
-          <!-- Dropdown açılır liste 2 -->
-          <a href="#submenu2" class="list-group-item list-group-item-action menu-item d-flex justify-content-between align-items-center dropdown-toggle">
-          <b>Fotoğraf Baskı</b>
-          </a>
-          <div class="collapse" id="submenu2">
-            <div class="list-group">
-              <a href="/BETA_ALBUM/Beta_Album/includes/products?Kategori=3" class="list-group-item list-group-item-action menu-item">kategori 3</a>
-              <a href="/BETA_ALBUM/Beta_Album/includes/products?Kategori=4" class="list-group-item list-group-item-action menu-item">kategori 4</a>
-              <a href="/BETA_ALBUM/Beta_Album/includes/products?Kategori=5" class="list-group-item list-group-item-action menu-item">kategori 5</a>
-            </div>
-          </div>
-
-          <!-- Dropdown açılır liste 2 -->
-          <a href="#submenu3" class="list-group-item list-group-item-action menu-item d-flex justify-content-between align-items-center dropdown-toggle">
-          <b>Canvas</b>
-          </a>
-          <div class="collapse" id="submenu3">
-            <div class="list-group">
-              <a href="/BETA_ALBUM/Beta_Album/includes/products?Kategori=6" class="list-group-item list-group-item-action menu-item">kategori 6</a>
-              <a href="/BETA_ALBUM/Beta_Album/includes/products?Kategori=7" class="list-group-item list-group-item-action menu-item">kategori 7</a>
-              <a href="/BETA_ALBUM/Beta_Album/includes/products?Kategori=8" class="list-group-item list-group-item-action menu-item">kategori 8</a>
-            </div>
-          </div>
-
-          <!-- Dropdown açılır liste 2 -->
-          <a href="#submenu4" class="list-group-item list-group-item-action menu-item d-flex justify-content-between align-items-center dropdown-toggle">
-          <b>Vesikalık</b>
-          </a>
-          <div class="collapse" id="submenu4">
-            <div class="list-group">
-              <a href="/BETA_ALBUM/Beta_Album/includes/products?Kategori=9" class="list-group-item list-group-item-action menu-item">kategori 9</a>
-            </div>
-          </div>
-
-          <!-- Dropdown açılır liste 2 -->
-          <a href="#submenu5" class="list-group-item list-group-item-action menu-item d-flex justify-content-between align-items-center dropdown-toggle">
-          <b>PS Tasarım</b>
-          </a>
-          <div class="collapse" id="submenu5">
-            <div class="list-group">
-              <a href="/BETA_ALBUM/Beta_Album/includes/products?Kategori=Fotoğraf Baskılı Çerçeve" class="list-group-item list-group-item-action menu-item">kategori 10</a>
-            </div>
-          </div>
- 
-        
         <div class="single-items">
                 <a href="/BETA_ALBUM/Beta_Album/includes/login" class="list-group-item list-group-item-action menu-item">Üye Giriş / Hesabım</a>
                 <a href="/BETA_ALBUM/Beta_Album/includes/about_us" class="list-group-item list-group-item-action menu-item">Hakkımızda</a>
@@ -160,7 +125,6 @@ while ($row = mysqli_fetch_assoc($result)) {
     </div>
 </div>
 
-   
     <script>
 
       // İşlev: tüm dropdown'ları kapat
