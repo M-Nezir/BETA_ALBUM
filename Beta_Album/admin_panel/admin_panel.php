@@ -66,6 +66,10 @@ if (!isset($_SESSION['admin_logged_in'])) {
     <a href="/BETA_ALBUM/Beta_Album/admin_panel/upload_product.php"><i class="fa fa-edit"></i>Ürün Güncelle</a>
    </div>
 
+   <div class="menu-item">
+    <a href="/BETA_ALBUM/Beta_Album/admin_panel/update_category.php"><i class="fa fa-edit"></i> Kategori Güncelle</a>
+   </div>
+
    
     <div class="menu-item">
         <a href="/BETA_ALBUM/Beta_Album/admin_panel/edit_home.php"><i class="fa-solid fa-image"></i>Ana Ekranı Düzenle</a>
