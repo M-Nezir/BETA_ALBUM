@@ -71,7 +71,7 @@ if (isset($_POST['add_product'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/BETA_ALBUM/Beta_Album/css/add_products.css">
+    <link rel="stylesheet" href="../css/add_products.css">
     <title>Ürün Yönetimi</title>
 </head>
 <body>

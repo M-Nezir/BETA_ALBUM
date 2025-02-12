@@ -1,5 +1,5 @@
 <?php
-require_once "config.php"; // Veritabanı bağlantısını çağır
+include('navbar.php'); // Veritabanı bağlantısını çağır
 
 if (isset($_GET['query'])) {
     $query = trim($_GET['query']);
@@ -19,7 +19,7 @@ if (isset($_GET['query'])) {
 <head>
     <meta charset="UTF-8">
     <title>Arama Sonuçları</title>
-    <link href="/BETA_ALBUM/Beta_Album/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="../bootstrap/bootstrap.min.css" rel="stylesheet">
     <style>
         .product-card {
             border: 1px solid #ddd;
@@ -52,11 +52,10 @@ if (isset($_GET['query'])) {
     </style>
 </head>
 <body>
-
     <div class="container mt-4">
         <div>
-           <h2 class="mb-4">Arama Sonuçları <a href="/BETA_ALBUM/Beta_Album/index" style="margin-left: 23%;">Anasayfaya Dön</a></h2> 
-           <form id="search-form" action="/BETA_ALBUM/Beta_Album/includes/search.php" method="GET" style=" display: inline-block; margin-left: 10%; margin-bottom: 6%; position: relative;">
+           <h2 class="mb-4">Arama Sonuçları</h2> 
+           <form id="search-form" action="search.php" method="GET" style=" display: inline-block; margin-left: 10%; margin-bottom: 6%; position: relative;">
                         <input type="text" name="query" placeholder="Ürün ara..." required>
                         <button type="submit"><i class="fas fa-search"></i></button>
                     </form>
@@ -67,8 +66,8 @@ if (isset($_GET['query'])) {
                 <?php while ($urun = $result->fetch_assoc()): ?>
                     <div class="col-md-4">
                         <div class="product-card">
-                            <a href="/BETA_ALBUM/Beta_Album/includes/product_detail.php?id=<?= $urun['urun_id']; ?>">
-                            <img src="/BETA_ALBUM/Beta_Album/image/<?= htmlspecialchars($urun['urun_gorsel']); ?>" 
+                            <a href="product_detail?urun_id=<?= $urun['urun_id']; ?>">
+                            <img src="../image/<?= htmlspecialchars($urun['urun_gorsel']); ?>" 
                                 alt="<?= htmlspecialchars($urun['urun_ad']); ?>" 
                                 class="product-img">
                             </a>

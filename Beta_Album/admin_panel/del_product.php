@@ -62,7 +62,7 @@ if (isset($_POST['delete_product'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/BETA_ALBUM/Beta_Album/css/del_products.css">
+    <link rel="stylesheet" href="../css/del_products.css">
     <title>Ürün Sil</title>
 </head>
 <body>
@@ -100,7 +100,7 @@ if (isset($_POST['delete_product'])) {
             while ($row = $urun_result->fetch_assoc()) {
                 echo "<div class='product'>";
                 echo "<div style='height: 50vh; width: 50vh;'>";
-                echo "<img src='/BETA_ALBUM/Beta_Album/image/" . htmlspecialchars($row['urun_gorsel']) . "' alt='Ürün Görseli'>";
+                echo "<img src='../image/" . htmlspecialchars($row['urun_gorsel']) . "' alt='Ürün Görseli'>";
                 echo "</div>";
                 echo "<h4>" . htmlspecialchars($row['urun_ad']) . "</h4>";
                 echo "<p>Fiyat: " . htmlspecialchars($row['urun_fiyat']) . " TL</p>";

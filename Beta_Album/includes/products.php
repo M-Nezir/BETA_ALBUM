@@ -33,8 +33,8 @@ if ($kategori) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $kategori ? htmlspecialchars($kategori['kategori_ad']) : 'Kategori Bulunamadı'; ?></title>
-    <link rel="stylesheet" href="/BETA_ALBUM/Beta_Album/css/backgraund.css">
-    <link rel="stylesheet" href="/BETA_ALBUM/Beta_Album/css/products.css">
+    <link rel="stylesheet" href="../css/backgraund.css">
+    <link rel="stylesheet" href="../css/products.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
@@ -47,9 +47,9 @@ if ($kategori) {
             if ($urun_result && $urun_result->num_rows > 0) {
                 while ($row = $urun_result->fetch_assoc()) {
                     echo "<div class='product'>";
-                    echo "<a href='/BETA_ALBUM/Beta_Album/includes/product_detail?urun_id=" . htmlspecialchars($row['urun_id']) . "' style='text-decoration: none; color: black;'>";
+                    echo "<a href='product_detail?urun_id=" . htmlspecialchars($row['urun_id']) . "' style='text-decoration: none; color: black;'>";
                     echo "<div style='height: 50vh; width: 100%;'>";
-                    echo "<img src='/BETA_ALBUM/Beta_Album/image/" . htmlspecialchars($row['urun_gorsel']) . "' alt='Ürün Görseli'>";
+                    echo "<img src='../image/" . htmlspecialchars($row['urun_gorsel']) . "' alt='Ürün Görseli'>";
                     echo "</div>";
                     echo "<h4>" . htmlspecialchars($row['urun_ad']) . "</h4>";
                     echo "<p>Fiyat: " . htmlspecialchars($row['urun_fiyat']) . " TL</p>";

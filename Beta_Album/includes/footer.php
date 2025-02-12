@@ -42,7 +42,7 @@
     <div class="footer-items">
         <ul>
             <li><h3>İletişim Bilgilerimiz</h3></li>
-            <li><a href="https://www.google.com/maps?q=Beta Color Albüm-Plato Konya" target="_blank"><i class="fa-solid fa-location-dot"></i>Ayanbey, Ateşbaz Sk. No:54 D:3, 42090 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Meram/Konya, Türkiye&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+            <li><a href="https://www.google.com/maps?q=Ereğli / Konya" target="_blank"><i class="fa-solid fa-location-dot"></i>Ereğli / Konya</a></li>
             <li><a href="tel:+905369771595"><i class="fa-solid fa-phone"></i>Telefon: +90 536 977 15 95</a></li>
             <li mailto=><a href="mailto:betacolor@hotmail.com"><i class="fa-solid fa-envelope"></i>Mail: betacolor@hotmail.com</a></li>
         </ul> 

@@ -25,8 +25,8 @@ if (isset($_SESSION['user_id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Üye Giriş / Hesabım</title>
-    <link rel="stylesheet" href="/BETA_ALBUM/Beta_Album/css/backgraund.css">
-    <link rel="stylesheet" href="/BETA_ALBUM/Beta_Album/css/login.css">
+    <link rel="stylesheet" href="../css/backgraund.css">
+    <link rel="stylesheet" href="../css/login.css">
 </head>
 <body class="body">
     <?php include('navbar.php'); ?>
@@ -48,14 +48,14 @@ if (isset($_SESSION['user_id'])) {
               <p class="welcome-message">
         Sepetine buradan ulaşabilirsin:
     </p>
-    <a href="/BETA_ALBUM/Beta_Album/includes/Basket" class="basket-link">
+    <a href="Basket" class="basket-link">
         <div class="basket-button">
             <h3>SEPETİME GİT</h3>
         </div>
     </a>
               </div>
               <div>   <p class="welcome-message">Siparişlerine Buradan Ulaşabilirsin:</p>
-    <a href="/BETA_ALBUM/Beta_Album/includes/siparislerim" class="basket-link">
+    <a href="siparislerim" class="basket-link">
         <div class="basket-button">
             <h3>SİPARİŞLERİM</h3>
         </div>

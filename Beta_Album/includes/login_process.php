@@ -24,10 +24,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: login");
         exit();
         } else {
-            die("Geçersiz e-posta veya şifre.");
-        }
+            die("<div style='text-align: center; color: red; font-size: 50px;'>Geçersiz e-posta veya şifre. <br> <a href='login.php'>GİRİŞ EKRANINA DÖN</a></div>");
+        } 
     } else {
-        die("Bu e-posta ile kayıtlı bir kullanıcı bulunamadı.");
+        die("<div style='text-align: center; color: red; font-size: 50px;'>Bu e-posta ile kayıtlı bir kullanıcı bulunamadı.<br> <a href='login.php'>GİRİŞ EKRANINA DÖN</a></div>");
     }    
 } else {
     die("Geçersiz istek.");

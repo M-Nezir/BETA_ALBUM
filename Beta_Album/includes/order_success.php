@@ -7,8 +7,8 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sipariş Başarılı</title>
-    <link rel="stylesheet" href="/BETA_ALBUM/Beta_Album/css/backgraund.css">
-    <link rel="stylesheet" href="/BETA_ALBUM/Beta_Album/css/basket.css">
+    <link rel="stylesheet" href="../css/backgraund.css">
+    <link rel="stylesheet" href="../css/basket.css">
     <style>
 
 /* Sayfa Kapsayıcı */

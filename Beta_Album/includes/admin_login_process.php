@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit();
         } else {
             echo "<h2 style='text-align: center; margin-top: 3%;'>❌ Hatalı şifre. Tekrar deneyin.</h2>
-                    <div style='text-align: center;'><a href='/BETA_ALBUM/Beta_Album/includes/adminlogin'> Tekrar Dene</a></div>";
+                    <div style='text-align: center;'><a href='adminlogin'> Tekrar Dene</a></div>";
         }
     } else {
         echo " <h2 style='text-align: center; margin-top: 3%;>❌ Bu e-posta ile kayıtlı admin bulunamadı.</h2>";

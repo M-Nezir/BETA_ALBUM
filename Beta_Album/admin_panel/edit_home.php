@@ -38,7 +38,7 @@ $main_image = $row['main_image'];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/BETA_ALBUM/Beta_Album/css/edit_home.css">
+    <link rel="stylesheet" href="../css/edit_home.css">
     <title>Ana Ekranı Düzenle</title>
 </head>
 <body>
@@ -58,7 +58,7 @@ $main_image = $row['main_image'];
         <div class="form-group">
             <div class="form-label">Mevcut Görsel:</div>
             <div class="form-image">
-                <img src="<?php echo "/BETA_ALBUM/Beta_Album/$main_image"; ?>" alt="Mevcut Görsel" class="current-image">
+                <img src="<?php echo "../$main_image"; ?>" alt="Mevcut Görsel" class="current-image">
             </div>
         </div>
 

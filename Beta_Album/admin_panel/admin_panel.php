@@ -13,7 +13,7 @@ if (!isset($_SESSION['admin_logged_in'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/BETA_ALBUM/Beta_Album/css/admin_panel.css">
+    <link rel="stylesheet" href="../css/admin_panel.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
         .metin {

@@ -17,7 +17,7 @@ Ayrıca, web üzerinden de bizlere ulaşabilir, gerekli bilgileri edinebilirsini
 Şubemizdeki fırsatları kaçırmamak ve kampanyalardan faydalanmak için bizi arayabilir veya ziyaret edebilirsiniz.<br>
 Size yardımcı olmak için buradayız, her zaman bekleriz! <br></p>
         İletişim için; <br> mail adresimiz: betacolor@hotmail.com <br> telefon numaramız: +90 536 977 15 95.<br>
-Şubemize Ayanbey, Ateşbaz Sk. No:54 D:3, 42090 Konya / Meram adresinden kolayca ulaşabilirsiniz.<br>
+Şubemize Konya / Ereğli adresinden kolayca ulaşabilirsiniz.<br>
 
     </div>
     </div>

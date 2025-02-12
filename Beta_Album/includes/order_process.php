@@ -22,7 +22,7 @@ $basket = !empty($user['sepet']) ? json_decode($user['sepet'], true) : [];
 
 if (empty($basket)) {
     echo "<h2 style='text-align: center; color: red;'>Hata: Sepetiniz Boş!</h2>
-    <div style='text-align: center;'><a href='/BETA_ALBUM/Beta_Album/index'> Ana Sayfaya Dön</a></div>";
+    <div style='text-align: center;'><a href='../index'> Ana Sayfaya Dön</a></div>";
     exit();
 }
 

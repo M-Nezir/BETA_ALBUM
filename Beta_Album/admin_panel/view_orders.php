@@ -13,7 +13,7 @@ include('../includes/config.php'); // Veritabanı bağlantısı
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/BETA_ALBUM/Beta_Album/css/products_operations.css">
+    <link rel="stylesheet" href="../css/products_operations.css">
     <title>Siparişler</title>
     <style>
         .table-container {
@@ -127,7 +127,7 @@ include('../includes/config.php'); // Veritabanı bağlantısı
                         echo "<table>";
                         foreach ($orderDetails as $item) {
                             echo "<tr>";
-                            echo "<td><img src='/BETA_ALBUM/Beta_Album/image/{$item['urun_gorsel']}' class='product-image'></td>";
+                            echo "<td><img src='../image/{$item['urun_gorsel']}' class='product-image'></td>";
                             echo "<td>{$item['urun_ad']}</td>";
                             echo "<td>{$item['adet']} adet</td>";
                             echo "<td>{$item['urun_fiyat']} ₺</td>";

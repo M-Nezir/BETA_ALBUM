@@ -27,27 +27,27 @@ while ($row = mysqli_fetch_assoc($result)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beta Album</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="/BETA_ALBUM/Beta_Album/bootstrap/bootstrap.min.css" rel="stylesheet">
-    <script src="/BETA_ALBUM/Beta_Album/bootstrap/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="/BETA_ALBUM/Beta_Album/css/index.css">
+    <link href="../bootstrap/bootstrap.min.css" rel="stylesheet">
+    <script src="../bootstrap/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="../css/index.css">
 </head>
 <body>
 
 <header>
     <nav>
         <ul>
-            <li><a href="/BETA_ALBUM/Beta_Album/includes/login">Üye Giriş / Hesabım</a></li> |
-            <li><a href="/BETA_ALBUM/Beta_Album/includes/about_us">Hakkımızda</a></li> |
-            <li><a href="/BETA_ALBUM/Beta_Album/includes/contact">İletişim</a></li> |
-            <li><a href="/BETA_ALBUM/Beta_Album/includes/basket">Sepetim</a></li> |
-            <li><a href="/BETA_ALBUM/Beta_Album/includes/basket">Kasaya git</a></li>
+            <li><a href="login">Üye Giriş / Hesabım</a></li> |
+            <li><a href="about_us">Hakkımızda</a></li> |
+            <li><a href="contact">İletişim</a></li> |
+            <li><a href="basket">Sepetim</a></li> |
+            <li><a href="basket">Kasaya git</a></li>
         </ul>
     </nav>
 </header>
 
 <nav class="fixed">
     <ul class="menu">
-        <li><a class="icon" href="/BETA_ALBUM/Beta_Album/index"><img src="/BETA_ALBUM/Beta_Album/image/betaalbümyatay.svg" alt="Logo" width="140"></a></li>
+        <li><a class="icon" href="../index"><img src="../image/betaalbümyatay.svg" alt="Logo" width="140"></a></li>
         <div class="center">
             <?php foreach ($category_groups as $group_name => $category_ids): ?>
                 <li class="dropdown">
@@ -56,7 +56,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                         <?php foreach ($category_ids as $category_id): ?>
                             <?php if (isset($categories[$category_id])): ?>
                                 <div class="dropdown-item">
-                                    <a class="category" href="/BETA_ALBUM/Beta_Album/includes/products?Kategori=<?= $category_id; ?>">
+                                    <a class="category" href="products?Kategori=<?= $category_id; ?>">
                                         <p><?= htmlspecialchars($categories[$category_id]); ?></p>
                                     </a>
                                 </div>
@@ -67,18 +67,18 @@ while ($row = mysqli_fetch_assoc($result)) {
             <?php endforeach; ?>
         </div>
         <li class="search-icon-container">
-            <a class="search_icon" id="search-btn" href="/BETA_ALBUM/Beta_Album/includes/search"><i class="fas fa-search"></i></a>
-            <a class="search_icon" href="/BETA_ALBUM/Beta_Album/includes/login"><i class="fas fa-user"></i></a>
-            <a class="search_icon" href="/BETA_ALBUM/Beta_Album/includes/basket"><i class="fa-solid fa-basket-shopping"></i></a>
+            <a class="search_icon" id="search-btn" href="search"><i class="fas fa-search"></i></a>
+            <a class="search_icon" href="login"><i class="fas fa-user"></i></a>
+            <a class="search_icon" href="basket"><i class="fa-solid fa-basket-shopping"></i></a>
         </li>
     </ul>
 </nav>
 
 <div class="hamburger-button">
-    <a href="/BETA_ALBUM/Beta_Album/index"  class="icon_mobile left"><img src="/BETA_ALBUM/Beta_Album/image/betaalbümyatay.svg" alt="Logo" width="140" height=auto></a>
+    <a href="../index"  class="icon_mobile left"><img src="../image/betaalbümyatay.svg" alt="Logo" width="140" height=auto></a>
     <a class="search_icon_mobile"href=""><i class="fas fa-search"></i></a>
-    <a class="search_icon_mobile" href="/BETA_ALBUM/Beta_Album/includes/login"><i class="fas fa-user"></i></a>
-    <a class="search_icon_mobile" href="/BETA_ALBUM/Beta_Album/includes/basket"><i class="fa-solid fa-basket-shopping"></i></a>
+    <a class="search_icon_mobile" href="login"><i class="fas fa-user"></i></a>
+    <a class="search_icon_mobile" href="basket"><i class="fa-solid fa-basket-shopping"></i></a>
 <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu">
       ☰
     </button>
@@ -101,7 +101,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                       <div class="list-group">
                           <?php foreach ($category_ids as $category_id): ?>
                               <?php if (isset($categories[$category_id])): ?>
-                                  <a href="/BETA_ALBUM/Beta_Album/includes/products?Kategori=<?= $category_id; ?>" 
+                                  <a href="products?Kategori=<?= $category_id; ?>" 
                                     class="list-group-item list-group-item-action menu-item">
                                       <?= htmlspecialchars($categories[$category_id]); ?>
                                   </a>
@@ -114,11 +114,11 @@ while ($row = mysqli_fetch_assoc($result)) {
       </div>
 
         <div class="single-items">
-                <a href="/BETA_ALBUM/Beta_Album/includes/login" class="list-group-item list-group-item-action menu-item">Üye Giriş / Hesabım</a>
-                <a href="/BETA_ALBUM/Beta_Album/includes/about_us" class="list-group-item list-group-item-action menu-item">Hakkımızda</a>
-                <a href="/BETA_ALBUM/Beta_Album/includes/contact" class="list-group-item list-group-item-action menu-item">İletişim</a>
-                <a href="/BETA_ALBUM/Beta_Album/includes/basket" class="list-group-item list-group-item-action menu-item">Sepetim</a>
-                <a href="/BETA_ALBUM/Beta_Album/includes/basket" class="list-group-item list-group-item-action menu-item">Kasaya git</a>
+                <a href="login" class="list-group-item list-group-item-action menu-item">Üye Giriş / Hesabım</a>
+                <a href="about_us" class="list-group-item list-group-item-action menu-item">Hakkımızda</a>
+                <a href="contact" class="list-group-item list-group-item-action menu-item">İletişim</a>
+                <a href="basket" class="list-group-item list-group-item-action menu-item">Sepetim</a>
+                <a href="basket" class="list-group-item list-group-item-action menu-item">Kasaya git</a>
         
             </div>
       </div>

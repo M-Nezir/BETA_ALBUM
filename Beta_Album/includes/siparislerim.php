@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once "config.php"; // Veritabanı bağlantısı
+include('navbar.php'); // Veritabanı bağlantısı
 
 // Kullanıcı giriş yapmış mı kontrol et
 if (!isset($_SESSION['user_id'])) {
@@ -36,7 +36,7 @@ $result = $stmt->get_result();
 
 <div>
 <div class="order-container">
-    <h2>Siparişlerim <a href="/BETA_ALBUM/Beta_Album/index" style="margin-left: 5%;">Anasayfaya Dön</a></h2>
+    <h2 style="margin: 3%;">Siparişlerim</h2>
 
     <?php if ($result->num_rows > 0): ?>
         <?php while ($row = $result->fetch_assoc()): ?>

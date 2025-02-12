@@ -11,7 +11,7 @@
     <div class="main">
         <h1 class='head'>KAMPANYALAR</h1>  
         <div style="margin: 8%;">
-        Kampanyalardan yararlanmak için sizi <b>Ayanbey, Ateşbaz Sk. No:54 D:3, 42090 Konya/Meram</b>’de bulunan şubemize bekliyoruz.<br>
+        Kampanyalardan yararlanmak için sizi <b>Konya / Ereğli</b>’de bulunan şubemize bekliyoruz.<br>
 Şubemizde birbirinden cazip indirimler ve fırsatlar sizi bekliyor.<br>
 Ürünlerimizdeki büyük fırsatlar, kaliteli hizmetimiz ve güler yüzlü ekibimizle alışveriş deneyiminizi daha keyifli hale getiriyoruz.<br>
 Ayrıca, farklı kampanyalarımızla dilediğiniz ürünü en uygun fiyatlarla temin edebilirsiniz.<br>
