@@ -1,9 +1,12 @@
 <?php
 include('config.php');
-include('navbar.php');
 
 // GET parametresini kontrol et
 $id = isset($_GET['Kategori']) ? intval($_GET['Kategori']) : 0;
+
+if ($id == '9') {
+    header('Location: vesikalik.php');
+}
 
 // kategori ismini al
 $kategori_sql = "SELECT kategori_ad FROM kategoriler WHERE kategori_id = ?";
@@ -24,7 +27,6 @@ if ($kategori) {
     $urun_result = null;
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -36,6 +38,7 @@ if ($kategori) {
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
+<?php include('navbar.php');?>
     <div class="main" style="padding-bottom: 10%;">
         <h1 class='head'><?php echo $kategori ? htmlspecialchars($kategori['kategori_ad']) : 'Kategori Bulunamadı'; ?></h1>
         
