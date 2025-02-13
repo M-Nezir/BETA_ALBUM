@@ -5,7 +5,7 @@ include('config.php');
 $id = isset($_GET['Kategori']) ? intval($_GET['Kategori']) : 0;
 
 if ($id == '9') {
-    header('Location: vesikalik.php');
+    header('Location: fotograf_yukleme.php');
 }
 
 // kategori ismini al

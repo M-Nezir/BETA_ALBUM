@@ -79,6 +79,12 @@ if (!isset($_SESSION['admin_logged_in'])) {
      <a href="/BETA_ALBUM/Beta_Album/admin_panel/view_orders"><i class="fa-solid fa-truck-fast"></i>Siparişleri Görüntüle</a>
     </div>
 
+    <div class="menu-item">
+        <a href="/BETA_ALBUM/Beta_Album/admin_panel/update_photo_prices">
+            <i class="fa-solid fa-money-bill-wave"></i> Fotoğraf Fiyatlarını Güncelle
+        </a>
+    </div>
+
 
     <div class="menu-item">
         <a href="/BETA_ALBUM/Beta_Album/admin_panel/update_admin">
