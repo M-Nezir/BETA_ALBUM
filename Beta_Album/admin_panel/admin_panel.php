@@ -81,7 +81,7 @@ if (!isset($_SESSION['admin_logged_in'])) {
 
     <div class="menu-item">
         <a href="/BETA_ALBUM/Beta_Album/admin_panel/update_photo_prices">
-            <i class="fa-solid fa-money-bill-wave"></i> Fotoğraf Fiyatlarını Güncelle
+            <i class="fa-solid fa-money-bill-wave"></i> Vesikalık Fiyatlarını Güncelle
         </a>
     </div>
 

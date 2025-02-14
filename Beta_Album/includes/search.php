@@ -20,6 +20,7 @@ if (isset($_GET['query'])) {
     <meta charset="UTF-8">
     <title>Arama Sonuçları</title>
     <link href="../bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../image/beyaz logo.png">
     <style>
         .product-card {
             border: 1px solid #ddd;

@@ -14,7 +14,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($row = $result->fetch_assoc()) {
         echo json_encode(["fiyat" => $row['fiyat']]);
     } else {
-        echo json_encode(["fiyat" => "Fiyat bulunamadı"]);
+        echo json_encode(["fiyat" => "Lütfen Yukarıdaki Kısımları Eksiksiz Doldurunuz!"]);
     }
 }
+
+
 ?>

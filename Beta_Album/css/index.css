@@ -282,6 +282,42 @@ a i {
     display: none;
 }
 
+#about {
+    background-color: #f8f9fa;
+    padding: 5vw 0; /* Ekran genişliğine göre dinamik padding */
+}
+
+.about-container {
+    display: flex;
+    justify-content: center;
+    gap: 3%; /* Kutular arası boşluk */
+    max-width: 80%; /* Sayfanın %80'ini kaplasın */
+    margin: 0 auto;
+}
+
+.content {
+    background: #ffffff;
+    padding: 3vw; /* Dinamik iç boşluk */
+    border-radius: 1vw; /* Köşeleri yumuşatma */
+    box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.1);
+    flex: 1;
+    text-align: center;
+}
+
+.kisa_yazi {
+    font-size: 2vw; /* Başlık boyutu dinamik */
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1vw;
+}
+
+.uzun_yazi_container {
+    text-align: justify;
+    line-height: 1.6;
+    font-size: 1.5vw; /* Paragraf boyutu dinamik */
+    color: #555;
+}
+
 
 @media screen and (max-width: 768px) {
 
@@ -390,6 +426,27 @@ header nav {
 .single-items a{
     font-weight: 600!important;
 
+}
+
+.about-container {
+    flex-direction: column;
+    gap: 5%;
+}
+
+.content {
+    padding: 5vw;
+}
+
+.kisa_yazi {
+    font-size: 4vw; /* Küçük ekranlarda başlık büyüsün */
+}
+
+.uzun_yazi_container {
+    font-size: 3vw; /* Küçük ekranlarda yazılar büyüsün */
+}
+
+.cloneable{
+    height: 20vh!important;
 }
 
 }

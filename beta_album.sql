@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 10 Şub 2025, 08:35:38
+-- Üretim Zamanı: 13 Şub 2025, 05:40:11
 -- Sunucu sürümü: 10.4.32-MariaDB
 -- PHP Sürümü: 8.2.12
 
@@ -39,6 +39,53 @@ CREATE TABLE `admin` (
 
 INSERT INTO `admin` (`admin_id`, `admin_email`, `admin_password`) VALUES
 (1, 'betacolor@hotmail.com', '$2y$10$vI/ZyXpTnl01aoxp81LOWelWfyK.jxup.c1J/VXql.vX/VKACMEXG');
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `fotograf_fiyatlari`
+--
+
+CREATE TABLE `fotograf_fiyatlari` (
+  `id` int(11) NOT NULL,
+  `kategori` enum('Biyometrik','Vesikalık') NOT NULL,
+  `ebat` varchar(50) NOT NULL,
+  `adet` int(11) NOT NULL,
+  `fiyat` decimal(10,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Tablo döküm verisi `fotograf_fiyatlari`
+--
+
+INSERT INTO `fotograf_fiyatlari` (`id`, `kategori`, `ebat`, `adet`, `fiyat`) VALUES
+(1, 'Biyometrik', '35x45mm', 4, 49.90),
+(2, 'Biyometrik', '35x45mm', 8, 54.90),
+(3, 'Biyometrik', '35x45mm', 12, 59.90),
+(4, 'Biyometrik', '35x45mm', 24, 69.90),
+(5, 'Biyometrik', '50x50mm', 4, 49.90),
+(6, 'Biyometrik', '50x50mm', 8, 54.90),
+(7, 'Biyometrik', '50x50mm', 12, 59.90),
+(8, 'Biyometrik', '50x50mm', 24, 69.90),
+(9, 'Biyometrik', '50x60mm', 4, 49.90),
+(10, 'Biyometrik', '50x60mm', 8, 54.90),
+(11, 'Biyometrik', '50x60mm', 12, 59.90),
+(12, 'Biyometrik', '50x60mm', 24, 69.90),
+(13, 'Vesikalık', '3,2x4,5 cm', 9, 39.90),
+(14, 'Vesikalık', '3,2x4,5 cm', 18, 49.90),
+(15, 'Vesikalık', '3,2x4,5 cm', 27, 59.90),
+(16, 'Vesikalık', '3,2x4,5 cm', 36, 69.90),
+(17, 'Vesikalık', '3,2x4,5 cm', 45, 79.90),
+(18, 'Vesikalık', '4,5x6 cm', 4, 39.90),
+(19, 'Vesikalık', '4,5x6 cm', 8, 49.90),
+(20, 'Vesikalık', '4,5x6 cm', 12, 59.90),
+(21, 'Vesikalık', '4,5x6 cm', 24, 69.90),
+(22, 'Vesikalık', '4,5x6 cm', 36, 79.90),
+(23, 'Vesikalık', '6x9 cm', 2, 39.90),
+(24, 'Vesikalık', '6x9 cm', 4, 49.90),
+(25, 'Vesikalık', '6x9 cm', 6, 59.90),
+(26, 'Vesikalık', '6x9 cm', 8, 69.90),
+(27, 'Vesikalık', '6x9 cm', 10, 79.90);
 
 -- --------------------------------------------------------
 
@@ -83,6 +130,13 @@ CREATE TABLE `kullanicilar` (
   `password` varchar(255) NOT NULL,
   `sepet` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Tablo döküm verisi `kullanicilar`
+--
+
+INSERT INTO `kullanicilar` (`user_id`, `user_name`, `user_surname`, `phoneNumber`, `tcKimlik`, `email`, `password`, `sepet`) VALUES
+(4, 'Yaver', 'Batıni', '05554443322', '12345678978', 'yaverbatini@gmail.com', '$2y$10$dDwE0tSy7TLGwqK.XCjLV.bIi5bFh/dtbyFXkhv8aspLS0oOuYx7a', NULL);
 
 -- --------------------------------------------------------
 
@@ -145,6 +199,12 @@ ALTER TABLE `admin`
   ADD UNIQUE KEY `admin_email` (`admin_email`);
 
 --
+-- Tablo için indeksler `fotograf_fiyatlari`
+--
+ALTER TABLE `fotograf_fiyatlari`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Tablo için indeksler `kategoriler`
 --
 ALTER TABLE `kategoriler`
@@ -189,6 +249,12 @@ ALTER TABLE `admin`
   MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- Tablo için AUTO_INCREMENT değeri `fotograf_fiyatlari`
+--
+ALTER TABLE `fotograf_fiyatlari`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+
+--
 -- Tablo için AUTO_INCREMENT değeri `kategoriler`
 --
 ALTER TABLE `kategoriler`
@@ -198,7 +264,7 @@ ALTER TABLE `kategoriler`
 -- Tablo için AUTO_INCREMENT değeri `kullanicilar`
 --
 ALTER TABLE `kullanicilar`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `settings`

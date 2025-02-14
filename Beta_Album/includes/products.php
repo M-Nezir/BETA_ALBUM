@@ -32,6 +32,7 @@ if ($kategori) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../image/beyaz logo.png">
     <title><?php echo $kategori ? htmlspecialchars($kategori['kategori_ad']) : 'Kategori Bulunamadı'; ?></title>
     <link rel="stylesheet" href="../css/backgraund.css">
     <link rel="stylesheet" href="../css/products.css">
