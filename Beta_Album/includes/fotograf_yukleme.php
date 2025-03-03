@@ -10,48 +10,59 @@ include 'config.php'; // Veritabanı bağlantısı
 
 // Kullanıcı giriş yapmış mı kontrol et
 
-
-//$user_id = $_SESSION['user_id'];
+$user_id = $_SESSION['user_id'];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $kategori = $_POST['kategori']; // "Biyometrik" veya "Vesikalık"
     $ebat = $_POST['ebat'];
     $kagit_yuzeyi = $_POST['kagit_yuzeyi'];
     $fotograf_sayisi = $_POST['fotograf_sayisi'];
-    
+
     // Dosya yükleme işlemi
+    $hedef_dosya = "";
     if (isset($_FILES['foto']) && $_FILES['foto']['error'] === UPLOAD_ERR_OK) {
         $dosya_adi = basename($_FILES['foto']['name']);
-        $hedef_klasor = "uploads/";
+        $hedef_klasor = "../image/";
         $hedef_dosya = $hedef_klasor . $dosya_adi;
         move_uploaded_file($_FILES['foto']['tmp_name'], $hedef_dosya);
-    } else {
-        $hedef_dosya = "";
     }
 
-    // Seçenekleri JSON olarak hazırla
-    $urun_bilgisi = json_encode([
+    // Seçenekleri JSON olarak hazırla (Düzenleme yapılıyor)
+    $urun_bilgisi = [
         'kategori' => $kategori,
         'ebat' => $ebat,
         'kagit_yuzeyi' => $kagit_yuzeyi,
         'fotograf_sayisi' => $fotograf_sayisi,
         'foto' => $hedef_dosya
-    ]);
+    ];
+
+    // Ürün bilgilerini düzenle
+    $urun_bilgisi['kategori'] = strtoupper($urun_bilgisi['kategori']); // Kategori büyük harfe çevir
+    $urun_bilgisi['ebat'] = htmlspecialchars($urun_bilgisi['ebat']); // Ebatı güvenli hale getir
+    $urun_bilgisi['kagit_yuzeyi'] = htmlspecialchars($urun_bilgisi['kagit_yuzeyi']); // Kağıt yüzeyini güvenli hale getir
+    $urun_bilgisi['fotograf_sayisi'] = (int)$urun_bilgisi['fotograf_sayisi']; // Fotoğraf sayısını tam sayı yap
+
+    // JSON formatına çevir
+    $urun_bilgisi_json = json_encode($urun_bilgisi);
 
     // Kullanıcının mevcut sepet verisini çek
     $query = $conn->prepare("SELECT sepet FROM kullanicilar WHERE user_id = ?");
-    $query->execute([$user_id]);
-    $row = $query->fetch(PDO::FETCH_ASSOC);
+    $query->bind_param("i", $user_id);
+    $query->execute();
+    $result = $query->get_result();
+    $row = $result->fetch_assoc();
     
-    $mevcut_sepet = $row['sepet'] ? json_decode($row['sepet'], true) : [];
-    $mevcut_sepet[] = $urun_bilgisi;
-    
-    // Yeni sepet bilgisi ile güncelle
+    // Mevcut sepeti al
+    $mevcut_sepet = $row && $row['sepet'] ? json_decode($row['sepet'], true) : [];
+    $mevcut_sepet[] = $urun_bilgisi_json; // Ürün bilgilerini sepete ekle
+
+    // Yeni sepet bilgisini güncelle
     $yeni_sepet = json_encode($mevcut_sepet);
     $update = $conn->prepare("UPDATE kullanicilar SET sepet = ? WHERE user_id = ?");
-    $update->execute([$yeni_sepet, $user_id]);
-    
-    echo "<script>alert('\u00dcr\u00fcn sepete eklendi!'); window.location.href='fotograf_yukleme.php';</script>";
+    $update->bind_param("si", $yeni_sepet, $user_id);
+    $update->execute();
+
+    echo "<script>alert('Ürün sepete eklendi!'); window.location.href='fotograf_yukleme.php';</script>";
 }
 ?>
 
@@ -236,7 +247,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         <form action="" method="POST" enctype="multipart/form-data" class="form">
             <h2 class="form-title">Vesikalık Fotoğraf</h2>
-            <input type="hidden" name="kategori" value="Vesikalık">
+            <input type="hidden" name="kategori" value="Vesikalik">
             <label class="form-label">Ebat:</label>
             <select name="ebat" id="vesikalik_ebat" class="form-select" onchange="updateFotografSayisi()">
                 <option>Lütfen Ebat Seçiniz</option>
@@ -341,7 +352,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Vesikalık Fotoğraf
         $("#vesikalik_ebat, #vesikalik_fotograf_sayisi").change(function() {
-            fiyatGuncelle("input[name='kategori'][value='Vesikalık']", 
+            fiyatGuncelle("input[name='kategori'][value='Vesikalik']", 
                         "#vesikalik_ebat", 
                         "#vesikalik_fotograf_sayisi", 
                         "#vesikalik_fiyat");
