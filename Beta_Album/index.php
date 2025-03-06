@@ -25,7 +25,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beta Album</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="icon" type="image/png" href="image/beyaz logo.png">
     <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
     <script src="bootstrap/bootstrap.bundle.min.js"></script>
@@ -126,8 +126,27 @@ while ($row = mysqli_fetch_assoc($result)) {
       </div>
     </div>
 </div>
+<style>.whatsapp-button {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: 50px;
+    height: 50px;
+    z-index: 1000;
+}
 
-
+.whatsapp-button i {
+    font-size: 80px !important;
+    z-index: 1000;
+}
+.whatsapp-button i:hover {
+    font-size: 90px !important;
+    z-index: 1000;
+}
+</style>
+<a href="https://wa.me/+905369771595" class="whatsapp-button" target="_blank" >
+<i class="fa-brands fa-square-whatsapp" style="color: #00ff40;"></i>
+</a>
     <?php  
     include('includes/config.php'); // Veritabanı bağlantısı
 

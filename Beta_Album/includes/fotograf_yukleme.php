@@ -71,6 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="icon" type="image/png" href="../image/beyaz logo.png">
     <link rel="stylesheet" href="../css/backgraund.css">
     <style>
@@ -165,6 +166,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 </head>
 <body>
+<style>.whatsapp-button {
+    position: fixed;
+    bottom: 50px;
+    right: 150px;
+    width: 50px;
+    height: 50px;
+    z-index: 1000;
+}
+
+.whatsapp-button i {
+    font-size: 80px !important;
+    z-index: 1000;
+}
+.whatsapp-button i:hover {
+    font-size: 90px !important;
+    z-index: 1000;
+}
+</style>
+<a href="https://wa.me/+905369771595" class="whatsapp-button" target="_blank" >
+<i class="fa-brands fa-square-whatsapp" style="color: #00ff40;"></i>
+</a>
     <div class="main">
         <img src="../image/vesikalık.jpg" alt="" style="height: 100%; width: 100%;">
         <h1 style="margin-left: 10%; margin-top: 5%; margin-bottom: 5%;">Biyometrik Fotoğraf ve Vesikalık Fotoğraf</h1>

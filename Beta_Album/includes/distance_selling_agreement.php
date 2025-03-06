@@ -20,9 +20,10 @@
 <h5>MADDE 2 - ALICI/SATICI BİLGİLERİ</h5>
 <p>MADDE 2.1 - SATICI BİLGİLERİ<br>
 Ünvan: Beta Album<br> 
-Adres: Ayanbey, Ateşbaz Sk. No:54 D:3, 42090 Konya/Meram<br>
-Telefon: +90 536 977 15 95<br>
-Email: betacolor@hotmail.com</p>
+Adres: SÜMER MAH. INÖNÜ CAD. NO: 102 A IÇ KAPI NO: A EREGLI/
+KONYA<br>
+Telefon: +90 536 977 15 95 veya +90 332 712 75 14<br>
+Email: beta.color@hotmail.com</p>
 <p>MADDE 2.2 - ALICI BİLGİLERİ
 Müşteri olarak alışveriş sitesine üye olan kişi. Üye olurken kullanılan adres ve iletişim bilgileri esas alınır.</p>
 <h5>MADDE 3 - SÖZLEŞME KONUSU ÜRÜN BİLGİLERİ</h5>
