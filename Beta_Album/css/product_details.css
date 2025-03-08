@@ -79,42 +79,42 @@ button:hover {
 .add-to-cart-btn:hover {
     background-color: #218838;
 }
-
+.notkısmımobil {
+    display: none;
+}
 @media (max-width: 768px) {
-    /* Görseller ekran genişliğine uyumlu */
-    .imagess {
-        width: 100%;
+    .main {
+        width: 90%;
         height: auto;
-    }
-    
-    /* Form elemanlarını dikey sırala */
-    form {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 10px;
+        padding: 15px;
     }
 
-    label {
-        margin-right: 0;
-        text-align: center;
+    .head {
+        font-size: 24px;
+    }
+
+    .imagess {
+        max-width: 100%;
+    }
+
+    form {
+        width: 100%;
     }
 
     input[type="number"] {
-        width: 100%;
-        max-width: 200px;
-        margin-right: 0;
-        margin: 0 auto;
+        max-width: 100px;
     }
 
-    .button {
-        width: 100%;
-        max-width: 200px;
-        margin: 0 auto;
-    }
-
+    button,
     .add-to-cart-btn {
-        width: 100%;
-        max-width: 200px;
-        margin: 0 auto;
+        max-width: 100%;
+    }
+    .notkısmımobil {
+        display: block;
+        margin-left: 0;
+        margin-bottom: 3%!important;
+    }
+    .notkısmı {
+        display: none;
     }
 }

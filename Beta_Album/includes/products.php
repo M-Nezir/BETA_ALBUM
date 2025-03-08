@@ -57,6 +57,10 @@ if ($kategori) {
     font-size: 90px !important;
     z-index: 1000;
 }
+@media (max-width: 768px) {
+    .whatsapp-button {
+        display: none;}
+}
 </style>
 <a href="https://wa.me/+905369771595" class="whatsapp-button" target="_blank" >
 <i class="fa-brands fa-square-whatsapp" style="color: #00ff40;"></i>
@@ -71,7 +75,7 @@ if ($kategori) {
                 while ($row = $urun_result->fetch_assoc()) {
                     echo "<div class='product'>";
                     echo "<a href='product_detail?urun_id=" . htmlspecialchars($row['urun_id']) . "' style='text-decoration: none; color: black;'>";
-                    echo "<div style='height: 50vh; width: 100%;'>";
+                    echo "<div class='productimage'>";
                     echo "<img src='../image/" . htmlspecialchars($row['urun_gorsel']) . "' alt='Ürün Görseli'>";
                     echo "</div>";
                     echo "<h4>" . htmlspecialchars($row['urun_ad']) . "</h4>";

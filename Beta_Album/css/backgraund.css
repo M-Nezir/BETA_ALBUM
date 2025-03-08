@@ -23,7 +23,7 @@ body{
 @media (max-width: 768px) {
 
     .main {
-        height: 100vh;
+        height: auto;
         margin-left: 10%;
         margin-right: 10%;
         bottom: 0;

@@ -74,93 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="icon" type="image/png" href="../image/beyaz logo.png">
     <link rel="stylesheet" href="../css/backgraund.css">
-    <style>
-        .container {
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 3%;
-            border: 1px solid rgba(0, 0, 0, 0.2);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 50% !important;
-        }
-        .title {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .form {
-            display: flex;
-            flex-direction: column;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            background: #fafafa;
-        }
-        .form-title {
-            text-align: center;
-            margin-bottom: 10px;
-        }
-        .form-label {
-            font-weight: bold;
-            margin-top: 10px;
-        }
-        .form-select, .form-input {
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            margin-top: 5px;
-        }
-        .btn {
-            background: #28a745!important;
-            color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-        .btn:hover {
-            background: #218838!important;
-        }
-
-        .hidden {
-        visibility: hidden;
-        opacity: 0;
-        height: 0;
-        overflow: hidden;
-        transition: opacity 0.3s ease, height 0.3s ease;
-    }
-    .visible {
-        visibility: visible;
-        opacity: 1;
-        height: auto;
-        transition: opacity 0.3s ease, height 0.3s ease;
-    }
-
-    .toggleButton{
-        background:rgb(0, 218, 47);
-            color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 10px;
-            margin-bottom: 10px;
-
-    }
-    .toggleButton:hover {
-        background: #28a745;
-        }
-    .toggle-class{
-        display: flex;
-        align-items: center;
-    }
-
-    .uyari_resim{
-
-        margin-top: 3%;
-    }
-    </style>
+    <link rel="stylesheet" href="../css/fotograf_yukleme.css">
     <title>Fotoğraf Yükleme</title>
 
 
@@ -183,54 +97,55 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     font-size: 90px !important;
     z-index: 1000;
 }
+@media (max-width: 768px) {
+    .whatsapp-button {
+        display: none;}
+}
 </style>
 <a href="https://wa.me/+905369771595" class="whatsapp-button" target="_blank" >
 <i class="fa-brands fa-square-whatsapp" style="color: #00ff40;"></i>
 </a>
     <div class="main">
-        <img src="../image/vesikalık.jpg" alt="" style="height: 100%; width: 100%;">
-        <h1 style="margin-left: 10%; margin-top: 5%; margin-bottom: 5%;">Biyometrik Fotoğraf ve Vesikalık Fotoğraf</h1>
-        <div style="text-align: center;">
-            <h2 style="margin-top: 3%;">Vesikalık Fotoğraf</h2>
-            <h5>Fotoğrafınız sizin gönderdiğiniz şekilde hiçbir bir oynama(fon değişimi, rötuş vb.) yapılmadan basılacaktır.</h5>
-            <div style="display: flex; gap: 4%; align-items: center; justify-content: center;">
-                <div>
-                    <img src="../image/vs01.jpg" alt="">
-                    <div>4,5x6 cm (4 adet) </div>
-                </div>
-                <div>
-                    <img src="../image/vs02.jpg" alt="">
-                    <div>3,2x4,5 cm (9 adet)</div>
-                </div>
-                <div>
-                    <img src="../image/vs03.jpg" alt="">
-                    <div>6x9 cm (2 adet) </div>
-                </div>
-        </div>
-    </div>
-    
-    <div style="text-align: center;">
-            <h1 style="margin-top: 3%;">Biyometrik Fotoğraf</h1>
-            <h5>Fotoğrafınız seçtiğiniz biyometrik ölçüsünde ve biyometrik standartlarına uygun olarak fon değişimi yapılarak basılacaktır.</h5>
-            <div style="display: flex; gap: 4%; align-items: center; justify-content: center;">
-                <div>
-                    <img src="../image/by01.jpg" alt="">
-                    <div>35x45 mm <br>
-                    <b>Schengen vize ölçüsü</b></div>
-                </div>
-                <div>
-                    <img src="../image/by02.jpg" alt="">
-                    <div>50x50 mm <br>
-                    <b>Amerika vize ölçüsü</b></div>
-                </div>
-                <div>
-                    <img src="../image/by03.jpg" alt="">
-                    <div>50x60 mm <br>
-                    <b>Kimlik, ehliyet, pasaport ve birçok <br>ülkenin vize ölçüsü</b></div>
-                </div>
-        </div>
-    </div>
+    <img src="../image/vesikalık.jpg" alt="" class="hero-image">
+<h1 class="main-title">Biyometrik Fotoğraf ve Vesikalık Fotoğraf</h1>
 
+<div class="section">
+    <h2 class="sub-title">Vesikalık Fotoğraf</h2>
+    <h5 class="description">Fotoğrafınız sizin gönderdiğiniz şekilde hiçbir oynama (fon değişimi, rötuş vb.) yapılmadan basılacaktır.</h5>
+    <div class="photo-grid">
+        <div class="photo-card">
+            <img src="../image/vs01.jpg" alt="">
+            <div class="photo-text">4,5x6 cm (4 adet)</div>
+        </div>
+        <div class="photo-card">
+            <img src="../image/vs02.jpg" alt="">
+            <div class="photo-text">3,2x4,5 cm (9 adet)</div>
+        </div>
+        <div class="photo-card">
+            <img src="../image/vs03.jpg" alt="">
+            <div class="photo-text">6x9 cm (2 adet)</div>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <h2 class="sub-title">Biyometrik Fotoğraf</h2>
+    <h5 class="description">Fotoğrafınız seçtiğiniz biyometrik ölçüsünde ve biyometrik standartlarına uygun olarak fon değişimi yapılarak basılacaktır.</h5>
+    <div class="photo-grid">
+        <div class="photo-card">
+            <img src="../image/by01.jpg" alt="">
+            <div class="photo-text">35x45 mm <br><b>Schengen vize ölçüsü</b></div>
+        </div>
+        <div class="photo-card">
+            <img src="../image/by02.jpg" alt="">
+            <div class="photo-text">50x50 mm <br><b>Amerika vize ölçüsü</b></div>
+        </div>
+        <div class="photo-card">
+            <img src="../image/by03.jpg" alt="">
+            <div class="photo-text">50x60 mm <br><b>Kimlik, ehliyet, pasaport ve birçok <br>ülkenin vize ölçüsü</b></div>
+        </div>
+    </div>
+</div>
 
 <div class="container">
 
@@ -264,7 +179,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <span id="biyometrik_fiyat" class="price"> - TL</span>
             <label class="form-label">Fotoğraf Seç:</label>
             <input type="file" name="foto" class="form-input">
-            <button type="submit" class="btn">Sepete Ekle</button>
+            <button type="submit" class="btnnn">Sepete Ekle</button>
         </form>
         
         <form action="" method="POST" enctype="multipart/form-data" class="form">
@@ -288,56 +203,56 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <span id="vesikalik_fiyat" class="price">- TL</span>
             <label class="form-label">Fotoğraf Seç:</label>
             <input type="file" name="foto" class="form-input">
-            <button type="submit" class="btn">Sepete Ekle</button>
+            <button type="submit" class="btnnn">Sepete Ekle</button>
         </form>
     </div>
 
 
 
-    <div style="text-align: center;">
-    <h1 style="margin-top: 3%;"> Biyometrik fotoğrafta dikkat etmeniz gerekenler;</h1>
-        <div>
-             <img src="../image/dk001.jpg" alt="" class="uyari_resim">
-            <div> Yüz, fotoğraf üzerinde ortalanmış olarak saç modeliyle birlikte tamamen görünür olmalıdır.</div>
-        </div>
+    <div class="photo-guidelines-container">
+    <h1 class="guideline-title">Biyometrik fotoğrafta dikkat etmeniz gerekenler;</h1>
 
-        <div>
-             <img src="../image/dk002.jpg" alt="" class="uyari_resim">
-            <div> Fotoğrafta leke ve bükülmeler olmamalıdır. Renkler nötr olmalı ve yüzün doğal renklerini yansıtmalıdır.
-            </div>
-        </div>
-
-        <div>
-             <img src="../image/dk003.jpg" alt="" class="uyari_resim">
-            <div> Gözler açık konumda olmalı ve net olarak görünmelidir. Saçlar gözleri ve kaç bitimini kapatmamalı, <br> fotoğraf çekilirken doğrudan kameraya bakılmalıdır.</div>
-        </div>
-
-        <div>
-             <img src="../image/dk004.jpg" alt="" class="uyari_resim">
-            <div> Başın konumu dik olmalı, baş herhangi bir yöne dönük olmamalıdır. Fotoğraf gülme vb. mimikler olmadan, <br> ağız kapalı olarak çekilmelidir.</div>
-        </div>
-
-        <div>
-             <img src="../image/dk005.jpg" alt="" class="uyari_resim">
-            <div> Işık yüze eşit ölçüde yansıtılmalı, yansıma veya gölgeler bulunmamalıdır. Fotoğrafta "kırmızı-göz" bulunmamalıdır.</div>
-        </div>
-
-        <div>
-             <img src="../image/dk006.jpg" alt="" class="uyari_resim">
-            <div> Gözler net bir şekilde görünmeli, gözlük camı üzerinde yansımalar bulunmamalı, renkli cam veya güneş gözlüğü kullanılmamalıdır. <br>
-            Gözlük camının kenarı veya çerçevesi gözleri kapatmamalı ya da gözleri kapatacak ölçüde kalın olmamalıdır.</div>
-        </div>
-
-        <div>
-             <img src="../image/dk007.jpg" alt="" class="uyari_resim">
-            <div>Kişinin zorunlu olarak kullandığı gözlük ve benzeri aksesuarlar dışında fotoğrafta şapka, başlık, pipo, vb. nesneler bulunmamalıdır.</div>
-        </div>
-
-        <div>
-             <img src="../image/dk008.jpg" alt="" class="uyari_resim">
-            <div>Başörtülü fotoğraflarda yüz çene ucundan alına kadar görünür olmalı, kaç bitimi gözükmeli, yüzün üzerinde gölgeler oluşmamalıdır.</div>
-        </div>
+    <div class="guideline-item">
+        <img src="../image/dk001.jpg" alt="" class="guideline-image">
+        <div class="guideline-text">Yüz, fotoğraf üzerinde ortalanmış olarak saç modeliyle birlikte tamamen görünür olmalıdır.</div>
     </div>
+
+    <div class="guideline-item">
+        <img src="../image/dk002.jpg" alt="" class="guideline-image">
+        <div class="guideline-text">Fotoğrafta leke ve bükülmeler olmamalıdır. Renkler nötr olmalı ve yüzün doğal renklerini yansıtmalıdır.</div>
+    </div>
+
+    <div class="guideline-item">
+        <img src="../image/dk003.jpg" alt="" class="guideline-image">
+        <div class="guideline-text">Gözler açık konumda olmalı ve net olarak görünmelidir. Saçlar gözleri ve kaş bitimini kapatmamalı, fotoğraf çekilirken doğrudan kameraya bakılmalıdır.</div>
+    </div>
+
+    <div class="guideline-item">
+        <img src="../image/dk004.jpg" alt="" class="guideline-image">
+        <div class="guideline-text">Başın konumu dik olmalı, baş herhangi bir yöne dönük olmamalıdır. Fotoğraf gülme vb. mimikler olmadan, ağız kapalı olarak çekilmelidir.</div>
+    </div>
+
+    <div class="guideline-item">
+        <img src="../image/dk005.jpg" alt="" class="guideline-image">
+        <div class="guideline-text">Işık yüze eşit ölçüde yansıtılmalı, yansıma veya gölgeler bulunmamalıdır. Fotoğrafta "kırmızı-göz" bulunmamalıdır.</div>
+    </div>
+
+    <div class="guideline-item">
+        <img src="../image/dk006.jpg" alt="" class="guideline-image">
+        <div class="guideline-text">Gözler net bir şekilde görünmeli, gözlük camı üzerinde yansımalar bulunmamalı, renkli cam veya güneş gözlüğü kullanılmamalıdır. Gözlük camının kenarı veya çerçevesi gözleri kapatmamalı ya da gözleri kapatacak ölçüde kalın olmamalıdır.</div>
+    </div>
+
+    <div class="guideline-item">
+        <img src="../image/dk007.jpg" alt="" class="guideline-image">
+        <div class="guideline-text">Kişinin zorunlu olarak kullandığı gözlük ve benzeri aksesuarlar dışında fotoğrafta şapka, başlık, pipo, vb. nesneler bulunmamalıdır.</div>
+    </div>
+
+    <div class="guideline-item">
+        <img src="../image/dk008.jpg" alt="" class="guideline-image">
+        <div class="guideline-text">Başörtülü fotoğraflarda yüz çene ucundan alına kadar görünür olmalı, kaş bitimi gözükmeli, yüzün üzerinde gölgeler oluşmamalıdır.</div>
+    </div>
+</div>
+
 
     </div>
     <script>updateFotografSayisi();</script>

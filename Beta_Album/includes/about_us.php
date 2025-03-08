@@ -26,6 +26,10 @@
     font-size: 90px !important;
     z-index: 1000;
 }
+@media (max-width: 768px) {
+    .whatsapp-button {
+        display: none;}
+}
 </style>
 <a href="https://wa.me/+905369771595" class="whatsapp-button" target="_blank" >
 <i class="fa-brands fa-square-whatsapp" style="color: #00ff40;"></i>

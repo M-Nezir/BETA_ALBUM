@@ -113,9 +113,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                   </div>
               <?php endforeach; ?>
           </div>
-      </div>
-
-        <div class="single-items">
+           <div class="single-items">
                 <a href="includes/login" class="list-group-item list-group-item-action menu-item">Üye Giriş / Hesabım</a>
                 <a href="includes/about_us" class="list-group-item list-group-item-action menu-item">Hakkımızda</a>
                 <a href="includes/contact" class="list-group-item list-group-item-action menu-item">İletişim</a>
@@ -123,6 +121,9 @@ while ($row = mysqli_fetch_assoc($result)) {
                 <a href="includes/basket" class="list-group-item list-group-item-action menu-item">Kasaya git</a>
         
             </div>
+      </div>
+
+       
       </div>
     </div>
 </div>
@@ -142,6 +143,10 @@ while ($row = mysqli_fetch_assoc($result)) {
 .whatsapp-button i:hover {
     font-size: 90px !important;
     z-index: 1000;
+}
+@media (max-width: 768px) {
+    .whatsapp-button {
+        display: none;}
 }
 </style>
 <a href="https://wa.me/+905369771595" class="whatsapp-button" target="_blank" >
