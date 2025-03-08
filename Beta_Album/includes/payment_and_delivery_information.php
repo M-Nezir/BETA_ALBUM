@@ -9,7 +9,7 @@
 </head>
 <body class="body">
     <?php include('navbar.php');?>
-    <div class="main">
+    <div class="main" style="height: auto;">
         <h1 class='head'>ÖDEME VE TESLİMAT BİLGİLERİ</h1>  
 
         <div style="margin: 8%;">

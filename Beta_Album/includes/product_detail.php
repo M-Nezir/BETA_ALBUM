@@ -39,7 +39,12 @@ $query->close();
     <div style="display: flex; flex-direction: center;">
     <div style="display: inline-flex;  justify-content: flex-start; flex-direction: column;">
          <h1 class="head"><?php echo htmlspecialchars($urun['urun_ad']); ?></h1><br>
-         <img class="imagess" src="../image/<?php echo htmlspecialchars($urun['urun_gorsel']); ?>" alt="<?php echo htmlspecialchars($urun['urun_ad']); ?>" width="300"> <br>
+
+         <div style="display: inline-flex;">
+         <img class="imagess" src="../image/<?php echo htmlspecialchars($urun['urun_gorsel']); ?>" alt="<?php echo htmlspecialchars($urun['urun_ad']); ?>" width="300">
+         <span class="notkısmı" style="margin-left: 5%;"><b>Not:</b> Sipariş ettiğiniz ürünler beta albüm güvencesi ile 21 iş günü içerisinde teslim edilmektedir. </span><br>
+         </div>
+         <span class="notkısmımobil"><b>Not:</b> Sipariş ettiğiniz ürünler beta albüm güvencesi ile 21 iş günü içerisinde teslim edilmektedir. </span><br>
          <div style=" width: 60%;word-wrap: break-word; overflow-wrap: break-word;">
          <p><strong>Fiyat:</strong> <?php echo number_format($urun['urun_fiyat'], 2); ?> TL</p>
          <?php if (!empty($urun['urun_aciklama'])): ?>

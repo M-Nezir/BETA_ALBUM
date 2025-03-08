@@ -271,9 +271,7 @@ a i {
     display: none!important;
 }
 
-.offcanvas {
-    display: none;
-}
+
 .icon_mobile {
     display: none;
 }
@@ -335,7 +333,7 @@ header {
 }
 
 header nav {
-    display: none;;
+    display: none;
 }
 
 
@@ -423,9 +421,10 @@ header nav {
 .icon_mobile {
     display: inline-block!important;
 }
+
 .single-items a{
     font-weight: 600!important;
-
+    text-decoration: underline;
 }
 
 .about-container {

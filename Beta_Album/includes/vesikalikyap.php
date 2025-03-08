@@ -1,63 +1,93 @@
 <?php
 // Yükleme dizini
-$upload_dir = "uploads/";
-if (!file_exists($upload_dir)) {
-    mkdir($upload_dir, 0777, true);
-}
+$target_dir = "../image"; // Burada yüklenen resimleri kaydedeceğiz
+$uploadOk = 1;
 
-// Fotoğraf işleme
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['photo'])) {
-    $file_name = time() . "_" . basename($_FILES["photo"]["name"]);
-    $target_file = $upload_dir . $file_name;
-    $clean_file = $upload_dir . "clean_" . $file_name;
+// Dosya adı
+$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+$imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
-    $allowed_types = ["image/jpeg", "image/png"];
-    $file_type = mime_content_type($_FILES["photo"]["tmp_name"]);
-
-    if (!in_array($file_type, $allowed_types)) {
-        die("Sadece JPG ve PNG dosyaları yüklenebilir.");
-    }
-
-    if (move_uploaded_file($_FILES["photo"]["tmp_name"], $target_file)) {
-        resizeImage($target_file, 600, 800);
-        copy($target_file, $clean_file);
-        addWatermark($target_file, "Filigran - Ödeme Sonrası Kaldırılacak");
+// Resmin bir resim olup olmadığını kontrol et
+if(isset($_POST["submit"])) {
+    if (isset($_FILES["fileToUpload"])) {
+        // Dosya var mı kontrol et
+        if ($_FILES["fileToUpload"]["error"] !== UPLOAD_ERR_OK) {
+            echo "Dosya yüklenirken bir hata oluştu.<br>";
+            $uploadOk = 0;
+        } else {
+            $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+            if($check !== false) {
+                echo "Dosya bir resim: " . $check["mime"] . ".<br>";
+                $uploadOk = 1;
+            } else {
+                echo "Bu dosya bir resim değil.<br>";
+                $uploadOk = 0;
+            }
+        }
     } else {
-        die("Yükleme sırasında hata oluştu.");
+        echo "Dosya seçilmedi.<br>";
+        $uploadOk = 0;
     }
 }
 
-// Fotoğraf yeniden boyutlandırma
-function resizeImage($file, $width, $height) {
-    $image = imagecreatefromstring(file_get_contents($file));
-    $resized = imagescale($image, $width, $height);
-    imagejpeg($resized, $file);
+// Dosya zaten var mı kontrol et
+if (file_exists($target_file)) {
+    echo "Üzgünüz, bu dosya zaten var.<br>";
+    $uploadOk = 0;
 }
 
-// Filigran ekleme
-function addWatermark($file, $text) {
-    $image = imagecreatefromjpeg($file);
-    $color = imagecolorallocate($image, 255, 0, 0);
-    $font = 5;
-    $x = imagesx($image) / 4;
-    $y = imagesy($image) - 30;
-    imagestring($image, $font, $x, $y, $text, $color);
-    imagejpeg($image, $file);
+// Dosya boyutunu kontrol et (maksimum 5MB)
+if ($_FILES["fileToUpload"]["size"] > 5000000) {
+    echo "Üzgünüz, dosyanız çok büyük.<br>";
+    $uploadOk = 0;
 }
 
-// Ödeme sonrası dosya indirme
-if (isset($_GET['file'])) {
-    $file_name = $_GET['file'];
-    $clean_file = $upload_dir . "clean_" . $file_name;
+// Belirli dosya uzantılarına izin ver (JPEG, PNG, GIF)
+if($imageFileType != "jpg" && $imageFileType != "jpeg" && $imageFileType != "png") {
+    echo "Üzgünüz, sadece JPG, JPEG ve PNG dosyalarına izin verilmektedir.<br>";
+    $uploadOk = 0;
+}
 
-    if (!file_exists($clean_file)) {
-        die("Dosya mevcut değil.");
+// Eğer $uploadOk 0 ise, yükleme engellendi
+if ($uploadOk == 0) {
+    echo "Üzgünüz, dosyanız yüklenemedi.<br>";
+} else {
+    // Benzersiz dosya ismi oluştur (çakışmayı önlemek için)
+    $unique_name = uniqid() . '.' . $imageFileType;
+    $target_file = $target_dir . $unique_name;
+
+    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+        echo "Dosyanız başarıyla " . htmlspecialchars(basename($unique_name)) . " olarak yüklendi.<br>";
+
+        // Yüklenen resmi al
+        if ($imageFileType == "jpg" || $imageFileType == "jpeg") {
+            $image = imagecreatefromjpeg($target_file);
+        } elseif ($imageFileType == "png") {
+            $image = imagecreatefrompng($target_file);
+        }
+
+        if ($image === false) {
+            echo "Resim yüklenirken bir hata oluştu.<br>";
+        } else {
+            // Resmin boyutlarını 60mm x 50mm olarak ayarla
+            $width = 60;
+            $height = 50;
+            $new_image = imagescale($image, $width, $height);
+
+            // Yeni resmi kaydedin
+            imagejpeg($new_image, $target_file);
+
+            // Hafızayı temizle
+            imagedestroy($image);
+            imagedestroy($new_image);
+
+            // Resmi ekranda göster
+            echo "<h3>Yüklenen Resim:</h3>";
+            echo "<img src='" . $target_file . "' alt='Yüklenen Resim'><br>";
+        }
+    } else {
+        echo "Üzgünüz, dosyanız yüklenirken bir hata oluştu.<br>";
     }
-
-    echo "<h2>Ödeme Başarılı!</h2>";
-    echo "<p>Filigransız fotoğrafınızı aşağıdan indirebilirsiniz.</p>";
-    echo "<a href='$clean_file' download>İndir</a>";
-    exit;
 }
 ?>
 
@@ -66,20 +96,14 @@ if (isset($_GET['file'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2 Saniyede Vesikalık</title>
+    <title>Resim Yükleme ve Görüntüleme</title>
 </head>
 <body>
-    <h2>Fotoğraf Yükleyin</h2>
-    <form action="vesikalik.php" method="post" enctype="multipart/form-data">
-        <input type="file" name="photo" accept="image/*" required>
-        <input type="submit" value="Vesikalık Yap">
+    <h1>Resim Yükleyin ve Görüntüleyin</h1>
+    <form action="" method="post" enctype="multipart/form-data">
+        <label for="fileToUpload">Resminizi seçin:</label>
+        <input type="file" name="fileToUpload" id="fileToUpload" required>
+        <input type="submit" value="Resim Yükle" name="submit">
     </form>
-
-    <?php if (!empty($target_file)): ?>
-        <h2>Filigranlı Vesikalık Fotoğraf</h2>
-        <img src="<?= $target_file ?>" width="150">
-        <br>
-        <a href="vesikalik.php?file=<?= urlencode($file_name) ?>">Ödeme Yap ve Filigranı Kaldır</a>
-    <?php endif; ?>
 </body>
 </html>

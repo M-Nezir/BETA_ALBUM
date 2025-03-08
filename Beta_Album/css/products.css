@@ -70,6 +70,12 @@ padding-bottom: 0;
 
 }
 
+.productimage{
+    height: 50vh;
+    width: 100%;
+
+}
+
 @media (max-width: 768px) {
     .product-list {
         margin-top: 3%;
@@ -122,5 +128,10 @@ padding-bottom: 0;
 
     .product-list {
         gap: 5px; /* Mobil cihazlarda daha küçük bir boşluk */
-    }    
+    }   
+    .productimage{
+        height: 40vh;
+        width: 100%;
+    
+    } 
 }

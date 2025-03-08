@@ -25,7 +25,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beta Album</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="icon" type="image/png" href="image/beyaz logo.png">
     <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
     <script src="bootstrap/bootstrap.bundle.min.js"></script>
@@ -113,9 +113,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                   </div>
               <?php endforeach; ?>
           </div>
-      </div>
-
-        <div class="single-items">
+           <div class="single-items">
                 <a href="includes/login" class="list-group-item list-group-item-action menu-item">Üye Giriş / Hesabım</a>
                 <a href="includes/about_us" class="list-group-item list-group-item-action menu-item">Hakkımızda</a>
                 <a href="includes/contact" class="list-group-item list-group-item-action menu-item">İletişim</a>
@@ -124,10 +122,36 @@ while ($row = mysqli_fetch_assoc($result)) {
         
             </div>
       </div>
+
+       
+      </div>
     </div>
 </div>
+<style>.whatsapp-button {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: 50px;
+    height: 50px;
+    z-index: 1000;
+}
 
-
+.whatsapp-button i {
+    font-size: 80px !important;
+    z-index: 1000;
+}
+.whatsapp-button i:hover {
+    font-size: 90px !important;
+    z-index: 1000;
+}
+@media (max-width: 768px) {
+    .whatsapp-button {
+        display: none;}
+}
+</style>
+<a href="https://wa.me/+905369771595" class="whatsapp-button" target="_blank" >
+<i class="fa-brands fa-square-whatsapp" style="color: #00ff40;"></i>
+</a>
     <?php  
     include('includes/config.php'); // Veritabanı bağlantısı
 

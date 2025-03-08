@@ -1,0 +1,234 @@
+
+.container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 3%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 50% !important;
+}
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fafafa;
+}
+.form-title {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.form-label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+.form-select, .form-input {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+.btnnn {
+    background: #28a745!important;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.btnnn:hover {
+    background: #218838!important;
+}
+
+.hidden {
+visibility: hidden;
+opacity: 0;
+height: 0;
+overflow: hidden;
+transition: opacity 0.3s ease, height 0.3s ease;
+}
+.visible {
+visibility: visible;
+opacity: 1;
+height: auto;
+transition: opacity 0.3s ease, height 0.3s ease;
+}
+
+.toggleButton{
+background:rgb(0, 218, 47);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+.toggleButton:hover {
+background: #28a745;
+}
+.toggle-class{
+display: flex;
+align-items: center;
+}
+
+.uyari_resim{
+
+margin-top: 3%;
+}
+
+.hero-image {
+width: 100%;
+height: auto;
+}
+
+/* Ana Başlık */
+.main-title {
+margin: 5% 10%;
+text-align: center;
+font-size: 28px;
+font-weight: bold;
+}
+
+/* Bölüm */
+.section {
+text-align: center;
+margin-top: 3%;
+}
+
+/* Alt Başlık */
+.sub-title {
+font-size: 24px;
+margin-bottom: 10px;
+}
+
+/* Açıklama */
+.description {
+font-size: 16px;
+color: #555;
+margin-bottom: 20px;
+}
+
+/* Fotoğraf Kartları */
+.photo-grid {
+display: flex;
+gap: 4%;
+align-items: center;
+justify-content: center;
+flex-wrap: wrap;
+margin-top: 10px;
+}
+
+.photo-card {
+text-align: center;
+max-width: 150px;
+}
+
+.photo-card img {
+width: 100%;
+border-radius: 5px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.photo-text {
+margin-top: 5px;
+font-size: 14px;
+}
+.photo-guidelines-container {
+text-align: center;
+margin-top: 3%;
+}
+
+/* Başlık */
+.guideline-title {
+font-size: 28px;
+font-weight: bold;
+margin-bottom: 20px;
+}
+
+/* Kılavuz Öğeleri */
+.guideline-item {
+margin-bottom: 20px;
+}
+
+
+/* Metin Açıklama */
+.guideline-text {
+font-size: 16px;
+color: #555;
+margin-top: 10px;
+padding: 0 5%;
+}
+@media (max-width: 768px) {
+.container{
+width: 90%!important;
+max-width: 400px;
+padding: 15px;
+margin-left: auto;
+margin-right: auto;
+}
+
+.form {
+padding: 10px;
+}
+
+.form-label {
+font-size: 16px;
+}
+
+.form-input, .form-select {
+font-size: 14px;
+padding: 6px;
+}
+
+.btnnn, .toggleButton {
+font-size: 14px;
+padding: 8px;
+}
+
+.title {
+font-size: 22px;
+}
+
+.main-title {
+font-size: 24px;
+margin: 5% auto;
+}
+
+.sub-title {
+font-size: 20px;
+}
+
+.description {
+font-size: 14px;
+}
+
+.photo-grid {
+flex-direction: row;
+gap: 20px;
+}
+
+.photo-card {
+max-width: 25%;
+}
+.guideline-title {
+font-size: 24px;
+}
+
+.guideline-text {
+font-size: 14px;
+}
+
+.guideline-image {
+max-width: 90%;
+margin: 0 auto;
+}
+}

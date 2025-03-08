@@ -36,9 +36,35 @@ if ($kategori) {
     <title><?php echo $kategori ? htmlspecialchars($kategori['kategori_ad']) : 'Kategori Bulunamadı'; ?></title>
     <link rel="stylesheet" href="../css/backgraund.css">
     <link rel="stylesheet" href="../css/products.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
 </head>
 <body>
+<style>.whatsapp-button {
+    position: fixed;
+    bottom: 50px;
+    right: 150px;
+    width: 50px;
+    height: 50px;
+    z-index: 1000;
+}
+
+.whatsapp-button i {
+    font-size: 80px !important;
+    z-index: 1000;
+}
+.whatsapp-button i:hover {
+    font-size: 90px !important;
+    z-index: 1000;
+}
+@media (max-width: 768px) {
+    .whatsapp-button {
+        display: none;}
+}
+</style>
+<a href="https://wa.me/+905369771595" class="whatsapp-button" target="_blank" >
+<i class="fa-brands fa-square-whatsapp" style="color: #00ff40;"></i>
+</a>
 <?php include('navbar.php');?>
     <div class="main" style="padding-bottom: 10%;">
         <h1 class='head'><?php echo $kategori ? htmlspecialchars($kategori['kategori_ad']) : 'Kategori Bulunamadı'; ?></h1>
@@ -49,7 +75,7 @@ if ($kategori) {
                 while ($row = $urun_result->fetch_assoc()) {
                     echo "<div class='product'>";
                     echo "<a href='product_detail?urun_id=" . htmlspecialchars($row['urun_id']) . "' style='text-decoration: none; color: black;'>";
-                    echo "<div style='height: 50vh; width: 100%;'>";
+                    echo "<div class='productimage'>";
                     echo "<img src='../image/" . htmlspecialchars($row['urun_gorsel']) . "' alt='Ürün Görseli'>";
                     echo "</div>";
                     echo "<h4>" . htmlspecialchars($row['urun_ad']) . "</h4>";
