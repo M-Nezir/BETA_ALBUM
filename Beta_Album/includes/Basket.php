@@ -16,7 +16,6 @@ $result = $query->get_result();
 $user = $result->fetch_assoc();
 $query->close();
 
-// Sepet verisini JSON formatında doğru şekilde çözümle
 $basket = [];
 if (!empty($user['sepet'])) {
     $decoded = json_decode($user['sepet'], true);
@@ -49,83 +48,66 @@ $total_price = 0;
             <div class="basket-item">
                 <?php
                 foreach ($basket as $key => $item) {
-                    // Eğer JSON verisi string olarak saklanmışsa decode edelim
                     if (is_string($item)) {
                         $item = json_decode($item, true);
                     }
-
-                    // Eğer veri hala dizi değilse hatayı önlemek için atla
                     if (!is_array($item)) {
                         continue;
                     }
-
                     echo "<div class='basket-itemmm'>";
 
-                    // Eğer standart bir ürünse
                     if (isset($item['urun_id'])) {
                         $item_total = $item['urun_fiyat'] * $item['adet'];
                         $total_price += $item_total;
 
                         echo "<div class='product-imagee'><img src='/BETA_ALBUM/Beta_Album/image/" . htmlspecialchars($item["urun_gorsel"]) . "' alt=''></div>";
-                        echo "<div style='display: inline-block; margin-left: 3%; text-align: center;'>";
                         echo "<div class='product-name'>" . htmlspecialchars($item['urun_ad']) . "</div>";
                         echo "<div class='quantity-control'>
-                            <button class='qty-btn decrease-qty' data-id='{$item['urun_id']}' aria-label='Adeti Azalt'>−</button>
-                            <span class='qty'>" . htmlspecialchars($item['adet']) . "</span>
-                            <button class='qty-btn increase-qty' data-id='{$item['urun_id']}' aria-label='Adeti Artır'>+</button>
-                            </div>";
-                        echo "<div class='product-price'>" . number_format($item_total, 2, '.', '') . " TL</div>";
-
-                    } 
-                    // Eğer vesikalık/biyometrik fotoğrafsa
-                    else if (isset($item['kategori']) && isset($item['ebat'])) {
-                        echo "<div class='product-imagee'><img src='" . htmlspecialchars($item["foto"]) . "' alt=''></div>";
-                        echo "<div style='display: inline-block; margin-left: 3%; text-align: center;'>";
-                        echo "<div class='product-name'>" . htmlspecialchars($item['kategori']) . " - " . htmlspecialchars($item['ebat']) . "</div>";
-                        echo "<div class='product-details'>
-                                <p><strong>Kağıt Yüzeyi:</strong> " . htmlspecialchars($item['kagit_yuzeyi']) . "</p>
-                                <p><strong>Fotoğraf Sayısı:</strong> " . htmlspecialchars($item['fotograf_sayisi']) . "</p>
+                                <button class='qty-btn decrease-qty' data-id='{$item['urun_id']}'>−</button>
+                                <span class='qty'>" . htmlspecialchars($item['adet']) . "</span>
+                                <button class='qty-btn increase-qty' data-id='{$item['urun_id']}'>+</button>
                               </div>";
-                        echo "<div class='product-price'>Özel Fiyatlandırma</div>";
+                        echo "<div class='product-price'>" . number_format($item_total, 2, '.', '') . " TL</div>";
+                    } else if (isset($item['kategori']) && isset($item['ebat'])) {
+                        $stmt = $conn->prepare("SELECT fiyat FROM fotograf_fiyatlari WHERE kategori = ? AND ebat = ? AND adet = ?");
+                        $stmt->bind_param("ssi", $item['kategori'], $item['ebat'], $item['fotograf_sayisi']);
+                        $stmt->execute();
+                        $result = $stmt->get_result();
+                        $price_row = $result->fetch_assoc();
+                        $stmt->close();
+                        
+                        $item_price = $price_row ? $price_row['fiyat'] : 0;
+                        $item_total = $item_price;
+                        $total_price += $item_total;
+                        
+                        echo "<div class='product-imagee'><img src='" . htmlspecialchars($item["foto"]) . "' alt=''></div>";
+                        echo "<div class='product-name'>" . htmlspecialchars($item['kategori']) . " - " . htmlspecialchars($item['ebat']) . "</div>";
+                        echo "<div class='product-price'>" . number_format($item_total, 2, '.', '') . " TL</div>";
                     }
-
-                    echo "</div>";
-                    echo "</div>";
-                    echo "<hr>";
+                    echo "<button class='remove-item' data-key='{$key}'>Sil</button>";
+                    echo "</div><hr>";
                 }
                 ?>
             </div>
-            
         <?php endif; ?>
 
-        <form id="order-form" class="order-form" action="order_process.php" method="POST">
-            <p class="basket-total" style='text-align: center;'><strong>Toplam Fiyat:</strong> <span id="total-price"><?php echo number_format($total_price, 2, '.', ''); ?></span> TL</p>
-            <label for="address" class="form-label">Teslimat Adresi</label>
-            <textarea id="address" name="address" class="form-input" placeholder="Adresinizi buraya yazın..." required></textarea>
-            <button type="submit" id="place-order" class="order-button">Satın Al</button>
+        <form id="order-form" action="order_process.php" method="POST">
+            <p class="basket-total"><strong>Toplam Fiyat:</strong> <span id="total-price"><?php echo number_format($total_price, 2, '.', ''); ?></span> TL</p>
+            <label for="address">Teslimat Adresi</label>
+            <textarea id="address" name="address" required></textarea>
+            <button type="submit">Satın Al</button>
         </form>
 
 <script>
     $(document).ready(function () {
-        $(document).on("click", ".increase-qty, .decrease-qty", function () {
-            var button = $(this);
-            var productId = button.data("id");
-            var action = button.hasClass("increase-qty") ? "increase" : "decrease";
-
+        $(document).on("click", ".remove-item", function () {
+            var key = $(this).data("key");
             $.ajax({
-                url: "update_basket.php",
+                url: "remove_from_basket.php",
                 type: "POST",
-                data: { urun_id: productId, action: action },
-                dataType: "json",
+                data: { key: key },
                 success: function (response) {
-                    if (response.status === "success") {
-                        window.location.reload();
-                    } else {
-                        alert("Sepet güncellenemedi!");
-                    }
-                },
-                error: function (xhr, status, error) {
-                    console.log("AJAX Hatası:", error);
+                    location.reload();
                 }
             });
         });
