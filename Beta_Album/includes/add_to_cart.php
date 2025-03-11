@@ -2,6 +2,26 @@
 session_start();
 include('config.php');
 
+// Ürün zaten sepette var mı? Kontrol et
+$found = false;
+foreach ($basket as &$item) {
+    if ($item['urun_id'] == $urun_id) {
+        $item['adet'] += $adet; // Var olan ürünün adetini artır
+        $found = true;
+        break;
+    }
+}
+
+if (!$found) {
+    $basket[] = [
+        'urun_id' => $urun_id,
+        'urun_ad' => $urun_ad,
+        'urun_fiyat' => $urun_fiyat,
+        'adet' => $adet,
+        'urun_gorsel' => $urun_gorsel
+    ];
+}
+
 if (!isset($_SESSION['user_id'])) {
     header("Location: login");
     exit();
@@ -40,15 +60,24 @@ $user = $result->fetch_assoc();
 $query->close();
 
 // Sepeti JSON formatında işle
-$basket = !empty($user['sepet']) ? json_decode($user['sepet'], true) : [];
+$basket = [];
+if (!empty($user['sepet'])) {
+    $basket = json_decode($user['sepet'], true);
 
-// Sepette ürün var mı kontrol et
-$found = false;
-foreach ($basket as &$item) {
-    if ($item['urun_id'] == $urun_id) {
-        $item['adet'] += $adet;
-        $found = true;
-        break;
+    // JSON decode başarısızsa hata yönetimi
+    if (!is_array($basket)) {
+        die("Sepet verisi bozulmuş olabilir! Lütfen temizleyin.");
+    }
+}
+
+// Sepeti JSON formatında işle
+$basket = [];
+if (!empty($user['sepet'])) {
+    $basket = json_decode($user['sepet'], true);
+
+    // JSON decode başarısızsa hata ver ve içeriği göster
+    if (!is_array($basket)) {
+        die("Sepet JSON hatası! Geçersiz format: " . htmlspecialchars($user['sepet']));
     }
 }
 
