@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beta Album</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/BETA_ALBUM/Beta_Album/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="/BETA_ALBUM/Beta_Album/css/footer.css">
+    <link rel="stylesheet" href="../bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/footer.css">
     
 </head>
 <body>
@@ -15,27 +15,27 @@
     <div class="footer-items">
         <ul>
             <li><h3>Bilgiler</h3></li>
-            <li><a href="/BETA_ALBUM/Beta_Album/includes/distance_selling_agreement">Mesafeli Satış Sözleşmesi</a></li>
-            <li><a href="/BETA_ALBUM/Beta_Album/includes/payment_and_delivery_information">Ödeme ve Teslimat Bilgileri</a></li>
-            <li><a href="/BETA_ALBUM/Beta_Album/includes/about_us">Hakkımızda</a></li>
-            <li><a href="/BETA_ALBUM/Beta_Album/includes/privacy_and_security">Gizlilik ve Güvenlik</a></li>
-            <li><a href="/BETA_ALBUM/Beta_Album/includes/contact">İletişim</a></li>
+            <li><a href="./distance_selling_agreement">Mesafeli Satış Sözleşmesi</a></li>
+            <li><a href="./payment_and_delivery_information">Ödeme ve Teslimat Bilgileri</a></li>
+            <li><a href="./about_us">Hakkımızda</a></li>
+            <li><a href="./privacy_and_security">Gizlilik ve Güvenlik</a></li>
+            <li><a href="./contact">İletişim</a></li>
         </ul>
     </div>
 
     <div class="footer-items">
         <ul>
             <li><h3>Ekstralar</h3></li>
-            <li><a href="/BETA_ALBUM/Beta_Album/includes/campaigns">Kampanyalar</a></li>
-            <li><a href="/BETA_ALBUM/Beta_Album/includes/adminlogin">Yönetici Girişi</a></li>
+            <li><a href="./campaigns">Kampanyalar</a></li>
+            <li><a href="./adminlogin">Yönetici Girişi</a></li>
         </ul>
     </div>
 
     <div class="footer-items">
         <ul>
             <li><h3>Hesabım</h3></li>
-            <li><a href="/BETA_ALBUM/Beta_Album/includes/login">Hesabım</a></li>
-            <li><a href="/BETA_ALBUM/Beta_Album/includes/siparislerim">Siparişlerim</a></li>
+            <li><a href="./login">Hesabım</a></li>
+            <li><a href="./siparislerim">Siparişlerim</a></li>
         </ul>
     </div>
 
@@ -54,7 +54,7 @@ KONYA" target="_blank"><i class="fa-solid fa-location-dot"></i>SÜMER MAH. INÖN
 
 <div  class="logo">
     <div>
-        <a class="footer_icon" href="/BETA_ALBUM/Beta_Album/index"><img src="/BETA_ALBUM/Beta_Album/image/betaalbümkare.svg" alt="Logo" width="200" height="200"></a>
+        <a class="footer_icon" href="../index"><img src="../image/betaalbümkare.svg" alt="Logo" width="200" height="200"></a>
 
     </div> 
     <div class="text">
@@ -66,7 +66,7 @@ KONYA" target="_blank"><i class="fa-solid fa-location-dot"></i>SÜMER MAH. INÖN
     <div class="img">
         <a href="https://www.google.com/search?q=facebook" target="_blank" class="facebook"><i class="fa-brands fa-facebook"></i></a>
         <a href="https://www.google.com/search?q=instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-        <img src="/BETA_ALBUM/Beta_Album/image/odeme-guvenlik.png" alt="" style="bottom: 0; display: block;">
+        <img src="../image/odeme-guvenlik.png" alt="" style="bottom: 0; display: block;">
     </div>
 </div>
 

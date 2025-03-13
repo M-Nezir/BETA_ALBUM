@@ -60,7 +60,7 @@ $total_price = 0;
                         $item_total = $item['urun_fiyat'] * $item['adet'];
                         $total_price += $item_total;
 
-                        echo "<div class='product-imagee'><img src='/BETA_ALBUM/Beta_Album/image/" . htmlspecialchars($item["urun_gorsel"]) . "' alt=''></div>";
+                        echo "<div class='product-imagee'><img src='../image/" . htmlspecialchars($item["urun_gorsel"]) . "' alt=''></div>";
                         echo "<div class='product-name'>" . htmlspecialchars($item['urun_ad']) . "</div>";
                         echo "<div class='quantity-control'>
                                 <button class='qty-btn decrease-qty' data-id='{$item['urun_id']}'>−</button>
@@ -91,11 +91,11 @@ $total_price = 0;
             </div>
         <?php endif; ?>
 
-        <form id="order-form" action="order_process.php" method="POST">
+        <form class="order-form" id="order-form" action="order_process.php" method="POST">
             <p class="basket-total"><strong>Toplam Fiyat:</strong> <span id="total-price"><?php echo number_format($total_price, 2, '.', ''); ?></span> TL</p>
-            <label for="address">Teslimat Adresi</label>
-            <textarea id="address" name="address" required></textarea>
-            <button type="submit">Satın Al</button>
+            <label class="form-label" for="address">Teslimat Adresi</label>
+            <textarea class="form-input" id="address" name="address" required></textarea>
+            <button class="order-button" type="submit">Satın Al</button>
         </form>
 
 <script>
@@ -113,7 +113,32 @@ $total_price = 0;
         });
     });
 </script>
+<script>
+    $(document).ready(function () {
+        $(document).on("click", ".increase-qty, .decrease-qty", function () {
+            var button = $(this);
+            var productId = button.data("id");
+            var action = button.hasClass("increase-qty") ? "increase" : "decrease";
 
+            $.ajax({
+                url: "update_basket.php",
+                type: "POST",
+                data: { urun_id: productId, action: action },
+                dataType: "json",
+                success: function (response) {
+                    if (response.status === "success") {
+                        window.location.reload();
+                    } else {
+                        alert("Sepet güncellenemedi!");
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.log("AJAX Hatası:", error);
+                }
+            });
+        });
+    });
+</script>
     </div>
     <?php include('footer.php'); ?>
 </body>

@@ -2,17 +2,15 @@
 session_start();
 include('config.php');
 
-header("Content-Type: application/json");
-
-if (!isset($_SESSION['user_id']) || !isset($_POST['urun_id']) || !isset($_POST['action'])) {
-    echo json_encode(["status" => "error", "message" => "Eksik veri gönderildi"]);
+// Eğer kullanıcı giriş yapmamışsa yönlendirme yap
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login");
     exit();
 }
 
 $user_id = $_SESSION['user_id'];
-$product_id = $_POST['urun_id'];
-$action = $_POST['action'];
 
+// Kullanıcının sepetini veritabanından al
 $query = $conn->prepare("SELECT sepet FROM kullanicilar WHERE user_id = ?");
 $query->bind_param("i", $user_id);
 $query->execute();
@@ -20,44 +18,56 @@ $result = $query->get_result();
 $user = $result->fetch_assoc();
 $query->close();
 
-$basket = !empty($user['sepet']) ? json_decode($user['sepet'], true) : [];
-
-$total_price = 0;
-$new_quantity = 0;
-$new_item_total = 0;
-
-foreach ($basket as $key => &$item) {
-    if ($item['urun_id'] == $product_id) {
-        if ($action == "increase") {
-            $item['adet'] += 1;
-        } elseif ($action == "decrease") {
-            $item['adet'] -= 1;
-            if ($item['adet'] <= 0) {
-                unset($basket[$key]);
-                continue;
-            }
-        }
-        $new_quantity = $item['adet'];
-        $new_item_total = $new_quantity * $item['urun_fiyat'];
+$basket = [];
+if (!empty($user['sepet'])) {
+    $decoded = json_decode($user['sepet'], true);
+    if (json_last_error() === JSON_ERROR_NONE) {
+        $basket = $decoded;
     }
 }
 
-$basket = array_values($basket);
-$updated_basket = json_encode($basket);
+$urun_id = $_POST['urun_id']; // Ürün ID'si
+$action = $_POST['action']; // Artırma ya da eksiltme işlemi
+$found = false;
 
-$update_query = $conn->prepare("UPDATE kullanicilar SET sepet = ? WHERE user_id = ?");
-$update_query->bind_param("si", $updated_basket, $user_id);
-$update_query->execute();
-$update_query->close();
-
-foreach ($basket as $item) {
-    $total_price += $item['urun_fiyat'] * $item['adet'];
+foreach ($basket as &$item) {
+    // Normal ürün için işlem
+    if (isset($item['urun_id']) && $item['urun_id'] == $urun_id && !isset($item['kategori']) && !isset($item['ebat'])) {
+        // Eğer artış yapılacaksa
+        if ($action == 'increase') {
+            $item['adet']++;
+        } elseif ($action == 'decrease' && $item['adet'] > 1) {
+            // Eğer azalma yapılacaksa ve adet 1'den fazla ise azalt
+            $item['adet']--;
+        }
+        $found = true;
+        break;
+    }
+    // Fotoğraf baskı ürünü için işlem
+    elseif (isset($item['kategori']) && isset($item['ebat'])) {
+        if ($action == 'increase') {
+            $item['fotograf_sayisi']++; // Fotoğraf sayısını artır
+        } elseif ($action == 'decrease' && $item['fotograf_sayisi'] > 1) {
+            $item['fotograf_sayisi']--; // Fotoğraf sayısını azalt
+        }
+        $found = true;
+        break;
+    }
 }
 
-echo json_encode([
-    "status" => "success",
-    "new_quantity" => $new_quantity,
-    "new_item_total" => number_format($new_item_total, 2, '.', ''),
-    "new_total_price" => number_format($total_price, 2, '.', '')
-]);
-exit();
+// Sepet güncelleme işlemi
+if ($found) {
+    // Güncellenen sepete tekrar json formatında dönüştür
+    $updated_basket = json_encode($basket);
+    
+    // Veritabanını güncelle
+    $update_query = $conn->prepare("UPDATE kullanicilar SET sepet = ? WHERE user_id = ?");
+    $update_query->bind_param("si", $updated_basket, $user_id);
+    $update_query->execute();
+    $update_query->close();
+    
+    echo json_encode(['status' => 'success']);
+} else {
+    echo json_encode(['status' => 'error']);
+}
+?>

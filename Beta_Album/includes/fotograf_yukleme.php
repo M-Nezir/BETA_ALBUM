@@ -157,19 +157,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <input type="hidden" name="kategori" value="Biyometrik">
             <label class="form-label">Ebat:</label>
             <select name="ebat" class="form-select">
-            <option>Lütfen Ebat Seçiniz</option>
+            <option disabled selected>Lütfen Ebat Seçiniz</option>
                 <option value="35x45 mm">35x45 mm</option>
                 <option value="50x50 mm">50x50 mm</option>
                 <option value="50x60 mm">50x60 mm</option>
             </select>
             <label class="form-label">Kağıt Yüzeyi:</label>
             <select name="kagit_yuzeyi" class="form-select">
+            <option disabled selected>Lütfen kağıt yüzeyi Seçiniz</option>
                 <option value="Parlak">Parlak</option>
                 <option value="Mat">Mat</option>
             </select>
             <label class="form-label">Fotoğraf Sayısı:</label>
             <select name="fotograf_sayisi" class="form-select">
-        
+            <option disabled selected>Lütfen adet Seçiniz</option>
                 <option value="4">4 adet</option>
                 <option value="8">8 adet</option>
                 <option value="12">12 adet</option>
@@ -178,7 +179,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <label class="form-label">Fiyat:</label> 
             <span id="biyometrik_fiyat" class="price"> - TL</span>
             <label class="form-label">Fotoğraf Seç:</label>
-            <input type="file" name="foto" class="form-input">
+            <input type="file" name="foto" accept='image/*' class="form-input">
             <button type="submit" class="btnnn">Sepete Ekle</button>
         </form>
         
@@ -187,13 +188,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <input type="hidden" name="kategori" value="Vesikalik">
             <label class="form-label">Ebat:</label>
             <select name="ebat" id="vesikalik_ebat" class="form-select" onchange="updateFotografSayisi()">
-                <option>Lütfen Ebat Seçiniz</option>
+            <option disabled selected>Lütfen Ebat Seçiniz</option>
                 <option value="3,2x4,5 cm (9 Adet)">3,2x4,5 cm (9 Adet)</option>
                 <option value="4,5x6 cm (4 Adet)">4,5x6 cm (4 Adet)</option>
                 <option value="6x9 cm (2 Adet)">6x9 cm (2 Adet)</option>
             </select>
             <label class="form-label">Kağıt Yüzeyi:</label>
             <select name="kagit_yuzeyi" class="form-select">
+            <option disabled selected>Lütfen kağıt yüzeyi Seçiniz</option>
                 <option value="Parlak">Parlak</option>
                 <option value="Mat">Mat</option>
             </select>
@@ -202,7 +204,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <label class="form-label">Fiyat:</label> 
             <span id="vesikalik_fiyat" class="price">- TL</span>
             <label class="form-label">Fotoğraf Seç:</label>
-            <input type="file" name="foto" class="form-input">
+            <input type="file" name="foto" accept='image/*' class="form-input">
             <button type="submit" class="btnnn">Sepete Ekle</button>
         </form>
     </div>
@@ -364,6 +366,62 @@ function guncelleFiyat() {
     .catch(error => console.error("Hata:", error));
 }
 </script>
+<script>
+   document.querySelectorAll('.btnnn').forEach(function(btn) {
+    btn.addEventListener('click', function(event) {
+        // Formu seç
+        const form = btn.closest('form');
+        
+        // Her tıklamada mesajı temizle
+        const mevcutMesaj = form.querySelector('.error-message');
+        if (mevcutMesaj) {
+            mevcutMesaj.remove();
+        }
+
+        // Seçilen seçenekler
+        const ebat = form.querySelector('select[name="ebat"]').value;
+        const kagitYuzeyi = form.querySelector('select[name="kagit_yuzeyi"]').value;
+        const fotografSayisi = form.querySelector('select[name="fotograf_sayisi"]').value;
+        const foto = form.querySelector('input[name="foto"]').files.length;
+
+        // Mesaj alanı
+        const mesajAlani = document.createElement('p');
+        mesajAlani.style.color = 'red';
+
+        // Hata mesajlarını belirleme
+        let mesaj = [];
+
+        // Hata kontrolü
+        if (ebat === "" || ebat === "Lütfen Ebat Seçiniz") {
+            mesaj.push('Lütfen ebat seçin');
+        } else if (kagitYuzeyi === "" || kagitYuzeyi === "Lütfen kağıt yüzeyi Seçiniz") {
+            mesaj.push('Lütfen kağıt yüzeyi seçin');
+        } else if (fotografSayisi === "" || fotografSayisi === "Lütfen adet Seçiniz") {
+            mesaj.push('Lütfen adet seçin');
+        } else if (foto === 0) {
+            mesaj.push('Lütfen fotoğraf seçin');
+        }
+
+        // Eğer mesaj varsa
+        if (mesaj.length > 0) {
+            event.preventDefault(); // Formun gönderilmesini engelle
+            mesajAlani.textContent = mesaj.join(', '); // Hata mesajlarını birleştir
+            if (!form.querySelector('.error-message')) {
+                mesajAlani.classList.add('error-message');
+                form.appendChild(mesajAlani);
+            }
+        } else {
+            // Eğer her şey seçildiyse mesajı kaldır
+            const mevcutMesaj = form.querySelector('.error-message');
+            if (mevcutMesaj) {
+                mevcutMesaj.remove();
+            }
+        }
+    });
+});
+
+</script>
+
 
 <?php include('footer.php'); ?>
 </body>
