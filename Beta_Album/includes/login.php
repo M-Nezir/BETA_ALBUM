@@ -49,7 +49,7 @@ if (isset($_SESSION['user_id'])) {
               <p class="welcome-message">
         Sepetine buradan ulaşabilirsin:
     </p>
-    <a href="Basket" class="basket-link">
+    <a href="basket" class="basket-link">
         <div class="basket-button">
             <h3>SEPETİME GİT</h3>
         </div>
