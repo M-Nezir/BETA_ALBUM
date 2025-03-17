@@ -48,46 +48,46 @@ if (!isset($_SESSION['admin_logged_in'])) {
 <div class="menu">
 
    <div class="header-container">
-    <a href="/BETA_ALBUM/Beta_Album/admin_panel/admin_panel" style="text-decoration: none; color: black;">
+    <a href="./admin_panel" style="text-decoration: none; color: black;">
    <b class="header">BETA ALBUM&trade;</b> <br>
    Admin Panel
    </a>
    </div>
 
    <div class="menu-item">
-    <a href="/BETA_ALBUM/Beta_Album/admin_panel/add_product"><i class="fa-solid fa-plus"></i>Ürün Ekle</a>
+    <a href="./add_product"><i class="fa-solid fa-plus"></i>Ürün Ekle</a>
    </div>
 
    <div class="menu-item">
-    <a href="/BETA_ALBUM/Beta_Album/admin_panel/del_product"><i class="fa-solid fa-trash"></i>Ürün Sil</a>
+    <a href="./del_product"><i class="fa-solid fa-trash"></i>Ürün Sil</a>
    </div>
 
    <div class="menu-item">
-    <a href="/BETA_ALBUM/Beta_Album/admin_panel/upload_product"><i class="fa fa-edit"></i>Ürün Güncelle</a>
+    <a href="./upload_product"><i class="fa fa-edit"></i>Ürün Güncelle</a>
    </div>
 
    <div class="menu-item">
-    <a href="/BETA_ALBUM/Beta_Album/admin_panel/update_category"><i class="fa fa-edit"></i> Kategori Güncelle</a>
+    <a href="./update_category"><i class="fa fa-edit"></i> Kategori Güncelle</a>
    </div>
 
    
     <div class="menu-item">
-        <a href="/BETA_ALBUM/Beta_Album/admin_panel/edit_home"><i class="fa-solid fa-image"></i>Ana Ekranı Düzenle</a>
+        <a href="./edit_home"><i class="fa-solid fa-image"></i>Ana Ekranı Düzenle</a>
     </div>
 
     <div class="menu-item">
-     <a href="/BETA_ALBUM/Beta_Album/admin_panel/view_orders"><i class="fa-solid fa-truck-fast"></i>Siparişleri Görüntüle</a>
+     <a href="./view_orders"><i class="fa-solid fa-truck-fast"></i>Siparişleri Görüntüle</a>
     </div>
 
     <div class="menu-item">
-        <a href="/BETA_ALBUM/Beta_Album/admin_panel/update_photo_prices">
+        <a href="./update_photo_prices">
             <i class="fa-solid fa-money-bill-wave"></i> Vesikalık Fiyatlarını Güncelle
         </a>
     </div>
 
 
     <div class="menu-item">
-        <a href="/BETA_ALBUM/Beta_Album/admin_panel/update_admin">
+        <a href="./update_admin">
             <i class="fa-solid fa-user-cog"></i> Admin Bilgilerini Güncelle
         </a>
     </div>
