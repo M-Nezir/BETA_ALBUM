@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="../image/beyaz logo.png">
     <title>Kampanyalar</title>
-    <link rel="stylesheet" href="/BETA_ALBUM/Beta_Album/css/backgraund.css">
+    <link rel="stylesheet" href="../css/backgraund.css">
 </head>
 <body class="body">
     <?php include('navbar.php');?>

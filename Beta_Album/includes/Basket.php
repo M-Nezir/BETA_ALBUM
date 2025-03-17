@@ -32,8 +32,8 @@ $total_price = 0;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sepetim</title>
-    <link rel="stylesheet" href="/BETA_ALBUM/Beta_Album/css/backgraund.css">
-    <link rel="stylesheet" href="/BETA_ALBUM/Beta_Album/css/basket.css">
+    <link rel="stylesheet" href="../css/backgraund.css">
+    <link rel="stylesheet" href="../css/basket.css">
     <link rel="icon" type="image/png" href="../image/beyaz logo.png">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
