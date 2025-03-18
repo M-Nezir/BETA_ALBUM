@@ -10,11 +10,29 @@ if (!isset($_SESSION['user_id'])) {
 
 $user_id = $_SESSION['user_id'];
 
-// Kullanıcının siparişlerini çek
-$stmt = $conn->prepare("SELECT * FROM siparisler WHERE user_id = ? ORDER BY order_date DESC");
-$stmt->bind_param("i", $user_id);
-$stmt->execute();
-$result = $stmt->get_result();
+$urun_stmt = $conn->prepare("SELECT urun_ad, urun_fiyat, urun_gorsel FROM urunler WHERE urun_id = ?");
+$urun_stmt->bind_param("i", $urun_id);
+$urun_stmt->execute();
+$urun_result = $urun_stmt->get_result();
+
+if ($urun = $urun_result->fetch_assoc()) {
+    $urun_gorsel = !empty($urun['urun_gorsel']) ? "../image/" . $urun['urun_gorsel'] : "../image/default.jpg";
+
+    // Eğer bu bir standart ürünse
+    echo "<li>
+        <img src='{$urun_gorsel}' class='product-img' alt='{$urun['urun_ad']}'>
+        <strong>{$urun['urun_ad']}</strong> - {$urun_adet} adet - 
+        <strong>{$urun['urun_fiyat']} ₺</strong>
+    </li>";
+}
+else {
+    // Vesikalık/biyometrik ürünse
+    echo "<li>
+        <strong>Kategori:</strong> {$item['kategori']} - 
+        <strong>Ebat:</strong> {$item['ebat']} - 
+        <strong>Fotoğraf Sayısı:</strong> {$item['fotograf_sayisi']}
+    </li>";
+}
 
 ?>
 
