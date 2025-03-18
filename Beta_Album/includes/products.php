@@ -7,6 +7,9 @@ $id = isset($_GET['Kategori']) ? intval($_GET['Kategori']) : 0;
 if ($id == '9') {
     header('Location: fotograf_yukleme.php');
 }
+if ($id == '10') {
+    header('Location: vesikalikyap.php');
+}
 
 // kategori ismini al
 $kategori_sql = "SELECT kategori_ad FROM kategoriler WHERE kategori_id = ?";
