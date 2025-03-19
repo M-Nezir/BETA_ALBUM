@@ -10,8 +10,8 @@ $category_groups = [
     "Panoramik Albüm" => [1, 2],
     "Fotoğraf Baskı"   => [3, 4, 5],
     "Canvas"          => [6, 7, 8],
-    "Vesikalık"       => [9],
-    "PS Tasarım"      => [10]
+    "Vesikalık"       => [9,10],
+    "PS Tasarım"      => [11]
 ];
 
 $categories = [];
