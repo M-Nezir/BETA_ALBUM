@@ -16,56 +16,11 @@ include('../includes/config.php'); // Veritabanı bağlantısı
     <link rel="stylesheet" href="../css/products_operations.css">
     <title>Siparişler</title>
     <style>
-        .table-container {
-            width: 100%;
-            overflow-x: auto;
-        }
-        table {
-            width: 100%;
-            max-width: 100%;
-            border-collapse: collapse;
-            font-family: Arial, sans-serif;
-            color: #333;
-            table-layout: auto;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 9px;
-            text-align: left;
-            word-wrap: break-word;
-            white-space: normal;
-        }
-        th {
-            background-color: #4CAF50;
-            color: white;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-        .product-image {
-            width: 50px;
-            height: 50px;
-            object-fit: cover;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        select {
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            background-color: #fff;
-            font-size: 14px;
-            transition: border-color 0.3s;
-        }
-        select:focus {
-            border-color: #4CAF50;
-            outline: none;
-        }
-        .metin{
-            display: none;
-        }
+        .table-container { width: 100%; overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; font-family: Arial, sans-serif; }
+        th, td { border: 1px solid #ddd; padding: 9px; text-align: left; }
+        th { background-color: #4CAF50; color: white; }
+        .product-image { width: 50px; height: 50px; object-fit: cover; border-radius: 5px; }
     </style>
     <script>
         function updateStatus(orderId, newStatus) {
@@ -94,7 +49,7 @@ include('../includes/config.php'); // Veritabanı bağlantısı
                 <tr>
                     <th>Sipariş ID</th>
                     <th>Kullanıcı</th>
-                    <th>T.C. Kimlik</th> <!-- Yeni sütun eklendi -->
+                    <th>T.C. Kimlik</th>
                     <th>Telefon</th>
                     <th>Email</th>
                     <th>Adres</th>
@@ -116,21 +71,33 @@ include('../includes/config.php'); // Veritabanı bağlantısı
                     echo "<tr>";
                     echo "<td>{$row['order_id']}</td>";
                     echo "<td>{$row['user_name']} {$row['user_surname']}</td>";
-                    echo "<td>{$row['tcKimlik']}</td>"; // Yeni sütun eklendi
+                    echo "<td>{$row['tcKimlik']}</td>";
                     echo "<td>{$row['phoneNumber']}</td>";
                     echo "<td>{$row['email']}</td>";
                     echo "<td>{$row['address']}</td>";
-
+                    
                     echo "<td>";
                     $orderDetails = json_decode($row['order_details'], true);
                     if (!empty($orderDetails)) {
                         echo "<table>";
                         foreach ($orderDetails as $item) {
+                            if (is_string($item)) {
+                                $item = json_decode($item, true);
+                            }
                             echo "<tr>";
-                            echo "<td><img src='../image/{$item['urun_gorsel']}' class='product-image'></td>";
-                            echo "<td>{$item['urun_ad']}</td>";
-                            echo "<td>{$item['adet']} adet</td>";
-                            echo "<td>{$item['urun_fiyat']} ₺</td>";
+                            
+                            if (isset($item['urun_id'])) { // Standart ürünler
+                                echo "<td><img src='../image/{$item['urun_gorsel']}' class='product-image'></td>";
+                                echo "<td>{$item['urun_ad']}</td>";
+                                echo "<td>{$item['adet']} adet</td>";
+                                echo "<td>{$item['urun_fiyat']} ₺</td>";
+                            } elseif (isset($item['kategori'])) { // Biyometrik/Vesikalık fotoğraflar
+                                echo "<td><img src='{$item['foto']}' class='product-image'></td>";
+                                echo "<td><strong>{$item['kategori']}</strong></td>";
+                                echo "<td><strong>Ebat:</strong> {$item['ebat']}</td>";
+                                echo "<td><strong>Kağıt Yüzeyi:</strong> {$item['kagit_yuzeyi']}</td>";
+                                echo "<td><strong>Foto Sayısı:</strong> {$item['fotograf_sayisi']}</td>";
+                            }
                             echo "</tr>";
                         }
                         echo "</table>";
@@ -149,7 +116,6 @@ include('../includes/config.php'); // Veritabanı bağlantısı
                             <option value='Teslim Edildi' " . ($row['status'] == 'Teslim Edildi' ? 'selected' : '') . ">Teslim Edildi</option>
                         </select>
                     </td>";
-
                     echo "</tr>";
                 }
                 ?>
@@ -157,6 +123,5 @@ include('../includes/config.php'); // Veritabanı bağlantısı
         </table>
     </div>
 </div>
-
 </body>
 </html>
