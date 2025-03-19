@@ -1,93 +1,48 @@
 <?php
-// Yükleme dizini
-$target_dir = "../image"; // Burada yüklenen resimleri kaydedeceğiz
-$uploadOk = 1;
+session_start();
 
-// Dosya adı
-$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-$imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+$target_dir = "../image/";
+$watermark_path = "betaalbümkare.png";
 
-// Resmin bir resim olup olmadığını kontrol et
-if(isset($_POST["submit"])) {
-    if (isset($_FILES["fileToUpload"])) {
-        // Dosya var mı kontrol et
-        if ($_FILES["fileToUpload"]["error"] !== UPLOAD_ERR_OK) {
-            echo "Dosya yüklenirken bir hata oluştu.<br>";
-            $uploadOk = 0;
-        } else {
-            $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-            if($check !== false) {
-                echo "Dosya bir resim: " . $check["mime"] . ".<br>";
-                $uploadOk = 1;
-            } else {
-                echo "Bu dosya bir resim değil.<br>";
-                $uploadOk = 0;
-            }
-        }
+if (!is_dir($target_dir)) {
+    mkdir($target_dir, 0755, true);
+}
+
+if (isset($_POST["upload"]) && isset($_FILES["fileToUpload"])) {
+    $file_name = $_FILES["fileToUpload"]["name"];
+    $file_tmp = $_FILES["fileToUpload"]["tmp_name"];
+    $imageFileType = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+    $allowed_types = ["jpg", "jpeg", "png"];
+    
+    if (!in_array($imageFileType, $allowed_types)) {
+        echo "Sadece JPG, JPEG ve PNG formatları desteklenmektedir.";
     } else {
-        echo "Dosya seçilmedi.<br>";
-        $uploadOk = 0;
+        $unique_name = uniqid() . "." . $imageFileType;
+        $target_file = $target_dir . $unique_name;
+        
+        if (move_uploaded_file($file_tmp, $target_file)) {
+            $_SESSION['uploaded_image'] = $target_file;
+            echo "Dosya başarıyla yüklendi. <br>";
+        }
     }
 }
 
-// Dosya zaten var mı kontrol et
-if (file_exists($target_file)) {
-    echo "Üzgünüz, bu dosya zaten var.<br>";
-    $uploadOk = 0;
-}
-
-// Dosya boyutunu kontrol et (maksimum 5MB)
-if ($_FILES["fileToUpload"]["size"] > 5000000) {
-    echo "Üzgünüz, dosyanız çok büyük.<br>";
-    $uploadOk = 0;
-}
-
-// Belirli dosya uzantılarına izin ver (JPEG, PNG, GIF)
-if($imageFileType != "jpg" && $imageFileType != "jpeg" && $imageFileType != "png") {
-    echo "Üzgünüz, sadece JPG, JPEG ve PNG dosyalarına izin verilmektedir.<br>";
-    $uploadOk = 0;
-}
-
-// Eğer $uploadOk 0 ise, yükleme engellendi
-if ($uploadOk == 0) {
-    echo "Üzgünüz, dosyanız yüklenemedi.<br>";
-} else {
-    // Benzersiz dosya ismi oluştur (çakışmayı önlemek için)
-    $unique_name = uniqid() . '.' . $imageFileType;
-    $target_file = $target_dir . $unique_name;
-
-    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-        echo "Dosyanız başarıyla " . htmlspecialchars(basename($unique_name)) . " olarak yüklendi.<br>";
-
-        // Yüklenen resmi al
-        if ($imageFileType == "jpg" || $imageFileType == "jpeg") {
-            $image = imagecreatefromjpeg($target_file);
-        } elseif ($imageFileType == "png") {
-            $image = imagecreatefrompng($target_file);
-        }
-
-        if ($image === false) {
-            echo "Resim yüklenirken bir hata oluştu.<br>";
-        } else {
-            // Resmin boyutlarını 60mm x 50mm olarak ayarla
-            $width = 60;
-            $height = 50;
-            $new_image = imagescale($image, $width, $height);
-
-            // Yeni resmi kaydedin
-            imagejpeg($new_image, $target_file);
-
-            // Hafızayı temizle
-            imagedestroy($image);
-            imagedestroy($new_image);
-
-            // Resmi ekranda göster
-            echo "<h3>Yüklenen Resim:</h3>";
-            echo "<img src='" . $target_file . "' alt='Yüklenen Resim'><br>";
-        }
-    } else {
-        echo "Üzgünüz, dosyanız yüklenirken bir hata oluştu.<br>";
+if (isset($_POST["purchase"])) {
+    if (isset($_SESSION['uploaded_image'])) {
+        $imagePath = $_SESSION['uploaded_image'];
+        unset($_SESSION['uploaded_image']); // Satın alma işlemi gerçekleştiğinde session temizlenir
+        echo "Satın alma başarılı! Filigransız resminiz: <br>";
+        echo "<img src='$imagePath' alt='Filigransız Resim'><br>";
     }
+}
+
+if (!isset($_POST["purchase"]) && isset($_SESSION['uploaded_image'])) {
+    register_shutdown_function(function() {
+        if (file_exists($_SESSION['uploaded_image'])) {
+            unlink($_SESSION['uploaded_image']);
+        }
+        unset($_SESSION['uploaded_image']);
+    });
 }
 ?>
 
@@ -95,15 +50,21 @@ if ($uploadOk == 0) {
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resim Yükleme ve Görüntüleme</title>
+    <title>Resim Yükleme</title>
 </head>
 <body>
-    <h1>Resim Yükleyin ve Görüntüleyin</h1>
+    <h1>Resim Yükleyin</h1>
     <form action="" method="post" enctype="multipart/form-data">
-        <label for="fileToUpload">Resminizi seçin:</label>
-        <input type="file" name="fileToUpload" id="fileToUpload" required>
-        <input type="submit" value="Resim Yükle" name="submit">
+        <input type="file" name="fileToUpload" required>
+        <input type="submit" value="Yükle" name="upload">
     </form>
+    
+    <?php if (isset($_SESSION['uploaded_image'])): ?>
+        <h2>Önizleme</h2>
+        <img src="<?php echo $_SESSION['uploaded_image']; ?>" alt="Önizleme" width="200"><br>
+        <form action="" method="post">
+            <input type="submit" value="Satın Al" name="purchase">
+        </form>
+    <?php endif; ?>
 </body>
 </html>
