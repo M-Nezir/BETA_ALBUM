@@ -125,7 +125,7 @@ if (isset($_POST["submit"]) && isset($_FILES["fileToUpload"])) {
             
 
             // Filigranlı resmi kaydet
-            $filigranli_name = "watermarked_" . $unique_name;
+            $filigranli_name = "filigranlı_" . $unique_name;
             $filigranli_dosya_yolu = $target_dir . $filigranli_name;
 
             // Filigranlı resmin kaydedilmesi
