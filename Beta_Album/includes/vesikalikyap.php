@@ -1,12 +1,26 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/backgraund.css">
+    <link rel="stylesheet" href="../css/vesikalikyap.css">
+    <title>Vesikalık Yap</title>
+</head>
+<body>
+<?php include('navbar.php');?> 
+<div class="main"> 
+ 
 <?php
 // Yükleme dizini
-$target_dir = "../image/";
+$target_dir = "../image/vesikaliklar/";
 if (!is_dir($target_dir)) {
     mkdir($target_dir, 0755, true);
 }
 
 $uploadOk = 1;
 $allowed_types = ["jpg", "jpeg", "png"];
+$filigranli_dosya_yolu = "";
 
 // Dosya yükleme işlemi
 if (isset($_POST["submit"]) && isset($_FILES["fileToUpload"])) {
@@ -30,7 +44,6 @@ if (isset($_POST["submit"]) && isset($_FILES["fileToUpload"])) {
         $target_file = $target_dir . $unique_name;
 
         if (move_uploaded_file($file_tmp, $target_file)) {
-            echo "Dosya başarıyla yüklendi: " . htmlspecialchars($unique_name) . "<br>";
 
             // Resmi oluştur
             if ($imageFileType == "jpg" || $imageFileType == "jpeg") {
@@ -39,32 +52,94 @@ if (isset($_POST["submit"]) && isset($_FILES["fileToUpload"])) {
                 $image = imagecreatefrompng($target_file);
             }
 
-            if ($image) {
-                $width = 189;
-                $height = 227;
-                $new_image = imagecreatetruecolor($width, $height);
-                imagecopyresampled($new_image, $image, 0, 0, 0, 0, $width, $height, imagesx($image), imagesy($image));
+            // Orijinal resmin boyutlarını al
+            $original_width = imagesx($image);
+            $original_height = imagesy($image);
 
-                // Filigran ekle
-                $text_color = imagecolorallocate($new_image, 255, 255, 255);
-                imagestring($new_image, 3, 5, 35, "FILIGRAN", $text_color);
+            // Yeni yüksekliği belirle (227px olarak)
+            $new_height = 227;
+            $new_width = 189;
 
-                // Yeni resmi kaydet
-                if ($imageFileType == "jpg" || $imageFileType == "jpeg") {
-                    imagejpeg($new_image, $target_file, 90);
-                } elseif ($imageFileType == "png") {
-                    imagepng($new_image, $target_file, 9);
-                }
+            // Eğer resmin eni boyundan uzunsa
+            if ($original_width > $original_height) {
+                // Resmin boyunu 227px yaparken enini orantılı şekilde küçült
+                $new_width = ($original_width / $original_height) * $new_height;
 
-                imagedestroy($image);
-                imagedestroy($new_image);
+                // Yeni resim oluştur
+                $new_image = imagecreatetruecolor($new_width, $new_height);
+                imagecopyresampled($new_image, $image, 0, 0, 0, 0, $new_width, $new_height, $original_width, $original_height);
 
-                // Görseli göster
-                echo "<h3>Filigranlı Resim:</h3>";
-                echo "<img src='" . $target_file . "' alt='Yüklenen Resim'><br>";
-            } else {
-                echo "Resim işlenirken hata oluştu.<br>";
+                // Sağdan ve soldan kırpma işlemi
+                $crop_x = ($new_width - 189) / 2;
+                $crop_y = 0;
+
+                $cropped_image = imagecreatetruecolor(189, 227);
+                imagecopy($cropped_image, $new_image, 0, 0, $crop_x, $crop_y, 189, 227);
             }
+            // Eğer resmin boyu eninden uzunsa
+            else {
+                // Resmin enini 189px yaparken boyunu orantılı şekilde küçült
+                $new_height = ($original_height / $original_width) * $new_width;
+
+                // Yeni resim oluştur
+                $new_image = imagecreatetruecolor($new_width, $new_height);
+                imagecopyresampled($new_image, $image, 0, 0, 0, 0, $new_width, $new_height, $original_width, $original_height);
+
+                // Üstten ve alttan kırpma işlemi
+                $crop_x = 0;
+                $crop_y = ($new_height - 227) / 2;
+
+                $cropped_image = imagecreatetruecolor(189, 227);
+                imagecopy($cropped_image, $new_image, 0, 0, $crop_x, $crop_y, 189, 227);
+            }
+
+            // Filigransız resmi kaydet
+            $original_image_path = $target_file;
+            imagejpeg($cropped_image, $original_image_path, 90);  // Filigransız resmi kaydediyoruz
+
+            // Filigranlı resim oluşturulacak
+            // Arka plan resmini yükle
+            $background_image = imagecreatefromjpeg("../image/vesikaliklar/imgSize.jpeg");
+
+            // Arka planın boyutlarını al
+            $bg_width = 220;
+            $bg_height = 271;
+
+            // Arka planın üzerine kırpılmış resmi yerleştir
+            imagecopy($background_image, $cropped_image, ($bg_width - 189) / 2, ($bg_height - 227) / 2, 0, 0, 189, 227);
+
+            // Yazı rengi (Yarı saydam siyah)
+            $text_color = imagecolorallocatealpha($background_image, 0, 0, 0, 100); // 100 şeffaflık seviyesi
+            // Yazıyı ekleyelim
+            imagestring($background_image, 5, 30, 30, "BETA COLOR", $text_color);
+            imagestring($background_image, 5, 100, 50, "BETA COLOR", $text_color);
+            imagestring($background_image, 5, 30, 70, "BETA COLOR", $text_color);
+            imagestring($background_image, 5, 100, 90, "BETA COLOR", $text_color);
+            imagestring($background_image, 5, 30, 110, "BETA COLOR", $text_color);
+            imagestring($background_image, 5, 100, 130, "BETA COLOR", $text_color);
+            imagestring($background_image, 5, 30, 150, "BETA COLOR", $text_color);
+            imagestring($background_image, 5, 100, 170, "BETA COLOR", $text_color);
+            imagestring($background_image, 5, 30, 190, "BETA COLOR", $text_color);
+            imagestring($background_image, 5, 100, 210, "BETA COLOR", $text_color);
+            imagestring($background_image, 5, 30, 230, "BETA COLOR", $text_color);
+            
+
+            // Filigranlı resmi kaydet
+            $filigranli_name = "watermarked_" . $unique_name;
+            $filigranli_dosya_yolu = $target_dir . $filigranli_name;
+
+            // Filigranlı resmin kaydedilmesi
+            if ($imageFileType == "jpg" || $imageFileType == "jpeg") {
+                imagejpeg($background_image, $filigranli_dosya_yolu, 90);
+            } elseif ($imageFileType == "png") {
+                imagepng($background_image, $filigranli_dosya_yolu, 9);
+            }
+
+            imagedestroy($image);
+            imagedestroy($new_image);
+            imagedestroy($cropped_image);
+            imagedestroy($background_image);
+
         } else {
             echo "Dosya yüklenirken hata oluştu.<br>";
         }
@@ -72,18 +147,27 @@ if (isset($_POST["submit"]) && isset($_FILES["fileToUpload"])) {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resim Yükleme</title>
-</head>
-<body>
-    <h1>Resim Yükleyin</h1>
-    <form action="" method="post" enctype="multipart/form-data">
-        <input type="file" name="fileToUpload" required>
-        <input type="submit" value="Yükle" name="submit">
+
+<div class="container"> 
+    <h1 class="page-title">VESİKALIK OLUŞTURUN</h1>
+
+    <form action="" method="post" enctype="multipart/form-data" class="upload-form">
+        <input type="file" name="fileToUpload" accept="image/jpeg, image/png" required class="file-input">
+        <input type="submit" value="Yükle" name="submit" class="btn-primary">
     </form>
+
+    <div class="image-preview">
+        <hr>
+        <?php if (!empty($filigranli_dosya_yolu)) : ?>
+            <h3 class="preview-title">Önizleme:</h3>
+            <img src="<?= $filigranli_dosya_yolu ?>" alt="Yüklenen Filigranlı Resim" class="uploaded-image">
+            <div style="display: flex; justify-content:center;">
+            <button id="paymentButton" class="btn-secondary">Ödeme Yap</button>
+            </div>
+        <?php endif; ?>
+    </div>
+</div>
+    </div>
+    <?php include('footer.php');?>
 </body>
 </html>
