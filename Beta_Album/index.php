@@ -11,7 +11,8 @@ $category_groups = [
     "Fotoğraf Baskı"   => [3, 4, 5],
     "Canvas"          => [6, 7, 8],
     "Vesikalık"       => [9,10],
-    "PS Tasarım"      => [11]
+    "PS Tasarım"      => [11],
+    "Beta Yıllık"      => []
 ];
 
 $categories = [];
@@ -53,7 +54,11 @@ while ($row = mysqli_fetch_assoc($result)) {
         <div class="center">
             <?php foreach ($category_groups as $group_name => $category_ids): ?>
                 <li class="dropdown">
-                    <a class="categoryList" href="#"><?= htmlspecialchars($group_name); ?> ▽</a>
+                <?php if ($group_name == "Beta Yıllık") : ?>
+                    <a class="categoryList" href="https://betayillik.com/"><?= htmlspecialchars($group_name); ?> ▽</a>
+                    <?php else : ?>
+                    <a class="categoryList" href=""><?= htmlspecialchars($group_name); ?> ▽</a>
+                    <?php endif; ?>
                     <div class="dropdown-content">
                         <?php foreach ($category_ids as $category_id): ?>
                             <?php if (isset($categories[$category_id])): ?>
@@ -434,9 +439,11 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="footer-items">
         <ul>
             <li><h3>İletişim Bilgilerimiz</h3></li>
-            <li><a href="https://www.google.com/maps?q=Ereğli / Konya" target="_blank"><i class="fa-solid fa-location-dot"></i>Ereğli / Konya</a></li>
+            <li><a href="https://www.google.com/maps?q=SÜMER MAH. INÖNÜ CAD. NO: 102 A IÇ KAPI NO: A EREGLI/
+KONYA" target="_blank"><i class="fa-solid fa-location-dot"></i>SÜMER MAH. INÖNÜ CAD. NO: 102 A <br> &nbsp;&nbsp;&nbsp;&nbsp;IÇ KAPI NO: A EREGLI/
+            KONYA</a></li>
             <li><a href="tel:+905369771595"><i class="fa-solid fa-phone"></i>Telefon: +90 536 977 15 95</a></li>
-            <li mailto=><a href="mailto:betacolor@hotmail.com"><i class="fa-solid fa-envelope"></i>Mail: betacolor@hotmail.com</a></li>
+            <li mailto=><a href="mailto:beta.color@hotmail.com"><i class="fa-solid fa-envelope"></i>Mail: beta.color@hotmail.com</a></li>
         </ul> 
     </div> 
 
@@ -449,9 +456,9 @@ document.addEventListener('DOMContentLoaded', function() {
     </div> 
     <div class="text">
         Hizmetlerimiz Hakkında sorularınız mı var? Bize
-         <a href="mailto:betacolor@hotmail.com" style="color: #FFA500;">betacolor@hotmail.com </a>mail adresimizden yazabilir, hafta içi
+         <a href="mailto:beta.color@hotmail.com" style="color: #FFA500;">beta.color@hotmail.com </a>mail adresimizden yazabilir, hafta içi
          <span  style="color: #FFA500;">09.00 - 20.00 </span>saatleri arasında 
-        <a href="tel:+905369771595" style="color: #FFA500;">+90 536 977 15 95</a> numaralı telefondan ulaşabilirsiniz.
+        <a href="tel:+905369771595" style="color: #FFA500;">+90 536 977 15 95</a> veya <a href="tel:+903327127514" style="color: #FFA500;">+90 332 712 75 14</a> numaralı telefonlardan ulaşabilirsiniz.
     </div>
     <div class="img">
         <a href="https://www.google.com/search?q=facebook" target="_blank" class="facebook"><i class="fa-brands fa-facebook"></i></a>

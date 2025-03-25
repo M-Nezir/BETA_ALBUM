@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/backgraund.css">
     <link rel="stylesheet" href="../css/vesikalikyap.css">
+    <link rel="stylesheet" href="../bootstrap/bootstrap.min.css">
     <title>Vesikalık Yap</title>
 </head>
 <body>
@@ -150,22 +151,48 @@ if (isset($_POST["submit"]) && isset($_FILES["fileToUpload"])) {
 
 <div class="container"> 
     <h1 class="page-title">VESİKALIK OLUŞTURUN</h1>
+    <div class="container">
+    <div class="row">
+        <div class="col-sm-5" style="padding: 8px 8px 12px 8px;">
+        <p style="margin-top: 1%; margin-bottom: 3%;">
+    Lütfen sağ tarafta görünen şekilde beyaz bir duvarın önüne geçerek ve fotoğrafta kendinizi ortalayarak çekindiğiniz bir fotoğraf ile işlem yapınız.
+</p>
+<form action="" method="post" enctype="multipart/form-data" class="upload-form">
+                <input type="file" name="fileToUpload" accept="image/jpeg, image/png" required class="file-input">
+                <input type="submit" value="Yükle" name="submit" class="btn-primary">
+            </form>
 
-    <form action="" method="post" enctype="multipart/form-data" class="upload-form">
-        <input type="file" name="fileToUpload" accept="image/jpeg, image/png" required class="file-input">
-        <input type="submit" value="Yükle" name="submit" class="btn-primary">
-    </form>
-
-    <div class="image-preview">
-        <hr>
-        <?php if (!empty($filigranli_dosya_yolu)) : ?>
-            <h3 class="preview-title">Önizleme:</h3>
-            <img src="<?= $filigranli_dosya_yolu ?>" alt="Yüklenen Filigranlı Resim" class="uploaded-image">
-            <div style="display: flex; justify-content:center;">
-            <button id="paymentButton" class="btn-secondary">Ödeme Yap</button>
+            <div class="image-preview">
+                <hr>
+                <?php if (!empty($filigranli_dosya_yolu)) : ?>
+                    <h3 class="preview-title">Önizleme:</h3>
+                    <img src="<?= $filigranli_dosya_yolu ?>" alt="Yüklenen Filigranlı Resim" class="uploaded-image">
+                    <div style="display: flex; justify-content:center;">
+                        <button id="paymentButton" class="btn-secondary">Ödeme Yap</button>
+                    </div>
+                <?php endif; ?>
             </div>
-        <?php endif; ?>
+        </div>
+
+        <div class="col-sm-5 offset-sm-1" style="margin-bottom: 3%; padding: 8px 8px 12px 8px;">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-6" style="text-align:center;">
+                        <h4>Öncesi</h4>
+                        <img src="../image/source03.png" class="center-block img-responsive img-thumbnail" alt="beta albüm">
+                    </div>
+                    <div class="col-sm-6" style="text-align:center;">
+                        <h4>Sonrası</h4>
+                        <img src="../image/canada_visa_photo.webp" class="center-block img-responsive img-thumbnail" alt="beta albüm">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
+
+        
+
 </div>
     </div>
     <?php include('footer.php');?>

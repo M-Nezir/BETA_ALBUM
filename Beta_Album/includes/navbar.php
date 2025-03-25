@@ -11,7 +11,8 @@ $category_groups = [
     "Fotoğraf Baskı"   => [3, 4, 5],
     "Canvas"          => [6, 7, 8],
     "Vesikalık"       => [9, 10],
-    "PS Tasarım"      => [11]
+    "PS Tasarım"      => [11],
+    "Beta Yıllık"      => []
 ];
 
 $categories = [];
@@ -51,7 +52,11 @@ while ($row = mysqli_fetch_assoc($result)) {
         <div class="center">
             <?php foreach ($category_groups as $group_name => $category_ids): ?>
                 <li class="dropdown">
-                    <a class="categoryList" href="#"><?= htmlspecialchars($group_name); ?> ▽</a>
+                <?php if ($group_name == "Beta Yıllık") : ?>
+                    <a class="categoryList" href="https://betayillik.com/"><?= htmlspecialchars($group_name); ?> ▽</a>
+                    <?php else : ?>
+                    <a class="categoryList" href=""><?= htmlspecialchars($group_name); ?> ▽</a>
+                    <?php endif; ?>
                     <div class="dropdown-content">
                         <?php foreach ($category_ids as $category_id): ?>
                             <?php if (isset($categories[$category_id])): ?>
@@ -63,8 +68,11 @@ while ($row = mysqli_fetch_assoc($result)) {
                             <?php endif; ?>
                         <?php endforeach; ?>
                     </div>
+                    <?php endforeach; ?>
                 </li>
-            <?php endforeach; ?>
+                
+            
+            
         </div>
         <li class="search-icon-container">
             <a class="search_icon" id="search-btn" href="search"><i class="fas fa-search"></i></a>
